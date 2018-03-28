@@ -1,0 +1,19 @@
+/* This is the style sheet used for the personal site */
+
+* {
+	margin: 0;
+	padding: 0;	
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+
+.grid  div:nth-child(even){
+	background-color: green;
+}
+.grid  div:nth-child(odd){
+	background-color: blue;
+}
