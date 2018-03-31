@@ -1,19 +1,55 @@
 /* This is the style sheet used for the personal site */
 
-* {
-	margin: 0;
-	padding: 0;	
-}
-
-.grid {
+.grid-container {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	padding: 0px;
+	grid-gap: 10px;
+	background-color: black;
+	padding: 10px;
+	color: black;
+	grid-template-columns: 5fr 5fr 5fr 5fr 5fr;
+	grid-template-rows: 50px 1fr 50px 1fr 1fr 1fr 1fr; 
+	grid-template-areas: 
+		"main-head main-head main-head main-head main-head"
+		"jumbotron jumbotron jumbotron jumbotron jumbotron"
+		"main-nav main-nav main-nav main-nav main-nav"
+		"content2 content2 content2 content2 content2"
+		"content3 content3 content3 content3 content3"
+		"aside content4 content4 content4 content4"
+		"footer footer footer footer footer";
+}
+.main-head {
+	grid-area: main-head;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+.main-nav {
+	grid-area: main-nav;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+.jumbotron {
+	grid-area: jumbotron;
+	height: 400px;
+	background-color: rgba(255, 255, 255, 0.8);	
+}
+.content2 {
+	grid-area: content2;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+.content3 {
+	grid-area: content3;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+.content4 {
+	grid-area: content4;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+.aside {
+	grid-area: aside;
+	background-color: rgba(255, 255, 255, 0.8);
 }
 
+.footer {
+	grid-area: footer;
+	background-color: rgba(255, 255, 255, 0.8);
+}
 
-.grid  div:nth-child(even){
-	background-color: green;
-}
-.grid  div:nth-child(odd){
-	background-color: blue;
-}
