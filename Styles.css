@@ -1,55 +1,30 @@
 /* This is the style sheet used for the personal site */
 
-.grid-container {
-	display: grid;
-	padding: 0px;
-	grid-gap: 10px;
-	background-color: black;
-	padding: 10px;
-	color: black;
-	grid-template-columns: 5fr 5fr 5fr 5fr 5fr;
-	grid-template-rows: 50px 1fr 50px 1fr 1fr 1fr 1fr; 
-	grid-template-areas: 
-		"main-head main-head main-head main-head main-head"
-		"jumbotron jumbotron jumbotron jumbotron jumbotron"
-		"main-nav main-nav main-nav main-nav main-nav"
-		"content2 content2 content2 content2 content2"
-		"content3 content3 content3 content3 content3"
-		"aside content4 content4 content4 content4"
-		"footer footer footer footer footer";
-}
-.main-head {
-	grid-area: main-head;
-	background-color: rgba(255, 255, 255, 0.8);
-}
-.main-nav {
-	grid-area: main-nav;
-	background-color: rgba(255, 255, 255, 0.8);
-}
-.jumbotron {
-	grid-area: jumbotron;
-	height: 400px;
-	background-color: rgba(255, 255, 255, 0.8);	
-}
-.content2 {
-	grid-area: content2;
-	background-color: rgba(255, 255, 255, 0.8);
-}
-.content3 {
-	grid-area: content3;
-	background-color: rgba(255, 255, 255, 0.8);
-}
-.content4 {
-	grid-area: content4;
-	background-color: rgba(255, 255, 255, 0.8);
-}
-.aside {
-	grid-area: aside;
-	background-color: rgba(255, 255, 255, 0.8);
-}
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
 
-.footer {
-	grid-area: footer;
-	background-color: rgba(255, 255, 255, 0.8);
-}
+    .bg-grey {
+      background-color: #f6f6f6;
+      padding-top: 3%;
+      padding-bottom: 3%;
+    }
 
+    .bg-white {
+      padding-top: 3%;
+      padding-bottom: 3%;
+    }
+
+    .bg-black {
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+    }
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      /*background-color: #f2f2f2; */
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+      padding: 25px;
+    }
