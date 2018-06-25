@@ -1,0 +1,15 @@
+//Grid Variables
+
+$row-margin-vertical: 0px;
+$row-margin-horizontal: 0px;
+
+$col-margin-vertical: 1rem;
+$col-margin-horizontal: 0px;
+
+$col-gutter: 1.5rem;
+$grid-width: calc((100% - #{$col-gutter}* 11)/12);
+
+//Colors
+
+$color-blue-dark: #0000FF;
+$color-purple-dark: #3333FF;
