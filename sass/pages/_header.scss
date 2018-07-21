@@ -1,8 +1,15 @@
 
 .header {
-  display: block;
+  display: grid;
+  grid-template-columns:  [header-start] 1fr [header-end]; //minmax(80%, max-content);
+  grid-template-rows: [nav-start] 10vh [nav-end hero-start] minmax(60vh, 80vh) [hero-end text-start] minmax(10vh, 20vh) [text-end];
+
   height: 100vh;
-  width: 100%;
+
+  align-items: center;
+  justify-items: center;
+
+  
   //background-image: linear-gradient(to right bottom, #667eea, #764ba2);
   background-image: linear-gradient(to right bottom, #000428, #004e92);
   //background-image: linear-gradient(to right bottom, #667eea, #764ba2);
@@ -10,26 +17,48 @@
 
   font-size: 1.5rem;
   color: #FFF;
-}
 
-.nav {
+  &__nav {
+    grid-column: header-start / header-end;
+    grid-row: nav-start / nav-end;
+    
+  }
+  
+  &__hero {
+      grid-column: header-start / header-end;
+      grid-row: hero-start / hero-end;
+      
+  
+    &__circle {
+      width: 50%;
+      margin: auto;
+      border-radius: 50%;
+      overflow: hidden;
 
-}
+      &::before {
+        
+      }
 
-.hero {
+      &::after {
 
-  &__circle {
-
-    width: 300px;
-
-    &__image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+      }
+  
+      &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
     }
   }
+  
+  &__text {
+      grid-column: header-start / header-end;
+      grid-row: text-start / text-end;
+  }
 }
+
+
 
 /*
 .hero {
