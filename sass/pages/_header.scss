@@ -32,15 +32,38 @@
     &__circle {
       width: 50%;
       margin: auto;
-      border-radius: 50%;
-      overflow: hidden;
+      position: relative;
 
       &::before {
-        
+        content: "";
+        border: 5px solid transparent;
+        border-left-color: whitesmoke;
+        border-top-color: whitesmoke;
+        border-radius: 50%;
+        position: absolute;
+        top: -4rem;
+        left: -4rem;
+        right: -4rem;
+        bottom: -4rem;
+  
+        animation: spin 2.5s 1s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+        animation-fill-mode: both;
       }
 
       &::after {
-
+        content: "";
+        border: 5px solid transparent;
+        border-left-color: whitesmoke;
+        border-bottom-color: whitesmoke;
+        border-radius: 50%;
+        position: absolute;
+        top: -2rem;
+        left: -2rem;
+        right: -2rem;
+        bottom: -2rem;
+  
+        animation: spin 3s .5s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+        animation-fill-mode: both;
       }
   
       &__image {
@@ -48,6 +71,9 @@
         height: 100%;
         object-fit: cover;
         display: block;
+        border-radius: 50%;
+        opacity: .4;
+        box-shadow: 1rem 2rem 5rem rgba(#111111, .9);
       }
     }
   }
