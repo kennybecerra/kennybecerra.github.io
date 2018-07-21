@@ -1,4 +1,21 @@
 
+.header {
+    display: grid;
+    grid-template-columns: minmax(80%, max-content);
+    grid-template-rows: 10vh minmax(60vh, 80vh);
+}
+
+.nav {
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+.hero {
+    grid-row: 2/3;
+    grid-column: 1/2;
+
+}
+/*
 .hero {
     display:grid;
     grid-template-columns: minmax(70%, max-content);
@@ -72,3 +89,4 @@
     padding: 10px;
     //background-color: orangered;
 }
+*/
