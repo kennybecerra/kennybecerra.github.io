@@ -1,0 +1,111 @@
+.nav {
+	grid-column: header-start / header-end;
+    grid-row: nav-start / nav-end;
+    
+    align-self: stretch;
+    justify-self: stretch;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: [menu-start] 1fr [menu-end];
+
+        /*
+        &__checkbox {
+            display: none;
+        } 
+
+		&__button {
+
+            grid-row: icon-start / icon-end;
+            grid-column: 1 / 2;
+
+            display: block;
+            background-color: $color-grey-dark-3;
+            height: 6rem;
+            width: 100vw;
+
+            z-index: 2000;
+            box-shadow: 0 1rem 3rem rgba($color-black, .1);
+            text-align: center;
+            cursor: pointer;
+
+            animation: fadeIn 1.7s 2s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+			animation-fill-mode: both;
+        }
+        
+          //ICON 
+        &__icon {
+            position: relative;
+            margin-top: 3rem;
+
+            &,
+            &::before,
+            &::after {
+            width: 3rem;
+            height: .3rem;
+            background-color: $color-white;
+            display: inline-block;
+            }
+
+            &::before,
+            &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+            }
+
+            &::before {top: -.8rem;}
+            &::after {top: .8rem;}
+        }
+
+	
+        //FUNCTIONALITY
+        &__checkbox:checked ~ &__content {
+            display: block;
+            height: 5rem;
+            visibility: visible;
+        }
+        */
+
+            &__content {
+                grid-row: menu-start /menu-end;
+                grid-column: 1/2;
+
+                list-style: none;
+                background-color: $color-grey-dark-3;
+                
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                font-size: 2rem;
+
+                animation: fadeIn 1.7s 2s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+			    animation-fill-mode: both;
+                
+                &__item {
+
+                }
+
+                &__link:link,
+                &__link:visited {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: $color-white;
+                    transition: all .4s;
+
+                }
+
+                &__link:hover,
+                &__link:active {
+
+                    color: $color-primary;
+        
+                    
+                }
+
+
+            }
+
+  }

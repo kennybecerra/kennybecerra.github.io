@@ -15,5 +15,17 @@
 @import "layout/grid";
 
 
-//PAGES
-@import "pages/header";
+//HEADER
+@import "header/header";
+@import "header/navigation";
+
+//LAYOUT
+
+//OVERVIEW
+
+//PROJECTS
+
+//RESUME
+@import "resume/resume";
+//@import "resume/section1"
+//@import "resume/resume"
