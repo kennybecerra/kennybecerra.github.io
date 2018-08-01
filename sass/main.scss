@@ -12,6 +12,9 @@
 @import "components/animations";
 @import "components/progressbar";
 
+//FOOTER
+@import "footer/footer";
+
 //LAYOUT
 @import "layout/grid";
 
@@ -25,7 +28,7 @@
 //OVERVIEW
 
 //PROJECTS
-
+@import "projects/project";
 //RESUME
 @import "resume/resume";
 //@import "resume/section1"

@@ -1,16 +1,16 @@
 
 .header {
 
-	grid-row: row-start 1 / row-emd 1;
+	grid-row: row-start-1 / row-emd-1;
 	grid-column: page-start / page-end;
 
-  display: grid;
-  grid-template-columns:  [header-start] 1fr [header-end]; //minmax(80%, max-content);
-  grid-template-rows: [nav-start] minmax(8vh, max-content) [nav-end hero-start] minmax(50vh, 80vh) [hero-end text-start] minmax(10vh, max-content) [text-end];
+	display: grid;
+	grid-template-columns:  [header-start] 1fr [header-end]; //minmax(80%, max-content);
+	grid-template-rows: [nav-start] minmax(8vh, max-content) [nav-end hero-start] minmax(50vh, 80vh) [hero-end text-start] minmax(10vh, max-content) [text-end];
 
-  height: 100vh;
+	height: 100vh;
 
-  align-items: center;
+	align-items: center;
 	justify-items: center;
 	  
   //background-image: linear-gradient(to right bottom, #667eea, #764ba2);

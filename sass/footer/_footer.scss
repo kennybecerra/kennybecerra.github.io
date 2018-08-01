@@ -1,0 +1,58 @@
+.footer {
+    grid-row:  row-start-4 / row-end-4;
+    grid-column: page-start / page-end;
+    background-color: $color-grey-dark-3;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    &__section {
+        height: 150px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+
+
+        &--text {
+            
+            color: $color-white;
+            font-size: 1.8rem;
+
+        }
+
+        &--icon {
+            color: $color-white;
+            font-size: 3.5rem;
+            padding: 1.2rem 1.4rem;
+            border: 2px solid $color-white;
+            border-radius: 50%;
+            margin-right: 3rem;
+
+            &:hover {
+                animation: rotate-vert-center .6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+            }
+
+        }
+
+        &--link {
+
+
+
+            &:link,
+            &:visited {
+            text-decoration: none;
+            color: white;
+            }
+
+            &:hover,
+            &:active {
+                text-decoration: none;
+                color:white;
+            }
+        }
+    }
+}
