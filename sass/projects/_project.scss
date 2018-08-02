@@ -1,0 +1,135 @@
+.projects {
+
+    grid-row: row-start-3 / row-end-3;
+    grid-column: inner-page-start / inner-page-end;
+
+    justify-self: center;
+    align-self: center;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 50vw));
+
+    grid-gap: 2rem;
+    padding-bottom: 2rem;
+
+    
+
+    &__container {
+        height: 350px;
+        overflow: hidden;
+        color: $color-white;
+        //max-width: 50%;
+        position: relative;
+        z-index: 0;
+        transition: all .3s;
+        background-color: $color-white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+        //border: 3px solid green;
+        //background-color: orangered;
+        
+
+        &__figure {
+            width: 100%;
+        
+            &--image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+    
+    
+                transition: all .5s;
+                transform: scale(1.2);
+            
+                &:hover {
+                    transform: scale(1);
+                    filter: brightness(90%);
+                }
+            }
+
+            &__caption {
+
+                display: flex;
+                flex-direction: column;
+    
+                align-items: center;
+                justify-content: space-evenly;
+
+                padding-left: 1rem;
+
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                right: 0px;
+                bottom: 0px;
+                transform: translateY(20%);
+                opacity: 0;
+                //border: 3px solid blue;
+
+                transition: all .5s;
+
+                &--box {
+                    width: 50%;
+                    
+                    
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+    
+    
+                &--heading1 {
+
+                    font-size: 2.5rem;
+                    font-weight: 400;
+                    line-height: 2.5rem;
+                    text-align: center;
+                    color: $color-white;
+
+                    align-self: center;
+                    
+                    
+                }
+
+                &--heading2 {
+                   
+                    font-style: bold;
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                    line-height: 1.7rem;
+                    text-decoration: underline;
+                    color: $color-white;
+                    text-transform: uppercase;
+                
+                }
+    
+                &--item {
+                    //width: 50%;
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    line-height: 1.3rem;
+                    color: $color-white;
+                    
+                    //padding-left: 1rem;
+                    
+                }
+            }
+
+            &:hover &__caption {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+
+            &:hover &--image {
+                transform: scale(1);
+                filter: brightness(80%);
+            }
+        
+        }
+
+        &:hover {
+           
+        }
+    }
+}

@@ -10,10 +10,26 @@
 
 //COMPONENTS
 @import "components/animations";
+@import "components/progressbar";
+
+//FOOTER
+@import "footer/footer";
 
 //LAYOUT
 @import "layout/grid";
 
 
-//PAGES
-@import "pages/home";
+//HEADER
+@import "header/header";
+@import "header/navigation";
+
+//LAYOUT
+
+//OVERVIEW
+
+//PROJECTS
+@import "projects/project";
+//RESUME
+@import "resume/resume";
+//@import "resume/section1"
+//@import "resume/resume"

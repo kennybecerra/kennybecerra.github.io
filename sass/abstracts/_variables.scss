@@ -7,9 +7,27 @@ $col-margin-vertical: 1rem;
 $col-margin-horizontal: 0px;
 
 $col-gutter: 1.5rem;
-$grid-width: calc((100% - #{$col-gutter}* 11)/12);
 
 //Colors
 
+$color-primary: #9d9d9d;
+$color-secondary: #000;
+
+$color-tertiary:#660000;
+$color-quaternary: #CEB888; 
+
+
+$color-garnet: #660000;
+$color-gold: #CEB888;
 $color-blue-dark: #0000FF;
 $color-purple-dark: #3333FF;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999; 
+$color-grey-dark-3: #333;
+
+$color-white: #FFF;
+$color-black: #000;
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;

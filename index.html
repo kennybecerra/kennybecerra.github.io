@@ -4,70 +4,190 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<title>Document</title>
 </head>
 <body>
-	<header>
-		<section class="hero">
-			<div class="hero__top">
-				<div class="item hero__box">
-					<div class="hero__box__circle">
-						<img src="images/HeadShot2.jpg" alt="Headshot photo" class="hero__box__circle__image">
-					</div> 
-				</div>
-					
-				<div class="item hero__text">
-					<span class="hero__text--1">Hello</span><span class="hero__text--2">... welcome to my portfolio</span>
-				</div>
+	<main class="container">
+		<header class="header">
+			<section class="nav">
+				<!--
+				<input type="checkbox" class="nav__checkbox" id="navi-toggle">
+				<label for="navi-toggle" class="nav__button">
+					<span class="nav__icon">&nbsp;</span>
+				</label>
+				-->
+				<!--
+				<div class="nav__background"></div>
+				-->
+				<ul class="nav__content">
+					<!-- <li class="nav__content__item"><a href="#" class="nav__content__link">About me</a></li> 
+					<li class="nav__content__item"><a href="#" class="nav__content__link">Overview</a></li> -->
+					<li class="nav__content__item"><a href="#PROJECTS" class="nav__content__link">Projects</a></li>
+					<li class="nav__content__item"><a href="#RESUME" class="nav__content__link">Resume</a></li>
+					<li class="nav__content__item"><a href="#FOOTER" class="nav__content__link">Contact me</a></li>
+				</ul>
+	
+			</section>
+			<section class="hero">
+				<figure class="hero__circle">
+					<img src="images/HeadShot2.jpg" alt="Headshot photo" class="hero__circle__image">
+				</figure>
+			</section>
+			<div class="text">
+			
 			</div>
+		</header>
+		<section class="projects" id="PROJECTS">
+			<div class="projects__container">
+				<figure class="projects__container__figure">
+					<img class="projects__container__figure--image" src="images/BudgetApp.png" alt="Budget APP screenshot">
+					<figcaption class="projects__container__figure__caption">
+						<h2 class="projects__container__figure__caption--heading1">BudgetAppController</h2>
+						<div class="projects__container__figure__caption--box">
+							<h3 class="projects__container__figure__caption--heading2">Libraries</h3>
+							<p class="projects__container__figure__caption--item">item 1</p>
+							<p class="projects__container__figure__caption--item">item 2</p>
+						</div>
 
-			<div class="item hero__content">Content</div>
+						<div class="projects__container__figure__caption--box">
+							<h3 
+							class="projects__container__figure__caption--heading2">Frameworks</h3>
+							<p class="projects__container__figure__caption--item">item 1</p>
+							<p class="projects__container__figure__caption--item">item 2</p>
+						</div>
+
+						<div class="projects__container__figure__caption--box">
+							<h3 class="projects__container__figure__caption--heading2">Tools</h3>
+							<p class="projects__container__figure__caption--item">item 1</p>
+							<p class="projects__container__figure__caption--item">item 2</p>
+						</div>
+
+						<div class="projects__container__figure__caption--box">
+							<h3 class="projects__container__figure__caption--heading2">Concepts</h3>
+							<p class="projects__container__figure__caption--item">item 1</p>
+							<p class="projects__container__figure__caption--item">item 2</p>
+						</div>
+						
+					</figcaption>
+				</figure>
+			</div>
+			<!--
+			<div class="projects__container">This is project 2</div>
+			<div class="projects__container">This is project 3</div>
+			<div class="projects__container">This is project 4</div>
+			<div class="projects__container">This is project 5</div>
+			<div class="projects__container">This is project 6</div>
+			-->
 		</section>
-<!-- 
-		<section class="hero">
-				<div class="hero__box">
-					<div class="hero__box__circle"></div>
-					<img src="images/HeadShot2.jpg" alt="Headshot photo" class="hero__box__image"> 
+		<section class="resume" id="RESUME">
+			<div class="section-1">
+				<figure clas="section__box">
+					<img class="section__box__image" src="Images/HeadShot3.jpg" alt="Face photo">
+				</figure>
+		
+				<div class="section__sub--info">
+				<p class="section__text--3"><i class="fa fa-briefcase section__icon--2"></i> Security Analyst</p>
+				<p class="section__text--3"><i class="fa fa-home section__icon--2" id="home-icon"></i>San Francisco, CA </p>
+				<p class="section__text--3"><i class="fa fa-envelope section__icon--2"></i> KennyBecerra.j@gmail.com</p>
+				<p class="section__text--3"><i class="fa fa-phone section__icon--2"></i>  786 367 4498</p>
 				</div>
-					<p class="hero__text">
-						<span class="hero__text--1">Hello</span><span class="hero__text--2">... welcome to my portfolio</span>
-					</p>
-		</section>	
-	-->	
-<!--
-		<section class="hero">
-			<div class="hero__content row">
-				<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-					<div class="hero__content__image-box">
-						<img src="images/HeadShot2.jpg" alt="Headshot photo" class="hero__content__image"> 
+				
+				<div class="section__sub--lang">
+					<h2 class="section__heading--4">Languages</h2>
+					<p class="section__text">HTML</p>
+					<div class="progress-container">
+						<div class="progress-bar">
+							<p class="section__text--2">intermediate</p>
+						</div>
+					</div>
+					<p class="section__text">CSS</p>
+					<div class="progress-container">
+						<div class="progress-bar">
+						<p class="section__text--2">intermediate</p>
+						</div>
+					</div>
+					<p class="section__text">JAVASCRIPT</p>
+					<div class="progress-container">
+						<div class="progress-bar">
+							<p class="section__text--2">intermediate</p>
+						</div>
 					</div>
 				</div>
 
-				<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-					<p class="hero__content__text">
-						hello and welcome to my portfolio
-					</p>
+				<div class="section__sub--tools">
+					<h2 class="section__heading--4">Tools/libraries</h2>
+					<p class="section__text">Git</p>
+					<div class="progress-container">
+						<div class="progress-bar">
+							<p class="section__text--2">intermediate</p>
+						</div>
+					</div>
+					<p class="section__text">VS Code</p>
+					<div class="progress-container">
+						<div class="progress-bar">
+						<p class="section__text--2">intermediate</p>
+						</div>
+					</div>
+					
+				</div>
+
+			</div>
+			
+			<div class="section-2">
+				<h1 class="section__heading--1"> <i class="fa fa-suitcase section__icon--1"></i> Work Experience</h1>
+	
+				<div class="section__sub">
+					<h2 class="section__heading--2" >Programmer/Security Assessor</h2>
+					<h3 class="section__heading--3"> <i class="fa fa-calendar section__icon--2"></i>January 2017 - Present</h3>
+					<p class="section__text">Developed and maintained Third-Party Security team systems and tools:</p>
+					<p class="section__text"> Utilized SQL, VBA scripts, and Python to enhance current system tools reporting, and metrics </p>
+					<p class="section__text"> Enhanced processes through automation using VBA and Python. </p>
+					<p class="section__text"> Managed team repositories/tools in MS Access, SharePoint, and MetricStream.</p>
+					<hr class="section__line">
+				</div>
+				<div class="section__sub">
+					<h2 class="section__heading--2">IT Analyst/Programmer</h2>
+					<h3 class="section__heading--3"> <i class="fa fa-calendar section__icon--2"></i> August 2015 - December 2016</h3>
+					<p class="section__text">Developed scripting solutions for Energy Procurement Support team Ad-hoc requests.</p>
+					<p class="section__text">Developed UI functionality for Energy Procurement System tools using SQL, and VBA.</p>
+					<p class="section__text">Automated administrative tasks and workflows using VBA, python and SharePoint Rest API's.</p>
+					<hr class="section__line">
+				</div>
+				<div class="section__sub">
+					<h2 class="section__heading--2">Software Engineering Intern</h2>
+					<h3 class="section__heading--3"> <i class="fa fa-calendar section__icon--2"></i> August 2015 - Current</h3>
+					<p class="section__text">Developed scripts in Lua and Python language for software testing and data manipulation</p>
+					<p class="section__text">Researched integration of DDS (Data Distribution Services) for CT Scanner middleware</p>
+					<p class="section__text">Evaluated integration methods of DDS and updated code information/manual</p>
+					<hr class="section__line"><br>
+				</div>
+			</div>
+			<div class="section-3">
+				<h1 class="section__heading--1"> <i class="fa fa-book section__icon--1"></i> Education </h1>
+				<div class="section__sub">
+					<h2 class="section__heading--2">Florida State University</h2>
+					<h3 class="section__heading--3"> <i class="fa fa-calendar section__icon--2"></i> August 2010 - August 2015</h3>
+					<p class="section__text">Baschelors of Science (BS) Computer Engineering</p>
+					<hr class="section__line"><br>
 				</div>
 			</div>
 		</section>
-	-->
-	</header>
-	<main>
-		<section class="overview">
-
-		</section>
-		<section class="projects">
-
-		</section>
-		<section class="resume">
-
-		</section>
+		<footer class="footer" id="FOOTER">
+			<div class="footer__section">
+				<i class="fa fa-envelope footer__section--icon"></i>
+				<p class="footer__section--text">Email me at <a class="footer__section--link" href="mailto:kennybecerra.j@gmail.com">kennybecerra.j@gmail.com </a></p>
+			</div>
+			<div class="footer__section">
+				<i class="fa fa-github footer__section--icon"></i>
+				<p class="footer__section--text">Checkout out my <a class="footer__section--link" href="https://github.com/kennybecerra" target="_blank">Github Page</a></p>
+			</div>
+			<div class="footer__section">
+				<i class="fa fa-linkedin footer__section--icon"></i><p class="footer__section--text">View my <a class="footer__section--link" href="https://www.linkedin.com/in/kenny-becerra-4924906/" target="_blank">LinkedIn profile</a></p>
+			</div>
+		</footer>
 	</main>
-	<footer>
-		<section class="footer">
-			
-		</section>
-	</footer>
 </body>
 </html>
