@@ -154,7 +154,8 @@ body {
   grid-template-rows: [row-start-1] minmax(100vh, max-content) [row-end-1 row-start-2] minmax(min-content, auto) [row-end-2 row-start-3] minmax(min-content, max-content) [row-end-3 row-start-4] minmax(min-content, max-content) [row-end-4];
   grid-template-columns: [page-start] 1fr [inner-page-start] minmax(min-content, 1200px) [inner-page-end] 1fr [page-end];
   justify-content: center;
-  align-content: center; }
+  align-content: center;
+  grid-row-gap: 2rem; }
 
 /*
 .hero {
