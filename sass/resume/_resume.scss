@@ -3,11 +3,15 @@
     grid-column: inner-page-start / inner-page-end;
     background-color: $color-white;
 
-    //align-self: center;
+    justify-self: center;
 
     display: grid;
-    grid-template-rows: .5rem  [resume-start] minmax(min-content, max-content) [resume-mid] minmax(min-content, max-content) [resume-end] .5rem;
-    grid-template-columns: minmax(min-content, 35%) minmax(min-content, 65%);
+    /*
+    grid-template-rows: .5rem  [section1-row-start section2-row-start] minmax(min-content, max-content) [section2-row-end section3-row-start] minmax(min-content, max-content) [section1-row-end section3-row-end] .5rem;
+    grid-template-columns: [section1-col-start] minmax(min-content, 35%) [section1-col-end section2-col-start section3-col-start] minmax(min-content, 65%) [section2-col-end section3-col-end];
+    */
+    grid-template-rows: .5rem [section1-row-start] minmax(min-content, max-content) [section1-row-end section2-row-start] minmax(min-content, max-content) [section2-row-end section3-row-start] minmax(min-content, max-content) [section3-row-end] .5rem;
+    grid-template-columns: [section1-col-start section2-col-start section3-col-start] minmax(min-content, 420px) [section1-col-end section2-col-end section3-col-end];
     //grid-template-columns: minmax(35%, 300px) minmax(65%, 1fr);
 
     //height: 100vh;
@@ -24,8 +28,8 @@
 
     &-1 {
 
-        grid-row:  resume-start / resume-end;
-        grid-column: 1/2; 
+        grid-row:  section1-row-start / section1-row-end;
+        grid-column: section1-col-start / section1-col-end; 
         //justify-content: space-around;
         justify-self: center;
 
@@ -48,8 +52,8 @@
     }
 
     &-2 {
-        grid-row: resume-start / resume-mid;
-        grid-column: 2/3;
+        grid-row: section2-row-start / section2-row-end;
+        grid-column: section2-col-start / section2-col-end;
 
         padding-top: 2rem;
 
@@ -64,8 +68,8 @@
     }
 
     &-3 {
-        grid-row: resume-mid / resume-end;
-        grid-column: 2/3;
+        grid-row: section3-row-start / section3-row-end;
+        grid-column: section3-col-start / section3-col-end;
 
         padding-top: 2rem;
 
@@ -89,7 +93,7 @@
             width: 100%;
 		    height: 100%;
 		    object-fit: cover;
-		    display: block;
+            display: block;
       }
     }
 

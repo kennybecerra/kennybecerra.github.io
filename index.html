@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 	<link rel="stylesheet" href="css/style.css">
 	<title>Document</title>
 </head>
@@ -42,37 +43,44 @@
 		</header>
 		<section class="projects" id="PROJECTS">
 			<div class="projects__container">
-				<figure class="projects__container__figure">
-					<img class="projects__container__figure--image" src="images/BudgetApp.png" alt="Budget APP screenshot">
-					<figcaption class="projects__container__figure__caption">
-						<h2 class="projects__container__figure__caption--heading1">BudgetAppController</h2>
-						<div class="projects__container__figure__caption--box">
-							<h3 class="projects__container__figure__caption--heading2">Libraries</h3>
-							<p class="projects__container__figure__caption--item">item 1</p>
-							<p class="projects__container__figure__caption--item">item 2</p>
-						</div>
-
-						<div class="projects__container__figure__caption--box">
-							<h3 
-							class="projects__container__figure__caption--heading2">Frameworks</h3>
-							<p class="projects__container__figure__caption--item">item 1</p>
-							<p class="projects__container__figure__caption--item">item 2</p>
-						</div>
-
-						<div class="projects__container__figure__caption--box">
-							<h3 class="projects__container__figure__caption--heading2">Tools</h3>
-							<p class="projects__container__figure__caption--item">item 1</p>
-							<p class="projects__container__figure__caption--item">item 2</p>
-						</div>
-
-						<div class="projects__container__figure__caption--box">
-							<h3 class="projects__container__figure__caption--heading2">Concepts</h3>
-							<p class="projects__container__figure__caption--item">item 1</p>
-							<p class="projects__container__figure__caption--item">item 2</p>
-						</div>
-						
-					</figcaption>
-				</figure>
+				<div class="projects__container__header">
+					<img class="projects__container__header--1" src="./images/browser-1.png" alt="broswer header">
+					<img class="projects__container__header--2" src="./images/browser-2.png" alt="browser header 2">
+				</div>
+				<div class="projects__container__website">
+					<figure class="projects__container__figure">
+						<img class="projects__container__figure--image" src="images/BudgetApp.png" alt="Budget APP screenshot">
+						<figcaption class="projects__container__figure__caption">
+							<h2 class="projects__container__figure__caption--heading1">BudgetAppController</h2>
+							<div class="projects__container__figure__caption--box">
+								<h3 class="projects__container__figure__caption--heading2">Libraries</h3>
+								<p class="projects__container__figure__caption--item">item 1</p>
+								<p class="projects__container__figure__caption--item">item 2</p>
+							</div>
+	
+							<div class="projects__container__figure__caption--box">
+								<h3 
+								class="projects__container__figure__caption--heading2">Frameworks</h3>
+								<p class="projects__container__figure__caption--item">item 1</p>
+								<p class="projects__container__figure__caption--item">item 2</p>
+							</div>
+	
+							<div class="projects__container__figure__caption--box">
+								<h3 class="projects__container__figure__caption--heading2">Tools</h3>
+								<p class="projects__container__figure__caption--item">item 1</p>
+								<p class="projects__container__figure__caption--item">item 2</p>
+							</div>
+	
+							<div class="projects__container__figure__caption--box">
+								<h3 class="projects__container__figure__caption--heading2">Concepts</h3>
+								<p class="projects__container__figure__caption--item">item 1</p>
+								<p class="projects__container__figure__caption--item">item 2</p>
+							</div>
+							
+						</figcaption>
+					</figure>
+				</div>
+				
 			</div>
 			<!--
 			<div class="projects__container">This is project 2</div>
@@ -177,15 +185,48 @@
 		</section>
 		<footer class="footer" id="FOOTER">
 			<div class="footer__section">
-				<i class="fa fa-envelope footer__section--icon"></i>
+				<a href="mailto:kennybecerra.j@gmail.com" class="footer__section--link">
+					<svg class="footer__section--icon">
+						<use xlink:href="images/sprite.svg#icon-envelop"></use>
+					</svg>
+					<p class="footer__section--text">Email</p>
+				</a>
+				<!--
 				<p class="footer__section--text">Email me at <a class="footer__section--link" href="mailto:kennybecerra.j@gmail.com">kennybecerra.j@gmail.com </a></p>
+				-->
 			</div>
 			<div class="footer__section">
-				<i class="fa fa-github footer__section--icon"></i>
+				<a href="https://github.com/kennybecerra" class="footer__section--link" target="_blank">
+					<svg class="footer__section--icon">
+						<use xlink:href="images/sprite.svg#icon-github"></use>
+					</svg>
+					<p class="footer__section--text">Github</p>
+				</a>
+				<!--
 				<p class="footer__section--text">Checkout out my <a class="footer__section--link" href="https://github.com/kennybecerra" target="_blank">Github Page</a></p>
+				-->
 			</div>
 			<div class="footer__section">
-				<i class="fa fa-linkedin footer__section--icon"></i><p class="footer__section--text">View my <a class="footer__section--link" href="https://www.linkedin.com/in/kenny-becerra-4924906/" target="_blank">LinkedIn profile</a></p>
+				<a href="https://www.linkedin.com/in/kenny-becerra-4924906/" class="footer__section--link" target="_blank">
+					<svg class="footer__section--icon">
+						<use xlink:href="images/sprite.svg#icon-linkedin"></use>
+					</svg>
+					<p class="footer__section--text">LinkedIn</p>
+				</a>
+				<!--
+				<p class="footer__section--text">View my <a class="footer__section--link" href="https://www.linkedin.com/in/kenny-becerra-4924906/" target="_blank">LinkedIn profile</a></p>
+				-->
+			</div>
+			<div class="footer__section">
+				<a href="" class="footer__section--link">
+					<svg class="footer__section--icon">
+						<use xlink:href="images/sprite.svg#icon-file-pdf"></use>
+					</svg>
+					<p class="footer__section--text">Resume</p>
+				</a>
+				<!--
+				<p class="footer__section--text">Download my <a class="footer__section--link" href="https://www.linkedin.com/in/kenny-becerra-4924906/" target="_blank">Resume</a></p>
+				-->
 			</div>
 		</footer>
 	</main>
