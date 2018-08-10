@@ -62,6 +62,25 @@
 		
 			animation: spin 1.9s 0s cubic-bezier(0.165, 0.84, 0.44, 1) both;
 			animation-fill-mode: both;
+
+			}
+
+			&__border {
+					content: "";
+					border: 5px solid transparent;
+					border-left-color: whitesmoke;
+					border-bottom-color: whitesmoke;
+					border-top-color: whitesmoke;
+					border-radius: 50%;
+					position: absolute;
+					top: -6rem;
+					left: -6rem;
+					right: -6rem;
+					bottom: -6rem;
+				
+					animation: spin 2.1s 0s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+					animation-fill-mode: both;
+					
 			}
 		
 			&__image {

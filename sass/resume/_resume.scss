@@ -11,14 +11,16 @@
     grid-template-columns: [section1-col-start] minmax(min-content, 35%) [section1-col-end section2-col-start section3-col-start] minmax(min-content, 65%) [section2-col-end section3-col-end];
     */
     grid-template-rows: .5rem [section1-row-start] minmax(min-content, max-content) [section1-row-end section2-row-start] minmax(min-content, max-content) [section2-row-end section3-row-start] minmax(min-content, max-content) [section3-row-end] .5rem;
-    grid-template-columns: [section1-col-start section2-col-start section3-col-start] minmax(min-content, 420px) [section1-col-end section2-col-end section3-col-end];
+    grid-template-columns: [section1-col-start section2-col-start section3-col-start] minmax(min-content, 400px) [section1-col-end section2-col-end section3-col-end];
     //grid-template-columns: minmax(35%, 300px) minmax(65%, 1fr);
 
     //height: 100vh;
     //height: calc(100vh - 4rem);
+    margin: 0px 1rem;
     grid-gap: 2rem;
 
     //align-content: center;
+    word-wrap: break-word;
 }
 
 #home-icon {
@@ -35,20 +37,74 @@
 
         background-color: $color-white;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        //max-width: 350px;
-
 
         display: grid;
-        //grid-template-columns: minmax(min-content, 350px);
         grid-template-rows: min-content repeat(3, minmax(min-content, 1fr)) ; 
 
-        justify-content: center;
-        /*
-        & > * {
-          margin: 0px 0px auto 0px;
-        }
-        */
+        justify-items: center;
+        align-items: center;
 
+        &__box {
+            width: 100%;
+        
+            &__image {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  display: block;
+            }
+          }
+
+        &__info {
+            width: 85%;
+            display: grid;
+            grid-template-columns: 20% minmax(min-content, 1fr);
+            grid-template-rows: repeat(4, minmax(min-content, max-content));
+            
+        }
+    
+        &__lang {
+            width: 85%;
+        }
+    
+        &__tools {
+            width: 85%;
+        }
+
+        &__icon {
+            height: 2.5rem;
+            fill: $color-tertiary;
+            justify-self: center;
+        }
+
+        &__heading {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: $color-tertiary;
+        }
+
+        &__text {
+
+            &--1 {
+                font-size: 2rem; 
+                font-weight: 400;
+                justify-self: start;
+                overflow-wrap: break-word;
+            }
+
+            &--2 {
+                font-size: 1.5rem; 
+                font-weight: 400;
+            }
+
+            &--3 {
+                font-size: 1.2rem; 
+                font-weight: 400;
+                color: $color-white;
+                padding-left: 1rem;
+                line-height: 2rem;
+            }
+        }
     }
 
     &-2 {
@@ -83,120 +139,84 @@
         flex-wrap: nowrap;
     }
 
+    &__header {
+        display: grid;
+        grid-template-columns: 6rem minmax(min-content, max-content);
+        align-items: flex-end;
+        padding: 1rem 0;
 
-      //Section 1 -- Start 
-    &__box {
+        &__icon {
+            grid-row: 1/2;
+            grid-column: 1/2;
 
-      width: 100%;
-  
-      &__image {
-            width: 100%;
-		    height: 100%;
-		    object-fit: cover;
-            display: block;
-      }
-    }
+            justify-self: center;
 
+            height: 3.5rem;
+            fill: $color-tertiary;
+        }
 
-    &__heading {
-        &--1 {
+        &__heading {
+
+            grid-row: 1/2;
+            grid-column: 2/3;
+
+            justify-self: start;
             font-size: 3rem;
-            text-align: center;
+            line-height: 2.5rem;
             color: $color-quaternary;
-            line-height: 6rem;
         }
-
-        &--2 {
-            font-size: 2rem;
-            color: $color-tertiary;
-            line-height: 4rem;
-        }
-
-        &--3 {
-            font-size: 1.8rem;
-            color: $color-quaternary;
-            line-height: 3.5rem;
-        }
-
-        &--4 {
-          font-size: 1.5rem;
-          color: $color-tertiary;
-      }
-    }
-    
-    &__icon {
-
-        &--1 {
-            font-size: 3.5rem;
-            color: $color-tertiary;
-        }
-
-        &--2 {
-            font-size: 2.5rem;
-            padding: 0px 1rem 0px 0px;
-            color: $color-tertiary;
-        }
-
-        &--3 {
-            font-size: 2rem;
-            padding: 0px 1rem;
-            color: $color-tertiary;
-            text-align: center;
-      }
-    }
-
-    &__text {
-        font-size: 1.5rem; 
-        font-weight: 400;
-
-        &--2 {
-            font-size: 1.2rem; 
-            font-weight: 400;
-            color: $color-white;
-            padding-left: 1rem;
-            line-height: 2rem;
-        }
-
-        &--3 {
-            font-size: 2rem; 
-            font-weight: 400;
-        }
-
-        &--4 {
-            font-size: 1.4rem; 
-            font-weight: 400;
-        }
-    }
-
-    &__line {
-        margin-top: .5rem;
-        border-top: 0px;
-        border-color: $color-tertiary;
     }
 
     &__sub {
-
         width: 90%;
         justify-content: center;
         padding: .5rem;
         flex-basis: auto;
         flex-shrink: 1;
 
-        &--info {
-            align-self: center;
-            justify-self: center;
+        &__heading {
+            font-size: 2rem;
+            color: $color-tertiary;
+            line-height: 4rem;
         }
 
-        &--lang {
-            width: 85%;
-            align-self: center;
-            justify-self: center;
-        }
+        &__header {
+            display: grid;
+            grid-template-columns: 2rem minmax(min-content, max-content);
+            align-items: end;
+            grid-column-gap: 1rem;
+            padding: .5rem 0;
+    
+            &__icon {
 
-        &--tools {
-            width: 85%;
-            align-self: center;
-            justify-self: center;
+                grid-row: 1/2;
+                grid-column: 1/2;
+
+                justify-self: center;
+                height: 2rem;
+                fill: $color-quaternary;
+            }
+    
+            &__heading {
+
+                grid-row: 1/2;
+                grid-column: 2/3;
+                justify-self: start;
+                font-size: 1.8rem;
+                color: $color-quaternary;
+                line-height: 1.8rem;
+            }
         }
+    }
+
+    &__text {
+        font-size: 1.5rem; 
+        font-weight: 400;
+    }
+
+    &__line {
+        margin-top: .5rem;
+        border-top: 0px;
+        border-color: $color-tertiary;
     }
 }
