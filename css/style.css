@@ -548,7 +548,7 @@ body {
         opacity: 0;
         transition: all .5s; }
         .projects__container__figure__caption--box {
-          width: 50%;
+          width: 65%;
           display: flex;
           flex-direction: column;
           align-items: center; }
@@ -566,12 +566,14 @@ body {
           line-height: 1.7rem;
           text-decoration: underline;
           color: #FFF;
-          text-transform: uppercase; }
+          text-transform: uppercase;
+          padding: .5rem 0; }
         .projects__container__figure__caption--item {
-          font-size: 1.2rem;
+          font-size: 1.4rem;
           font-weight: 400;
-          line-height: 1.3rem;
-          color: #FFF; }
+          line-height: 1.4rem;
+          color: #FFF;
+          text-align: center; }
       .projects__container__figure:hover .projects__container__figure__caption {
         opacity: 1;
         transform: translateY(0%); }
