@@ -85,7 +85,13 @@
 			    animation-fill-mode: both;
                 
                 &__item {
-
+                    @include fs(1.2, 300);
+                    @media screen and (min-width: 350px) {
+                        @include fs(1.5, 300);
+                    }
+                    @media screen and (min-width: 500px) {
+                        @include fs(1.8, 300);
+                    }
                 }
 
                 &__link:link,
@@ -94,18 +100,12 @@
                     text-transform: uppercase;
                     color: $color-white;
                     transition: all .4s;
-
                 }
 
                 &__link:hover,
                 &__link:active {
-
-                    color: $color-primary;
-        
-                    
+                     color: $color-primary;
                 }
-
-
             }
 
   }

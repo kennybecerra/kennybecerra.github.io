@@ -13,7 +13,7 @@ body {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  line-height: 3rem; }
+  line-height: 2.5rem; }
 
 .outline-b {
   outline: 1px solid blue; }
@@ -50,10 +50,10 @@ body {
 
 /*Animation Classes to be used with Javascript  */
 .animate-footer-icon {
-  animation: rotate-vert-center 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955) both; }
+  animation: rotate-vert-center 0.9s cubic-bezier(0.455, 0.03, 0.515, 0.955) both; }
 
 .animate-footer-text {
-  animation: fade-in-top 0.7s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
+  animation: fade-in-top 0.9s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
 
 .animate-fade-entrance {
   animation: fade-in-bottom 0.9s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
@@ -141,7 +141,8 @@ body {
   width: 100%;
   background-color: #eee;
   border: 2px solid #CEB888;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: .5rem 0px; }
 
 .progress-bar {
   height: 100%;
@@ -160,6 +161,7 @@ body {
     justify-items: center;
     grid-row-gap: 1rem;
     */
+  height: 12rem;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap; }
@@ -194,10 +196,11 @@ body {
     .footer__section--text {
       display: inline-block;
       color: #FFF;
-      font-size: 1.5rem; }
+      font-size: 1.5rem;
+      opacity: 0; }
     .footer__section--icon {
       fill: #FFF;
-      height: 50px;
+      height: 5rem;
       width: 100%;
       flex-grow: 0; }
 
@@ -230,44 +233,81 @@ body {
     position: relative; }
     .hero__circle::before {
       content: "";
-      border: 5px solid transparent;
-      border-left-color: whitesmoke;
-      border-top-color: whitesmoke;
-      border-radius: 50%;
-      position: absolute;
-      top: -4rem;
-      left: -4rem;
-      right: -4rem;
-      bottom: -4rem;
-      animation: spin 1.7s 0s cubic-bezier(0.165, 0.84, 0.44, 1) both;
-      animation-fill-mode: both; }
-    .hero__circle::after {
-      content: "";
-      border: 5px solid transparent;
-      border-left-color: whitesmoke;
-      border-bottom-color: whitesmoke;
+      border: 0.3rem solid transparent;
       border-radius: 50%;
       position: absolute;
       top: -2rem;
       left: -2rem;
       right: -2rem;
       bottom: -2rem;
-      animation: spin 1.9s 0s cubic-bezier(0.165, 0.84, 0.44, 1) both;
-      animation-fill-mode: both; }
-    .hero__circle__border {
-      content: "";
-      border: 5px solid transparent;
       border-left-color: whitesmoke;
-      border-bottom-color: whitesmoke;
       border-top-color: whitesmoke;
+      animation: spin 1.7s 0s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+      animation-fill-mode: both; }
+      @media screen and (min-width: 350px) {
+        .hero__circle::before {
+          content: "";
+          border: 0.5rem solid transparent;
+          border-radius: 50%;
+          position: absolute;
+          top: -4rem;
+          left: -4rem;
+          right: -4rem;
+          bottom: -4rem;
+          border-left-color: whitesmoke;
+          border-top-color: whitesmoke; } }
+    .hero__circle::after {
+      content: "";
+      border: 0.3rem solid transparent;
       border-radius: 50%;
       position: absolute;
-      top: -6rem;
-      left: -6rem;
-      right: -6rem;
-      bottom: -6rem;
+      top: -1rem;
+      left: -1rem;
+      right: -1rem;
+      bottom: -1rem;
+      border-left-color: whitesmoke;
+      border-bottom-color: whitesmoke;
+      animation: spin 1.9s 0s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+      animation-fill-mode: both; }
+      @media screen and (min-width: 350px) {
+        .hero__circle::after {
+          content: "";
+          border: 0.5rem solid transparent;
+          border-radius: 50%;
+          position: absolute;
+          top: -2rem;
+          left: -2rem;
+          right: -2rem;
+          bottom: -2rem;
+          border-left-color: whitesmoke;
+          border-bottom-color: whitesmoke; } }
+    .hero__circle__border {
+      content: "";
+      border: 0.3rem solid transparent;
+      border-radius: 50%;
+      position: absolute;
+      top: -3rem;
+      left: -3rem;
+      right: -3rem;
+      bottom: -3rem;
+      border-left-color: whitesmoke;
+      border-top-color: whitesmoke;
+      border-bottom-color: whitesmoke;
       animation: spin 2.1s 0s cubic-bezier(0.165, 0.84, 0.44, 1) both;
       animation-fill-mode: both; }
+      @media screen and (min-width: 350px) {
+        .hero__circle__border {
+          content: "";
+          border: 0.5rem solid transparent;
+          border-radius: 50%;
+          position: absolute;
+          top: -6rem;
+          left: -6rem;
+          right: -6rem;
+          bottom: -6rem;
+          border-left-color: whitesmoke;
+          border-top-color: whitesmoke;
+          border-bottom-color: whitesmoke; } }
     .hero__circle__image {
       width: 100%;
       height: 100%;
@@ -402,6 +442,20 @@ body {
     font-size: 2rem;
     animation: fadeIn 1.9s 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) both;
     animation-fill-mode: both; }
+    .nav__content__item {
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+      font-weight: 300; }
+      @media screen and (min-width: 350px) {
+        .nav__content__item {
+          font-size: 1.5rem;
+          line-height: 1.5rem;
+          font-weight: 300; } }
+      @media screen and (min-width: 500px) {
+        .nav__content__item {
+          font-size: 1.8rem;
+          line-height: 1.8rem;
+          font-weight: 300; } }
     .nav__content__link:link, .nav__content__link:visited {
       text-decoration: none;
       text-transform: uppercase;
@@ -531,15 +585,15 @@ body {
   background-color: #FFF;
   justify-self: center;
   display: grid;
-  /*
-    grid-template-rows: .5rem  [section1-row-start section2-row-start] minmax(min-content, max-content) [section2-row-end section3-row-start] minmax(min-content, max-content) [section1-row-end section3-row-end] .5rem;
-    grid-template-columns: [section1-col-start] minmax(min-content, 35%) [section1-col-end section2-col-start section3-col-start] minmax(min-content, 65%) [section2-col-end section3-col-end];
-    */
-  grid-template-rows: 0.5rem [section1-row-start] minmax(min-content, max-content) [section1-row-end section2-row-start] minmax(min-content, max-content) [section2-row-end section3-row-start] minmax(min-content, max-content) [section3-row-end] 0.5rem;
+  grid-template-rows: [section1-row-start] minmax(min-content, max-content) [section1-row-end section2-row-start] minmax(min-content, max-content) [section2-row-end section3-row-start] minmax(min-content, max-content) [section3-row-end];
   grid-template-columns: [section1-col-start section2-col-start section3-col-start] minmax(min-content, 400px) [section1-col-end section2-col-end section3-col-end];
   margin: 0px 1rem;
   grid-gap: 2rem;
   word-wrap: break-word; }
+  @media screen and (min-width: 850px) {
+    .resume {
+      grid-template-rows: 0.5rem [section1-row-start section2-row-start] minmax(min-content, max-content) [section2-row-end section3-row-start] minmax(min-content, max-content) [section1-row-end section3-row-end] 0.5rem;
+      grid-template-columns: [section1-col-start] minmax(min-content, 35%) [section1-col-end section2-col-start section3-col-start] minmax(min-content, 65%) [section2-col-end section3-col-end]; } }
 
 #home-icon {
   font-size: 3rem; }
@@ -560,38 +614,68 @@ body {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block; }
+      display: block;
+      filter: brightness(85%) contrast(1.1);
+      opacity: 1; }
   .section-1__info {
     width: 85%;
     display: grid;
     grid-template-columns: 20% minmax(min-content, 1fr);
-    grid-template-rows: repeat(4, minmax(min-content, max-content)); }
+    grid-template-rows: repeat(4, minmax(min-content, max-content));
+    grid-gap: 1rem;
+    align-items: end; }
   .section-1__lang {
     width: 85%; }
   .section-1__tools {
     width: 85%; }
   .section-1__icon {
-    height: 2.5rem;
+    height: 2rem;
     fill: #660000;
     justify-self: center; }
+    @media screen and (min-width: 350px) {
+      .section-1__icon {
+        height: 2.5rem; } }
   .section-1__heading {
     font-size: 1.5rem;
+    line-height: 1.5rem;
     font-weight: 700;
-    color: #660000; }
+    color: #660000;
+    margin: .5rem 0; }
+    @media screen and (min-width: 350px) {
+      .section-1__heading {
+        font-size: 2rem;
+        line-height: 2rem;
+        font-weight: 700; } }
   .section-1__text--1 {
-    font-size: 2rem;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
     font-weight: 400;
-    justify-self: start;
-    overflow-wrap: break-word; }
+    justify-self: start; }
+    @media screen and (min-width: 350px) {
+      .section-1__text--1 {
+        font-size: 1.7rem;
+        line-height: 1.7rem;
+        font-weight: 400; } }
   .section-1__text--2 {
-    font-size: 1.5rem;
-    font-weight: 400; }
-  .section-1__text--3 {
     font-size: 1.2rem;
-    font-weight: 400;
+    line-height: 1.2rem;
+    font-weight: 400; }
+    @media screen and (min-width: 350px) {
+      .section-1__text--2 {
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+        font-weight: 400; } }
+  .section-1__text--3 {
     color: #FFF;
     padding-left: 1rem;
-    line-height: 2rem; }
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    font-weight: 400; }
+    @media screen and (min-width: 350px) {
+      .section-1__text--3 {
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+        font-weight: 400; } }
 
 .section-2 {
   grid-row: section2-row-start / section2-row-end;
@@ -620,21 +704,31 @@ body {
 .section__header {
   display: grid;
   grid-template-columns: 6rem minmax(min-content, max-content);
-  align-items: flex-end;
+  align-items: end;
   padding: 1rem 0; }
   .section__header__icon {
     grid-row: 1/2;
     grid-column: 1/2;
     justify-self: center;
-    height: 3.5rem;
+    height: 2.5rem;
     fill: #660000; }
+    @media screen and (min-width: 350px) {
+      .section__header__icon {
+        height: 3rem; } }
   .section__header__heading {
     grid-row: 1/2;
     grid-column: 2/3;
     justify-self: start;
-    font-size: 3rem;
-    line-height: 2.5rem;
+    align-self: end;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 700;
     color: #CEB888; }
+    @media screen and (min-width: 350px) {
+      .section__header__heading {
+        font-size: 2.5rem;
+        line-height: 3rem;
+        font-weight: 700; } }
 
 .section__sub {
   width: 90%;
@@ -643,9 +737,15 @@ body {
   flex-basis: auto;
   flex-shrink: 1; }
   .section__sub__heading {
-    font-size: 2rem;
     color: #660000;
-    line-height: 4rem; }
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 700; }
+    @media screen and (min-width: 350px) {
+      .section__sub__heading {
+        font-size: 2rem;
+        line-height: 2.2rem;
+        font-weight: 700; } }
   .section__sub__header {
     display: grid;
     grid-template-columns: 2rem minmax(min-content, max-content);
@@ -656,19 +756,39 @@ body {
       grid-row: 1/2;
       grid-column: 1/2;
       justify-self: center;
-      height: 2rem;
-      fill: #CEB888; }
+      fill: #CEB888;
+      height: 1.5rem; }
+      @media screen and (min-width: 350px) {
+        .section__sub__header__icon {
+          height: 2rem; } }
     .section__sub__header__heading {
       grid-row: 1/2;
       grid-column: 2/3;
       justify-self: start;
-      font-size: 1.8rem;
       color: #CEB888;
-      line-height: 1.8rem; }
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+      font-weight: 700; }
+      @media screen and (min-width: 350px) {
+        .section__sub__header__heading {
+          font-size: 1.6rem;
+          line-height: 1.76rem;
+          font-weight: 700; } }
 
 .section__text {
-  font-size: 1.5rem;
+  font-size: 1rem;
+  line-height: 2rem;
   font-weight: 400; }
+  @media screen and (min-width: 350px) {
+    .section__text {
+      font-size: 1.4rem;
+      line-height: 2.52rem;
+      font-weight: 400; } }
+  @media screen and (min-width: 1000px) {
+    .section__text {
+      font-size: 1.6rem;
+      line-height: 2.88rem;
+      font-weight: 400; } }
 
 .section__line {
   margin-top: .5rem;

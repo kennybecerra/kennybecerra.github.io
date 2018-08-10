@@ -45,7 +45,7 @@ var ResumeController = (function() {
 
         var Animations = ['animate-footer-text', 'animate-fade-entrance', 'animate-footer-icon'];
         var AnimateElements =['myonscroll1', 'myonscroll2', 'onmyscroll3'];
-        var thresholds = [.30, .01, .30];
+        var thresholds = [.95, .01, .30];
 
         for( var itr = 0; itr < AnimateElements.length; itr++) {
 
