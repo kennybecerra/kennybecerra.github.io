@@ -87,8 +87,7 @@ var ResumeController = (function() {
                     //addClass(elements[i], 'animate-footer-text')
                     //removeClass(elements[i], 'myonscroll1');
                     addClass(elements[i], Animations[itr]);
-                    //removeClass(elements[i], AnimateElements[itr]);
-                    
+                    //removeClass(elements[i], AnimateElements[itr]); 
                 } 
             }
 

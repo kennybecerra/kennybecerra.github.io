@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto-regular.ttf');
+}
+
+.myitem {
+    color: red;
+    height: 90vh;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(#7ed56f,.8),
+        rgba(#28b485,.8)),
+        url(../assets/images/Picture4.jpg);
+      background-size: cover;
+      background-position: top;
+      clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100% );
+      font-family: Roboto;
+      font-size: 35px;
+}
+.header  {
+    font-family: Roboto;
+    font-size: 35px;
+}
