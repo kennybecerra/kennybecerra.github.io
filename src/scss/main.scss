@@ -1,17 +1,18 @@
 
 
 // ABSTRACTS
+@import "abstracts/variables";
+@import "abstracts/animations";
 @import "abstracts/mixins";
 
 // BASE
 @import "base/base";
-@import "base/variables";
+
 
 // COMPONENTS
-//@import "components/grid";
 
 // LAYOUT
 @import "layout/grid";
 
 // SECTION
-@import "section/testing";
+@import "section/header";

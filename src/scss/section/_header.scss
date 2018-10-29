@@ -1,0 +1,28 @@
+.header {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../assets/images/coverPhoto.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.nav {
+    height: 15%;
+    border: 3px solid white;
+    color: white;
+    font-family: inherit;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__item {
+        border-right: 2px solid rgba(255, 255, 255, 0.75);
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
