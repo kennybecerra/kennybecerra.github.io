@@ -3,6 +3,10 @@
     blinkTextCursor 500ms steps(40) infinite normal;
 }
 
+.blinking {
+      animation: blinkTextCursor 500ms steps(40) infinite normal;
+}
+
 
 @keyframes typewriter {
     from {
