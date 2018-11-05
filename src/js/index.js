@@ -347,7 +347,12 @@ var domIsReady = (function(domIsReady) {
     
  })();
 
-
+/***
+ * Jquery like function that takes a single ID or class 
+ * selector and return a class of MinUtil.  MinUtil is 
+ * function contrusctor that add functionality to an 
+ * element.
+ *  */ 
  function $(qualifier) {
 
     function MinUtil(selector) {

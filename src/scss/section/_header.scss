@@ -21,6 +21,7 @@
         align-items: center;
 
         &--item {
+            box-sizing: border-box;
             text-align: center;
             white-space: nowrap;
             overflow: hidden;
@@ -44,9 +45,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
     }
-
 }
 
 .nav {

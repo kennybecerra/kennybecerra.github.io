@@ -31,9 +31,9 @@
 .container {
   position: relative;
   width: 100%;
-  max-width: 960px;
+  max-width: 1200px; 
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 0;
   box-sizing: border-box; }
 .column,
 .columns {
@@ -356,7 +356,7 @@ p,
 ul,
 ol,
 form {
-  margin-bottom: 2.5rem; }
+  margin-bottom: 0; }
 
 
 /* Utilities
