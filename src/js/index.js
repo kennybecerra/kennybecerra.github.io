@@ -43,6 +43,17 @@ var domIsReady = (function(domIsReady) {
         //$('.test-1').typingAnimation('write', "hellothere", 12 , 2000);
         $('.test-1').typingAnimation('delete', 3,  12 , 2000);
 
+        var docWidth = document.documentElement.offsetWidth;
+
+        [].forEach.call(
+        document.querySelectorAll('*'),
+        function(el) {
+            if (el.offsetWidth > docWidth) {
+            console.log(el);
+            }
+        }
+        );
+
     });
  })(domIsReady);
 
