@@ -4,18 +4,23 @@
     &:visited {
       text-transform: uppercase;
       text-decoration: none;
-      padding: 1.2vw 3.5vw;
+      //padding: 1.2vw 3.5vw;
       border-radius: 10rem;
       display: inline-block;
       transition: all .2s;
       position: relative;
-      font-size: 1.4vw;
-      margin-top: 3vw;
+
+      //font-size: 1.4vw;  
+      //margin-top: 3vw;
+      padding: .8em 1.6em;;
+      font-size: .8em;
+      margin: 0px auto;
   
       //change for the <button> element
       border: none;
       cursor: pointer;
   
+      color: $color-white;
       /*
       @include ResponsiveMobileFirst(big-desktop) {
         padding: 1vw 2.5vw;
@@ -62,6 +67,26 @@
       }
   
     }
+
+    
+    &--blue {
+      background-color: #33a4c9;
+      color: $color-white;
+
+      &::after {
+        background-color: #33a4c9;
+      }
+    }
+
+    &--black {
+      background-color: #292c33;
+      color: $color-white;
+
+      &::after {
+        background-color:#292c33;
+      }
+    }
+    
   
   
     &::after {

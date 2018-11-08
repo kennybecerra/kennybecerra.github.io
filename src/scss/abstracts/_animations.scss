@@ -7,6 +7,14 @@
       animation: blinkTextCursor 500ms steps(40) infinite normal;
 }
 
+.blinking-2 {
+
+      &::after {
+            content: "_";
+            animation: blinkTextCursor_2 1000ms steps(40) infinite normal;
+      }
+}
+
 
 @keyframes typewriter {
     from {
@@ -25,3 +33,24 @@
           border-right-color: transparent;
     }
 }
+
+@keyframes blinkTextCursor_2 {
+      from {
+            opacity: 1
+      }
+      to {
+            opacity: 0;
+      }
+  }
+
+  @keyframes moveInButton {
+      0% {
+        opacity: 0;
+        transform: translateY(10rem);
+      }
+    
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
