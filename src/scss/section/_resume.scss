@@ -1,11 +1,13 @@
 .resumeContainer {
-    padding: 1em 0px;
+    padding: 1.5em 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 
     &__header {
         width: 100%;
-        flex-basis: 100%;
-        flex-shrink: 1;
-
 
         display: flex;
         flex-direction: column;
@@ -13,54 +15,105 @@
         align-items: center;
 
         &--text {
-            font-size: 2.5em;
+            font-size: 5rem;
             color: $color-black;
             font-family: 'Roboto Mono', monospace;
             letter-spacing: 2px;
             font-weight: 300;
         }
     }
+
+    &__body {
+        width: 100%;
+        padding: .5em 1em;
+
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    &__footer {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 
 .resume {
+    width: 960px;
     max-width: 960px;
-    margin: 1em auto;
+    flex-basis: 960px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    //max-width: 960px;
+    margin: 1em 0px;
     box-shadow: 0 4px 8px 0 rgba(201, 167, 167, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
+    display: flex;
+    flex-direction: column;
+
+
     &__header {
+        width: 100%;
 
         display: flex;
+        flex-direction: row;
         justify-content: center;
-        padding: 1em 0px;
-        border-bottom:4px solid #33a4c9;
+        border-bottom: 4px solid #33a4c9;
+        height: auto;
     }
 
     &__body {
+
+        width: 100%;
         display: flex;
         justify-content: center;
         padding: 1em 0px;
         background: #f5f5f5;
     }
 }
+
 .resHeaderContainer {
     width: 80%;
-    height: 100%;
+    //height: 100%;
 
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
+
+    @include ResponsiveDesktopFirst(phone) {
+        flex-direction: column;
+        align-content: center;
+    }
 
     &__left {
         flex-basis: 50%;
         flex-grow: 0;
-        flex-shrink: 0;
-
+        flex-shrink: 1;
+        padding: 1em 0px;
         width: 50%;
-        height: 100%;
+        height: auto;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+
+        @include ResponsiveDesktopFirst(phone) {
+            min-width: none;
+
+            flex-basis: auto;
+            flex-shrink: 0;
+            flex-grow: 0;
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+        }
 
         &--header1 {
             color:#555;
@@ -68,6 +121,10 @@
             font-family:'DroidSansBold', Arial, sans-serif; 
             padding: 0px;
             margin: 0px;
+
+            @include ResponsiveDesktopFirst(phone) {
+                font-size: 2.6rem;
+            }
         }
 
         &--header2 {
@@ -77,21 +134,39 @@
             text-shadow: 1px 1px 0 rgba(0,0,0,.5);
             margin: 0px;
             padding: 0px;
+
+            @include ResponsiveDesktopFirst(phone) {
+                font-size: 2rem;
+            }
         }
     }
 
     &__right {
         flex-basis: 50%;
         flex-grow: 0;
-        flex-shrink: 0;
+        flex-shrink: 1;
+        padding: 1em 0px;
 
         width: 50%;
-        height: 100%;
+        height: auto;
         display: flex;
+        flex-direction: row;
         justify-content: flex-end;
         align-items: center;
 
+        @include ResponsiveDesktopFirst(phone) {
+            min-width: none;
+
+            flex-basis: auto;
+            flex-shrink: 0;
+            flex-grow: 0;
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+        }
+
         &--fig {
+            display: flex;
 
             border-radius: 50%;
             height: 15rem;
@@ -109,6 +184,7 @@
     }
 }
 
+
 .resBodyContainer {
     width: 80%;
     height: 100%;
@@ -122,11 +198,19 @@
     &__1 {
         flex-basis: 100%;
         width: 100%;
+        height: auto;
 
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;
+
+        @include ResponsiveDesktopFirst(tab-port) {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: center;
+        }
 
         &--left {
             flex-basis: 48%;
@@ -138,6 +222,12 @@
             display: flex;
             flex-direction: column;
             //justify-content: flex-start;
+
+            @include ResponsiveDesktopFirst(tab-port) {
+                flex-basis: auto;
+                height: auto;
+                width: 100%;
+            }
         }
     
         &--right {
@@ -150,6 +240,12 @@
             display: flex;
             flex-direction: column;
             //justify-content: flex-start;
+
+            @include ResponsiveDesktopFirst(tab-port) {
+                flex-basis: auto;
+                height: auto;
+                width: 100%;
+            }
         }
     }
 
@@ -167,11 +263,19 @@
 
         flex-basis: 100%;
         width: 100%;
+        height: auto;
 
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;
+
+        @include ResponsiveDesktopFirst(tab-port) {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: center;
+        }
 
         &--left {
             flex-basis: 48%;
@@ -182,6 +286,13 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+
+            @include ResponsiveDesktopFirst(tab-port) {
+                flex-basis: auto;
+                height: auto;
+                width: 100%;
+            }
+
         }
     
         &--right {
@@ -193,6 +304,13 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+
+            @include ResponsiveDesktopFirst(tab-port) {
+                flex-basis: auto;
+                height: auto;
+                width: 100%;
+            }
+
         }
     }
 }
@@ -400,8 +518,12 @@
         font-weight: 500; 
         //align-self: center;
         //flex-grow: 1;
-        text-align: center;
+        //text-align: center;
         //border-bottom: 1px solid #333;
+
+        @include ResponsiveDesktopFirst(phone) {
+            font-size: 1.5rem;
+        }
     }
 
     &__link {

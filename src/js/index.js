@@ -463,7 +463,6 @@ var domIsReady = (function(domIsReady) {
                 console.log('there was an issue with the settings');
             }
 
-
         };
     }
 
