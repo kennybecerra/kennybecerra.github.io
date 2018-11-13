@@ -40,8 +40,90 @@ var domIsReady = (function(domIsReady) {
 
  (function(domIsReady) {
     domIsReady(function() {
+
+        myLib.addAnimation({
+            className: "fadeInOnThreshold",
+            animation: "appear",
+            check: "threshold",
+            options: {
+                marker: '100vh',
+                offset: -100
+            }
+        });
+
+        $('.option-1').typingAnimation2('write', "Skills", 12 , 2000, 7000);
+        $('.option-2').typingAnimation2('write', "Resume", 12 , 2600, 6400);
+        $('.option-3').typingAnimation2('write', "Projects", 12 , 3200, 5800);
+
+
+        
+
+        $('.option-main').typingAnimation2('write', "Hello", 18 , 5500, 0, true);
+        $('.option-main').typingAnimation2('write', ", I'm Kenny", 18 , 7000, 0, true);
+        $('.option-main').typingAnimation2('delete', 16, 18 , 9500, 0, true);
+
+        $('.option-main').typingAnimation2('write', "I am Computer Engineer", 18 , 11500, 0, true);
+        $('.option-main').typingAnimation2('delete', 17, 20 , 13500, 0, true);
+        $('.option-main').typingAnimation2('write', "Programmer", 18 , 15600, 0, true);
+        $('.option-main').typingAnimation2('delete', 10, 20 , 17600, 0, true);
+        $('.option-main').typingAnimation2('write', "Frontend Developer", 18 , 19600, 1000, false);
+        /*
+        $('.option-main').typingAnimation2('delete', 17, 20 , 7600, 1000, true);
+        $('.option-main').typingAnimation2('write', "Programmer", 20 , 9600, 1000, true);
+
+        $('.option-main').typingAnimation2('delete', 10, 20 , 11600, 0, true);
+        $('.option-main').typingAnimation2('write', "Frontend developer", 20 , 13600, 1000, false);
+        */
+        //$('.option-main2').typingAnimation2('write', "I'm Computer Engineer", 18 , 9500, 1000, true);
+        
+        /*
+        $('.option-main').typingAnimation2('write', "I am Computer Engineer", 18 , 5000, 0, true);
+        $('.option-main').typingAnimation2('delete', 17, 20 , 7600, 1000, true);
+        $('.option-main').typingAnimation2('write', "Programmer", 20 , 9600, 1000, true);
+
+        $('.option-main').typingAnimation2('delete', 10, 20 , 11600, 0, true);
+        $('.option-main').typingAnimation2('write', "Frontend developer", 20 , 13600, 1000, false);
+        */
+        setTimeout(() => {
+            $('.option-main2').typingAnimation2('write', "Welcome to my Website", 18 , 0, 1000, true);
+        }, 22600);
+        
+        //$('.option-main').typingAnimation2('write', "I am Kenny Becerra", 12 , 3200, 5800);
+
+    
+
+        document.querySelector('.option-1').addEventListener('click', function() {
+            myLib.scrollIt(document.getElementById('skills'), 1200, 'easeInOutQuint', "-10%");
+        });
+
+        document.querySelector('.option-2').addEventListener('click', function() {
+            myLib.scrollIt(document.getElementById('resume'), 1200, 'easeInOutQuint', "-10%");
+        });
+
+        document.querySelector('.option-3').addEventListener('click', function() {
+            myLib.scrollIt(document.getElementById('projects'), 1200, 'easeInOutQuint', "-10%");
+        });
+
+
+        document.querySelector('.option-4').addEventListener('click', function() {
+            myLib.scrollIt(document.getElementById('skills'), 1200, 'easeInOutQuint', "-10%");
+        });
+
+        document.querySelector('.option-5').addEventListener('click', function() {
+            myLib.scrollIt(document.getElementById('resume'), 1200, 'easeInOutQuint', "-10%");
+        });
+
+        document.querySelector('.option-6').addEventListener('click', function() {
+            myLib.scrollIt(document.getElementById('projects'), 1200, 'easeInOutQuint', "-10%");
+        });
+
+
+
+
         //$('.test-1').typingAnimation('write', "hellothere", 12 , 2000);
-        $('.test-1').typingAnimation('delete', 3,  12 , 2000);
+        //$('.test-1').typingAnimation('delete', 3,  12 , 2000);
+
+        /*
 
         var docWidth = document.documentElement.offsetWidth;
 
@@ -52,7 +134,9 @@ var domIsReady = (function(domIsReady) {
             console.log(el);
             }
         }
-        );
+        );*/
+
+        window.addEventListener('scroll', myLib.enableAnimations);
 
     });
  })(domIsReady);
@@ -366,7 +450,7 @@ var domIsReady = (function(domIsReady) {
  *  */ 
  function $(qualifier) {
 
-    function MinUtil(selector) {
+    function MinUtil2(selector) {
         var element = document.querySelector(selector);
         var requestID = null;
 
@@ -464,14 +548,88 @@ var domIsReady = (function(domIsReady) {
             }
 
         };
+        this.typingAnimation2 = function(setting, textOrNum, speed, delay, postDelay, chain) {
+
+            var itr = 0;
+            var fps = speed;
+            var letters;
+            var blinkClass = "blinking-2";
+
+            if (setting === "write") {
+                letters = textOrNum.split("");
+                var max = textOrNum.length;
+                
+                //element.style.borderRight =  "2px solid rgba(255, 255, 255, 0.75)";
+                
+                addClass(element, blinkClass);
+                setTimeout(() => {
+                    function addLetter() {
+                        setTimeout(function() { 
+                            element.innerHTML += letters.shift();
+                            itr++;
+        
+                            if (itr < max) {
+                                requestID  = requestAnimationFrame(addLetter);
+                            }
+                            else {
+                                setTimeout(() => {
+                                    if (!chain) {
+                                        removeClass(element, blinkClass);
+                                    }
+                                    //element.style.borderRight =  "2px solid transparent";
+                                }, postDelay);
+                            }
+                        }, 1000/fps);
+                    }
+                    requestID = requestAnimationFrame(addLetter);
+                }, delay);
+            }
+            else if ( setting === "delete" ){
+                //element.style.borderRight =  "2px solid rgba(255, 255, 255, 0.75)";
+                
+                addClass(element, blinkClass);
+                setTimeout(() => {
+                    function eraseLetter() {
+                        setTimeout(function() { 
+                            letters = element.textContent.split("");
+                            letters.pop();
+                            element.textContent = letters.join("");
+                            itr++;
+        
+                            if (itr < textOrNum) {
+                                requestID  = requestAnimationFrame(eraseLetter);
+                            }
+                            else {
+                                setTimeout(() => {
+                                    if (!chain) {
+                                        removeClass(element, blinkClass);
+                                    }
+                                    //element.style.borderRight =  "2px solid transparent";
+                                }, postDelay);
+                            }
+                        }, 1000/fps);
+                    }
+                    requestID = requestAnimationFrame(eraseLetter);
+                }, delay);
+
+            }
+            else {
+                console.log('there was an issue with the settings');
+            }
+
+        };
     }
 
 
     if (typeof qualifier === "string" && (qualifier.charAt(0) === "." || qualifier.charAt(0) === "#") ) {
-        return new MinUtil(qualifier);
+        return new MinUtil2(qualifier);
     } 
     else {
         console.log("Error Occured");
     }
  }
 
+/**
+ * My Attempt are a function constructor that will be a utility
+ * class with all comon functionality for navigation and classes
+ */

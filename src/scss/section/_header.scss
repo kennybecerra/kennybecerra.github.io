@@ -3,12 +3,12 @@
     width: 100%;
 
     background-image: url('../assets/images/coverPhoto_Large.jpg');
+
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     
-
     font-family: 'Roboto Mono', monospace;
 
     &__nav {
@@ -46,9 +46,14 @@
         font-size: 3em;
 
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 0px;
+
+        &--item {
+            font-size: 8rem;
+        }
     }
 }
 

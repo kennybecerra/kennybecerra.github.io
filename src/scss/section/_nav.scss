@@ -1,0 +1,44 @@
+.nav {
+
+    position: fixed;
+    top: 0px;
+
+    height: 10%;
+    width: 100%;
+    font-family: inherit;
+    padding: 0px;
+
+    opacity: 0;
+    z-index: 10;
+    display: none;
+    //border: 4px solid green;
+
+    &__inner {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        background-color: #1d1e25;
+
+        font-family: 'Roboto Mono', monospace;
+
+        &--item {
+            box-sizing: border-box;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            margin: 0px;
+            padding: 0px;
+    
+            &:hover {
+                border-bottom: 2px solid white;
+                cursor: pointer;
+            }
+        }
+
+
+    }
+    
+}

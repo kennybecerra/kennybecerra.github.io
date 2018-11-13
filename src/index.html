@@ -8,34 +8,30 @@
     <title>Portfolio Website - Kenny Becerra</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
 </head>
 <body>
     <main>
-        <nav class="nav">
-            <p class="nav__item test-1">About me</p>
-            <p class="nav__item">Projects</p>
-            <p class="nav__item">Resume</p>
-            <p class="nav__item">More info</p>
-            <p class="nav__item">Contact</p>
+        <nav class="nav fadeInOnThreshold">
+            <div class="nav__inner">
+                <p class="nav__inner--item blinking-2 option-4">Skills</p>
+                <p class="nav__inner--item blinking-2 option-5">Resume</p>
+                <p class="nav__inner--item blinking-2 option-6">Projects</p>
+            </div>
         </nav>
 
         
         <header class="header">
             <div class="header__nav">
-                <p class="header__nav--item test-1">About me</p>
-                <p class="header__nav--item">Projects</p>
-                <p class="header__nav--item">Resume</p>
-                <p class="header__nav--item">More info</p>
-                <p class="header__nav--item">Contact</p>
+                <p class="header__nav--item option-1"></p>
+                <p class="header__nav--item option-2"></p>
+                <p class="header__nav--item option-3"></p>
             </div>
             <div class="header__body">
-                <p class="header__body--item"></p>
+                <p class="header__body--item option-main"></p>
+                <p class="header__body--item option-main2"></p>
             </div>
         </header>
-        <section class="skills">
+        <section class="skills" id="skills">
             <header class="skills__header">
                 <h2 class="skills__header--text">Technical Skills</h2> 
             </header>
@@ -70,7 +66,7 @@
                 </div>
             </div>
         </section>
-        <section class="resumeContainer">
+        <section class="resumeContainer" id="resume">
             <header class="resumeContainer__header">
                 <h2 class="resumeContainer__header--text">Resume</h2> 
             </header>
@@ -403,7 +399,7 @@
                 <a href="./assets/documents/Kenny_Becerra_Resume.pdf" download class="btn btn--blue">Download Resume</a>  
             </footer>
         </section>
-        <section class="projects">
+        <section class="projects" id="projects">
 
             <header class="projects__header">
                 <h2 class="projects__header--text">Projects</h2> 
@@ -617,7 +613,7 @@
                     </a>
                 </div>
                 <div class="footer__section">
-                    <a href=href="./assets/documents/Kenny_Becerra_Resume.pdf" download class="footer__section--link">
+                    <a href="./assets/documents/Kenny_Becerra_Resume.pdf" download class="footer__section--link">
                         <div class="onmyscroll3">
                             <svg class="footer__section--icon-4">
                                 <use href="./assets/SVG/symbol-defs.svg#icon-file-pdf" xlink:href="./assets/SVG/symbol-defs.svg#icon-file-pdf"></use>
