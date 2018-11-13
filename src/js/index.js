@@ -1,7 +1,8 @@
 import normalize from "../scss/vendor/normalize.css";
 import skeleton from "../scss/vendor/skeleton.css";
 import style from "../scss/main.scss";
-import pdf from "../assets/documents/Kenny_Becerra_Resume.pdf"
+import pdf from "../assets/documents/Kenny_Becerra_Resume.pdf";
+import icon from "../assets/images/favicon.ico";
 //import img from "../images/wow.jpg";
 //import {myFunc} from "./test.js";
 

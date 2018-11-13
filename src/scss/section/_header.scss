@@ -31,6 +31,10 @@
             margin: 0px;
             padding: 0px;
 
+            @include ResponsiveDesktopFirst(phone) {
+                font-size: 1.8rem;
+            }
+
             &:hover {
                 border-bottom: 2px solid white;
                 cursor: pointer;
@@ -52,8 +56,22 @@
         padding: 0px;
         padding-bottom: 3em;
 
+
+        @include ResponsiveDesktopFirst(phone) {
+            padding-bottom: 1em;
+        }
+
         &--item {
-            font-size: 7rem;
+            font-size: 5.8rem;
+
+            @include ResponsiveDesktopFirst(tab-port) {
+                font-size: 3.8rem;
+            }
+
+            @include ResponsiveDesktopFirst(phone) {
+                font-size: 2.2rem;
+                font-weight: 400;
+            }
         }
     }
 }
