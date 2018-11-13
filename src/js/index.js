@@ -1,6 +1,7 @@
 import normalize from "../scss/vendor/normalize.css";
 import skeleton from "../scss/vendor/skeleton.css";
 import style from "../scss/main.scss";
+import pdf from "../assets/documents/Kenny_Becerra_Resume.pdf"
 //import img from "../images/wow.jpg";
 //import {myFunc} from "./test.js";
 
@@ -51,9 +52,9 @@ var domIsReady = (function(domIsReady) {
             }
         });
 
-        $('.option-1').typingAnimation2('write', "Skills", 12 , 2000, 7000);
-        $('.option-2').typingAnimation2('write', "Resume", 12 , 2600, 6400);
-        $('.option-3').typingAnimation2('write', "Projects", 12 , 3200, 5800);
+        $('.option-1').typingAnimation2('write', "Skills", 12 , 2000, 0, false);
+        $('.option-2').typingAnimation2('write', "Resume", 12 , 2600, 0, false);
+        $('.option-3').typingAnimation2('write', "Projects", 12 , 3200, 0, false);
 
 
         
@@ -62,11 +63,11 @@ var domIsReady = (function(domIsReady) {
         $('.option-main').typingAnimation2('write', ", I'm Kenny", 18 , 7000, 0, true);
         $('.option-main').typingAnimation2('delete', 16, 18 , 9500, 0, true);
 
-        $('.option-main').typingAnimation2('write', "I am Computer Engineer", 18 , 11500, 0, true);
-        $('.option-main').typingAnimation2('delete', 17, 20 , 13500, 0, true);
-        $('.option-main').typingAnimation2('write', "Programmer", 18 , 15600, 0, true);
-        $('.option-main').typingAnimation2('delete', 10, 20 , 17600, 0, true);
-        $('.option-main').typingAnimation2('write', "Frontend Developer", 18 , 19600, 1000, false);
+        $('.option-main').typingAnimation2('write', "I am a Computer Engineer.", 18 , 11500, 0, true);
+        $('.option-main').typingAnimation2('delete', 18, 20 , 13500, 0, true);
+        $('.option-main').typingAnimation2('write', "Programmer.", 18 , 15600, 0, true);
+        $('.option-main').typingAnimation2('delete', 11, 20 , 17600, 0, true);
+        $('.option-main').typingAnimation2('write', "Frontend Developer.", 18 , 19600, 1000, false);
         /*
         $('.option-main').typingAnimation2('delete', 17, 20 , 7600, 1000, true);
         $('.option-main').typingAnimation2('write', "Programmer", 20 , 9600, 1000, true);

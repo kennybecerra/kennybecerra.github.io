@@ -88,6 +88,18 @@ module.exports = {
                 }
             },
             {
+                test: /\.(pdf|doc|docx)$/,
+                use: [
+                    {
+                        loader: "file-loader",
+                        options: {
+                            //limit: 10,
+                            name: "./assets/documents/[name].[ext]"
+                        }
+                    }
+                ]
+            },
+            {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
                 use: [
                     {

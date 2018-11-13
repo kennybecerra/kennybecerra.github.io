@@ -1180,9 +1180,10 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 0px; }
+    padding: 0px;
+    padding-bottom: 3em; }
     .header__body--item {
-      font-size: 8rem; }
+      font-size: 7rem; }
 
 .nav {
   height: 10%;
@@ -1413,10 +1414,10 @@ body {
         .resHeaderContainer__left--header1 {
           font-size: 2.6rem; } }
     .resHeaderContainer__left--header2 {
-      color: #cecece;
+      color: #147393;
+      font-weight: 400;
       font-style: italic;
       font-size: 3rem;
-      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
       margin: 0px;
       padding: 0px; }
       @media (max-width: 37.5em) {
@@ -1774,8 +1775,6 @@ body {
     height: .5rem;
     width: 100%;
     background-color: #e1e1e1;
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: .5rem 0; }
     .item__container--bar {
       height: inherit;
@@ -1789,8 +1788,9 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
 
@@ -1802,7 +1802,8 @@ body {
       flex-wrap: nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  min-width: 30%; }
   .list__fig {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2380,8 +2381,11 @@ body {
     width: auto;
     height: 50%; }
     .card__image--large {
-      width: 35%;
-      height: auto; }
+      width: 28%;
+      height: 60%; }
+    .card__image--large-2 {
+      width: auto;
+      height: 65%; }
   .card__header {
     text-transform: uppercase;
     font-size: 2rem;

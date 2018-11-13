@@ -82,8 +82,13 @@
         height: 50%;
 
         &--large {
-            width: 35%;
-            height: auto;
+            width: 28%;
+            height: 60%;
+        }
+
+        &--large-2 {
+            width: auto;
+            height: 65%;
         }
     }
 

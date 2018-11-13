@@ -128,10 +128,12 @@
         }
 
         &--header2 {
-            color:#cecece;
+            //color:#cecece;
+            color: rgb(20,115,147);
+            font-weight: 400;
             font-style: italic;
             font-size: 3rem;
-            text-shadow: 1px 1px 0 rgba(0,0,0,.5);
+            //text-shadow: 1px 1px 0 rgba(0,0,0,.5);
             margin: 0px;
             padding: 0px;
 
@@ -441,7 +443,7 @@
         width: 100%;
         background-color: #e1e1e1;
         //outline: 2px solid #CEB888;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         margin: .5rem 0;
     
         &--bar {
@@ -454,7 +456,7 @@
 
     &__listing {
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-start;
         flex-wrap: wrap;
     }
 }
@@ -464,6 +466,7 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    min-width: 30%;
 
     &__fig {
     
@@ -484,6 +487,7 @@
     &__text {
         font-size: 1.4rem;
         font-weight: 600;
+        //padding: 0 1em 0 0;
     }
 }
 
