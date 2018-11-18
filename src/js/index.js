@@ -53,12 +53,63 @@ var domIsReady = (function(domIsReady) {
             }
         });
 
+
+        /**
+         * Typing animation functionality with Promises
+         */
+
+         /*
+
+        $('.option-1').typingAnimation4('write', "Skills", 12 , 2000, 100, true)
+        .then(function() {
+            $('.option-2').typingAnimation4('write', "Resume", 12 , 0, 100, true)
+            .then(function() {
+
+            });
+        });
+
+        */
+
+        /**
+         * typing Animation functionality with callbacks
+         */
+
+        
+        $('.option-1').typingAnimation3('write', "Skills", 12 , 2000, 100, true, function() {
+            $('.option-2').typingAnimation3('write', "Resume", 12 , 0, 100, true, function() {
+                $('.option-3').typingAnimation3('write', "Projects", 12 , 0, 1000, true, function() {
+                    console.log("nav done");
+                    $('.option-main').typingAnimation3('write', "Hello", 18 , 1000, 2000, false, function() {
+                        $('.option-main').typingAnimation3('write', ", I'm Kenny", 18 , 0, 2000, false, function() {
+                            $('.option-main').typingAnimation3('delete', 16, 18 , 0, 500, false, function(){
+                                $('.option-main').typingAnimation3('write', "I am a Computer Engineer.", 18 , 0, 1000, false, function() {
+                                    $('.option-main').typingAnimation3('delete', 18, 20 , 0, 500, false, function() {
+                                        $('.option-main').typingAnimation3('write', "Programmer.", 18 , 0, 1000, false, function() {
+                                            $('.option-main').typingAnimation3('delete', 11, 20 , 500, 0, false, function() {
+                                                $('.option-main').typingAnimation3('write', "Frontend Developer.", 18 , 500, 2000, true, function() {
+                                                    $('.option-main2').typingAnimation3('write', "Welcome to my Website", 18 , 0, 3000), false;
+                                                });
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+        });
+
+        
+
+        /**
+         * Typing animation functionality with only synchonous code adn set timeouts
+         */
+        /*
         $('.option-1').typingAnimation2('write', "Skills", 12 , 2000, 0, false);
         $('.option-2').typingAnimation2('write', "Resume", 12 , 2600, 0, false);
         $('.option-3').typingAnimation2('write', "Projects", 12 , 3200, 0, false);
 
-
-        
 
         $('.option-main').typingAnimation2('write', "Hello", 18 , 5500, 0, true);
         $('.option-main').typingAnimation2('write', ", I'm Kenny", 18 , 7000, 0, true);
@@ -69,6 +120,15 @@ var domIsReady = (function(domIsReady) {
         $('.option-main').typingAnimation2('write', "Programmer.", 18 , 15600, 0, true);
         $('.option-main').typingAnimation2('delete', 11, 20 , 17600, 0, true);
         $('.option-main').typingAnimation2('write', "Frontend Developer.", 18 , 19600, 1000, false);
+
+        setTimeout(() => {
+            $('.option-main2').typingAnimation2('write', "Welcome to my Website", 18 , 0, 1000, true);
+        }, 22600);
+        */
+
+
+
+
         /*
         $('.option-main').typingAnimation2('delete', 17, 20 , 7600, 1000, true);
         $('.option-main').typingAnimation2('write', "Programmer", 20 , 9600, 1000, true);
@@ -86,9 +146,6 @@ var domIsReady = (function(domIsReady) {
         $('.option-main').typingAnimation2('delete', 10, 20 , 11600, 0, true);
         $('.option-main').typingAnimation2('write', "Frontend developer", 20 , 13600, 1000, false);
         */
-        setTimeout(() => {
-            $('.option-main2').typingAnimation2('write', "Welcome to my Website", 18 , 0, 1000, true);
-        }, 22600);
         
         //$('.option-main').typingAnimation2('write', "I am Kenny Becerra", 12 , 3200, 5800);
 
@@ -618,6 +675,178 @@ var domIsReady = (function(domIsReady) {
             else {
                 console.log('there was an issue with the settings');
             }
+
+        };
+        this.typingAnimation3 = function(setting, textOrNum, speed, delay, postDelay, remove,  callback) {
+
+            var itr = 0;
+            var fps = speed;
+            var letters;
+            var blinkClass = "blinking-2";
+
+            if (setting === "write") {
+                letters = textOrNum.split("");
+                var max = textOrNum.length;
+                
+                //element.style.borderRight =  "2px solid rgba(255, 255, 255, 0.75)";
+                
+                addClass(element, blinkClass);
+                setTimeout(() => {
+                    function addLetter() {
+                        setTimeout(function() { 
+                            element.innerHTML += letters.shift();
+                            itr++;
+        
+                            if (itr < max) {
+                                requestID  = requestAnimationFrame(addLetter);
+                            }
+                            else {
+                                setTimeout(() => {
+
+                                    if (remove) {
+                                        removeClass(element, blinkClass);
+                                    }
+                                    if (callback) {
+                                        callback();
+                                    }
+                                    //element.style.borderRight =  "2px solid transparent";
+                                }, postDelay);
+                            }
+                        }, 1000/fps);
+                    }
+                    requestID = requestAnimationFrame(addLetter);
+                }, delay);
+            }
+            else if ( setting === "delete" ){
+                //element.style.borderRight =  "2px solid rgba(255, 255, 255, 0.75)";
+                
+                addClass(element, blinkClass);
+                setTimeout(() => {
+                    function eraseLetter() {
+                        setTimeout(function() { 
+                            letters = element.textContent.split("");
+                            letters.pop();
+                            element.textContent = letters.join("");
+                            itr++;
+        
+                            if (itr < textOrNum) {
+                                requestID  = requestAnimationFrame(eraseLetter);
+                            }
+                            else {
+                                setTimeout(() => {
+
+                                    if (remove) {
+                                        removeClass(element, blinkClass);
+                                    }
+                                    if (callback) {
+                                        callback();
+                                    }
+                                    /*
+                                    if (!callback) {
+                                        removeClass(element, blinkClass);
+                                    }
+                                    else {
+                                        callback();
+                                    }
+                                    */
+                                    //element.style.borderRight =  "2px solid transparent";
+                                }, postDelay);
+                            }
+                        }, 1000/fps);
+                    }
+                    requestID = requestAnimationFrame(eraseLetter);
+                }, delay);
+
+            }
+            else {
+                console.log('there was an issue with the settings');
+            }
+
+        };
+        this.typingAnimation4 = function(setting, textOrNum, speed, delay, postDelay, remove) {
+
+            var itr = 0;
+            var fps = speed;
+            var letters;
+            var blinkClass = "blinking-2";
+
+            return new Promise(function(resolve, reject) {
+
+                if (setting === "write") {
+                    letters = textOrNum.split("");
+                    var max = textOrNum.length;
+                    
+                    //element.style.borderRight =  "2px solid rgba(255, 255, 255, 0.75)";
+                    
+                    addClass(element, blinkClass);
+                    setTimeout(() => {
+                        function addLetter() {
+                            setTimeout(function() { 
+                                element.innerHTML += letters.shift();
+                                itr++;
+            
+                                if (itr < max) {
+                                    requestID  = requestAnimationFrame(addLetter);
+                                }
+                                else {
+                                    setTimeout(() => {
+    
+                                        if (remove) {
+                                            removeClass(element, blinkClass);
+                                        }
+                                        resolve();
+                                        //element.style.borderRight =  "2px solid transparent";
+                                    }, postDelay);
+                                }
+                            }, 1000/fps);
+                        }
+                        requestID = requestAnimationFrame(addLetter);
+                    }, delay);
+                }
+                else if ( setting === "delete" ){
+                    //element.style.borderRight =  "2px solid rgba(255, 255, 255, 0.75)";
+                    
+                    addClass(element, blinkClass);
+                    setTimeout(() => {
+                        function eraseLetter() {
+                            setTimeout(function() { 
+                                letters = element.textContent.split("");
+                                letters.pop();
+                                element.textContent = letters.join("");
+                                itr++;
+            
+                                if (itr < textOrNum) {
+                                    requestID  = requestAnimationFrame(eraseLetter);
+                                }
+                                else {
+                                    setTimeout(() => {
+    
+                                        if (remove) {
+                                            removeClass(element, blinkClass);
+                                        }
+                                        resolve();
+                                        /*
+                                        if (!callback) {
+                                            removeClass(element, blinkClass);
+                                        }
+                                        else {
+                                            callback();
+                                        }
+                                        */
+                                        //element.style.borderRight =  "2px solid transparent";
+                                    }, postDelay);
+                                }
+                            }, 1000/fps);
+                        }
+                        requestID = requestAnimationFrame(eraseLetter);
+                    }, delay);
+    
+                }
+                else {
+                    reject("Error : " + 'there was an issue with the settings');
+                    //console.log('there was an issue with the settings');
+                }
+            });
 
         };
     }
