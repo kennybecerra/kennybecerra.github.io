@@ -1,554 +1,531 @@
 .resumeContainer {
-    padding: 1.5em 0px;
+  padding: 1.5em 0px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+
+  &__header {
+    width: 100%;
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
 
-    &__header {
-        width: 100%;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        &--text {
-            font-size: 5rem;
-            color: $color-black;
-            font-family: 'Roboto Mono', monospace;
-            letter-spacing: 2px;
-            font-weight: 300;
-        }
+    &--text {
+      font-size: 5rem;
+      color: $color-black;
+      font-family: "Roboto Mono", monospace;
+      letter-spacing: 2px;
+      font-weight: 300;
     }
+  }
 
-    &__body {
-        width: 100%;
-        padding: .5em 1em;
+  &__body {
+    width: 100%;
+    padding: 0.5em 1em;
 
-        display: flex;
-        justify-content: center;
-        
-    }
+    display: flex;
+    justify-content: center;
+  }
 
-    &__footer {
-        width: 100%;
+  &__footer {
+    width: 100%;
 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-
 .resume {
-    width: 960px;
-    max-width: 960px;
-    flex-basis: 960px;
-    flex-grow: 0;
-    flex-shrink: 1;
-    //max-width: 960px;
-    margin: 1em 0px;
-    box-shadow: 0 4px 8px 0 rgba(201, 167, 167, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 960px;
+  max-width: 960px;
+  flex-basis: 960px;
+  flex-grow: 0;
+  flex-shrink: 1;
+  //max-width: 960px;
+  margin: 1em 0px;
+  box-shadow: 0 4px 8px 0 rgba(201, 167, 167, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    width: 100%;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 4px solid #33a4c9;
+    height: auto;
+  }
 
-
-    &__header {
-        width: 100%;
-
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        border-bottom: 4px solid #33a4c9;
-        height: auto;
-    }
-
-    &__body {
-
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: 1em 0px;
-        background: #f5f5f5;
-    }
+  &__body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1em 0px;
+    background: #f5f5f5;
+  }
 }
 
 .resHeaderContainer {
-    width: 80%;
-    //height: 100%;
+  width: 80%;
+  //height: 100%;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
 
-    @include ResponsiveDesktopFirst(phone) {
-        flex-direction: column;
-        align-content: center;
-    }
+  @include ResponsiveDesktopFirst(phone) {
+    flex-direction: column;
+    align-content: center;
+  }
 
-    &__left {
-        flex-basis: 50%;
-        flex-grow: 0;
-        flex-shrink: 1;
-        padding: 1em 0px;
-        width: 50%;
-        height: auto;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-
-        @include ResponsiveDesktopFirst(phone) {
-            min-width: none;
-
-            flex-basis: auto;
-            flex-shrink: 0;
-            flex-grow: 0;
-            width: 100%;
-            justify-content: center;
-            text-align: center;
-        }
-
-        &--header1 {
-            color:#555;
-            font-size: 3.6rem;
-            font-family:'DroidSansBold', Arial, sans-serif; 
-            padding: 0px;
-            margin: 0px;
-
-            @include ResponsiveDesktopFirst(phone) {
-                font-size: 2.6rem;
-            }
-        }
-
-        &--header2 {
-            //color:#cecece;
-            color: rgb(20,115,147);
-            font-weight: 400;
-            font-style: italic;
-            font-size: 3rem;
-            //text-shadow: 1px 1px 0 rgba(0,0,0,.5);
-            margin: 0px;
-            padding: 0px;
-
-            @include ResponsiveDesktopFirst(phone) {
-                font-size: 2rem;
-            }
-        }
-    }
-
-    &__right {
-        flex-basis: 50%;
-        flex-grow: 0;
-        flex-shrink: 1;
-        padding: 1em 0px;
-
-        width: 50%;
-        height: auto;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-
-        @include ResponsiveDesktopFirst(phone) {
-            min-width: none;
-
-            flex-basis: auto;
-            flex-shrink: 0;
-            flex-grow: 0;
-            width: 100%;
-            justify-content: center;
-            text-align: center;
-        }
-
-        &--fig {
-            display: flex;
-
-            border-radius: 50%;
-            height: 15rem;
-            width: 15rem;
-            margin: 0px;
-            padding: 0px;
-    
-            &--image {
-                border-radius: 50%;
-                height: 15rem;
-                width: 15rem;
-                border: 3px solid #cecece;
-            }
-        }
-    }
-}
-
-
-.resBodyContainer {
-    width: 80%;
-    height: 100%;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-
-    &__1 {
-        flex-basis: 100%;
-        width: 100%;
-        height: auto;
-
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
-
-        @include ResponsiveDesktopFirst(tab-port) {
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            align-content: center;
-        }
-
-        &--left {
-            flex-basis: 48%;
-            flex-grow: 0;
-            flex-shrink: 0;
-    
-            width: 48%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            //justify-content: flex-start;
-
-            @include ResponsiveDesktopFirst(tab-port) {
-                flex-basis: auto;
-                height: auto;
-                width: 100%;
-            }
-        }
-    
-        &--right {
-            flex-basis: 48%;
-            flex-grow: 0;
-            flex-shrink: 0;
-    
-            width: 48%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            //justify-content: flex-start;
-
-            @include ResponsiveDesktopFirst(tab-port) {
-                flex-basis: auto;
-                height: auto;
-                width: 100%;
-            }
-        }
-    }
-
-    &__2 {
-
-        flex-basis: 100%;
-        width: 100%;
-
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    &__3 {
-
-        flex-basis: 100%;
-        width: 100%;
-        height: auto;
-
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
-
-        @include ResponsiveDesktopFirst(tab-port) {
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            align-content: center;
-        }
-
-        &--left {
-            flex-basis: 48%;
-            flex-grow: 0;
-            flex-shrink: 0;
-    
-            width: 48%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-
-            @include ResponsiveDesktopFirst(tab-port) {
-                flex-basis: auto;
-                height: auto;
-                width: 100%;
-            }
-
-        }
-    
-        &--right {
-            flex-basis: 48%;
-            flex-grow: 0;
-            flex-shrink: 0;
-    
-            width: 48%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-
-            @include ResponsiveDesktopFirst(tab-port) {
-                flex-basis: auto;
-                height: auto;
-                width: 100%;
-            }
-
-        }
-    }
-}
-
-.resSubHeader {
-
-    width: 100%;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-bottom: 4px solid #e1e1e1;
-
-    &__fig {
-
-        justify-self: center;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 5rem;
-        width: 5rem;
-        padding: 1.2rem;
-        background-color: #33a4c9;
-        border-radius: 50%;
-        margin: 1rem 2rem 1rem 1rem;
-
-        &__icon {
-            fill: white;
-            //height: 2.8rem;
-        }
-    }
-
-    &__text {
-
-        font-size: 2.4rem;
-        font-weight: bold;
-        line-height: 2rem;
-        color: #333;
-        margin: 0px;
-        padding: 0px;
-        //align-self: center;
-    }
-}
-
-.resSubBody {
+  &__left {
+    flex-basis: 50%;
+    flex-grow: 0;
+    flex-shrink: 1;
+    padding: 1em 0px;
+    width: 50%;
+    height: auto;
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
+    @include ResponsiveDesktopFirst(phone) {
+      min-width: none;
+
+      flex-basis: auto;
+      flex-shrink: 0;
+      flex-grow: 0;
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+    }
+
+    &--header1 {
+      color: #555;
+      font-size: 3.6rem;
+      font-family: "DroidSansBold", Arial, sans-serif;
+      padding: 0px;
+      margin: 0px;
+
+      @include ResponsiveDesktopFirst(phone) {
+        font-size: 2.6rem;
+      }
+    }
+
+    &--header2 {
+      //color:#cecece;
+      color: rgb(20, 115, 147);
+      font-weight: 400;
+      font-style: italic;
+      font-size: 3rem;
+      //text-shadow: 1px 1px 0 rgba(0,0,0,.5);
+      margin: 0px;
+      padding: 0px;
+
+      @include ResponsiveDesktopFirst(phone) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__right {
+    flex-basis: 50%;
+    flex-grow: 0;
+    flex-shrink: 1;
+    padding: 1em 0px;
+
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    @include ResponsiveDesktopFirst(phone) {
+      min-width: none;
+
+      flex-basis: auto;
+      flex-shrink: 0;
+      flex-grow: 0;
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+    }
+
+    &--fig {
+      display: flex;
+
+      border-radius: 50%;
+      height: 15rem;
+      width: 15rem;
+      margin: 0px;
+      padding: 0px;
+
+      &--image {
+        border-radius: 50%;
+        height: 15rem;
+        width: 15rem;
+        border: 3px solid #cecece;
+      }
+    }
+  }
+}
+
+.resBodyContainer {
+  width: 80%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+
+  &__1 {
+    flex-basis: 100%;
     width: 100%;
-    padding: 1rem 0px;
+    height: auto;
 
-    &__text {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
 
-        font-size: 1.6rem;
-        font-weight: 400;
-        color: #333;
+    @include ResponsiveDesktopFirst(tab-port) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      align-content: center;
+    }
 
-        &--1 {
-            
-            font-weight: normal;
-            font-size: 1.8rem;
-            color: #333;
-            margin: 0px;
-        }
+    &--left {
+      flex-basis: 48%;
+      flex-grow: 0;
+      flex-shrink: 0;
 
-        &--2 {
-            color: #147393;
-            font-weight: normal;
-            font-size: 1.8rem;
-            font-weight: 500;
-        }
+      width: 48%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      //justify-content: flex-start;
 
-        /*
+      @include ResponsiveDesktopFirst(tab-port) {
+        flex-basis: auto;
+        height: auto;
+        width: 100%;
+      }
+    }
+
+    &--right {
+      flex-basis: 48%;
+      flex-grow: 0;
+      flex-shrink: 0;
+
+      width: 48%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      //justify-content: flex-start;
+
+      @include ResponsiveDesktopFirst(tab-port) {
+        flex-basis: auto;
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+
+  &__2 {
+    flex-basis: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__3 {
+    flex-basis: 100%;
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include ResponsiveDesktopFirst(tab-port) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      align-content: center;
+    }
+
+    &--left {
+      flex-basis: 48%;
+      flex-grow: 0;
+      flex-shrink: 0;
+
+      width: 48%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      @include ResponsiveDesktopFirst(tab-port) {
+        flex-basis: auto;
+        height: auto;
+        width: 100%;
+      }
+    }
+
+    &--right {
+      flex-basis: 48%;
+      flex-grow: 0;
+      flex-shrink: 0;
+
+      width: 48%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      @include ResponsiveDesktopFirst(tab-port) {
+        flex-basis: auto;
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.resSubHeader {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 4px solid #e1e1e1;
+
+  &__fig {
+    justify-self: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    width: 5rem;
+    padding: 1.2rem;
+    background-color: #33a4c9;
+    border-radius: 50%;
+    margin: 1rem 2rem 1rem 1rem;
+
+    &__icon {
+      fill: white;
+      //height: 2.8rem;
+    }
+  }
+
+  &__text {
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2rem;
+    color: #333;
+    margin: 0px;
+    padding: 0px;
+    //align-self: center;
+  }
+}
+
+.resSubBody {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  padding: 1rem 0px;
+
+  &__text {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #333;
+
+    &--1 {
+      font-weight: normal;
+      font-size: 1.8rem;
+      color: #333;
+      margin: 0px;
+    }
+
+    &--2 {
+      color: #147393;
+      font-weight: normal;
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+
+    /*
         &--2::after{
             content: 'at';
             margin: 0 .5rem;
         }
         */
-        &--3 {
-            display: inline-block;
-            color: #999;
-            font-weight: normal;
-            font-size: 1.4rem;
-            font-weight: 500;
-            margin: .2rem 0px .5rem 2rem;
-        }
-
-        &--4 {
-            display: inline-block;
-            color: #999;
-            font-weight: normal;
-            font-size: 1.4rem;
-            margin: .5rem 0px 2rem 2rem;
-        }
-
-        &--5 {
-            color: #333;
-            font-weight: 400;
-            font-size: 1.5rem;
-            line-height: 2.2rem;
-            margin-left: 2rem;
-        }
+    &--3 {
+      display: inline-block;
+      color: #999;
+      font-weight: normal;
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin: 0.2rem 0px 0.5rem 2rem;
     }
 
-    &__item {
-        width: 90%;
-        margin: .5rem 0;
+    &--4 {
+      display: inline-block;
+      color: #999;
+      font-weight: normal;
+      font-size: 1.4rem;
+      margin: 0.5rem 0px 2rem 2rem;
     }
+
+    &--5 {
+      color: #333;
+      font-weight: 400;
+      font-size: 1.5rem;
+      line-height: 2.2rem;
+      margin-left: 2rem;
+    }
+  }
+
+  &__item {
+    width: 90%;
+    margin: 0.5rem 0;
+  }
 }
 
-
 .item {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 0px 1rem 0px;
 
+  &__header {
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &__container {
+    height: 0.5rem;
+    width: 100%;
+    background-color: #e1e1e1;
+    //outline: 2px solid #CEB888;
+    //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 0.5rem 0;
+
+    &--bar {
+      height: inherit;
+      width: 90%;
+      background-color: #33a4c9;
+      background: linear-gradient(90deg, #33a4c9, #33a4c9);
+    }
+  }
+
+  &__listing {
     display: flex;
-    flex-direction: column;
-    padding: 0px 0px 1rem 0px;
-
-    &__header {
-        font-size: 1.4rem;
-        font-weight: 500;
-        text-transform: uppercase;
-    }
-
-    &__container {
-        height: .5rem;
-        width: 100%;
-        background-color: #e1e1e1;
-        //outline: 2px solid #CEB888;
-        //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        margin: .5rem 0;
-    
-        &--bar {
-            height: inherit;
-            width: 90%;
-            background-color: #33a4c9;
-            background: linear-gradient(90deg,#33a4c9, #33a4c9);
-        }
-    }
-
-    &__listing {
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-    }
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 }
 
 .list {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  min-width: 30%;
 
+  &__fig {
     display: flex;
-    flex-wrap: nowrap;
+    justify-content: center;
     align-items: center;
-    min-width: 30%;
+    height: 2rem;
+    width: 2rem;
+    //border: 1px solid green;
+    padding: 0 0.5rem 0 0;
 
-    &__fig {
-    
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 2rem;
-        width: 2rem;
-        //border: 1px solid green;
-        padding: 0 .5rem 0 0;
-
-        &--icon {
-            fill: green;
-            //height: 3rem;
-        }
+    &--icon {
+      fill: green;
+      //height: 3rem;
     }
+  }
 
-    &__text {
-        font-size: 1.4rem;
-        font-weight: 600;
-        //padding: 0 1em 0 0;
-    }
+  &__text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    //padding: 0 1em 0 0;
+  }
 }
-
 
 .contacts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
+  &__fig {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    width: 3rem;
+    //background-color: #33a4c9;
+    //border-radius: 50%;
+    margin: 0px 0.5em;
 
-    &__fig {
+    &__icon {
+      fill: #333;
+    }
+  }
 
-        display: flex;
-        justify-content: center;
-        height: 3rem;
-        width: 3rem;
-        //background-color: #33a4c9;
-        //border-radius: 50%;
-        margin: 0px .5em;
+  &__text {
+    justify-self: start;
+    font-size: 1.7rem;
+    line-height: 2rem;
+    padding-left: 1rem;
+    font-weight: 500;
+    //align-self: center;
+    //flex-grow: 1;
+    //text-align: center;
+    //border-bottom: 1px solid #333;
 
-        &__icon {
-            fill: #333;
-        }
+    @include ResponsiveDesktopFirst(phone) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__link {
+    &:link {
+      color: #333;
+      text-decoration: none;
     }
 
-    &__text {
-
-        justify-self: start;
-        font-size: 1.7rem;
-        line-height: 2rem;
-        padding-left: 1rem;
-        font-weight: 500; 
-        //align-self: center;
-        //flex-grow: 1;
-        //text-align: center;
-        //border-bottom: 1px solid #333;
-
-        @include ResponsiveDesktopFirst(phone) {
-            font-size: 1.5rem;
-        }
+    &:visited {
+      color: #333;
+      text-decoration: none;
     }
 
-    &__link {
-
-        &:link {
-            color: #333;
-            text-decoration: none;
-        }
-
-        &:visited {
-            color: #333;
-            text-decoration: none;
-        }
-
-        &:hover {
-            text-decoration: underline;
-        }
+    &:hover {
+      text-decoration: underline;
     }
+  }
 }
 
-.addAt::after{
-    content: 'at';
-    margin: 0 .5rem;
+.addAt::after {
+  content: "at";
+  margin: 0 0.5rem;
 }

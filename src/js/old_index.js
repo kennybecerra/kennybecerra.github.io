@@ -4,11 +4,15 @@ import style from "../scss/main.scss";
 import pdf from "../assets/documents/Kenny_Becerra_Resume.pdf";
 import icon from "../assets/images/favicon.ico";
 import SmoothScroll from "smooth-scroll";
-import TweenMax from "TweenMax";
-import TimelineMax from "TimelineMax";
-import ScrollMagic from "ScrollMagic";
-import "animation.gsap";
-import "debug.addIndicators";
+import ScrollReveal from "scrollreveal";
+//import img from "../images/wow.jpg";
+//import {myFunc} from "./test.js";
+
+// Functions meant to include the assets files if they can not be included via the css or html
+//function requireAll(r) { r.keys().forEach(r); }
+//requireAll(require.context('../assets/SVG/', true, /\.svg$/));
+//requireAll(require.context('../assets/images/', true,  /\.(png|jpeg|jpg)$/));
+//requireAll(require.context('../assets/videos/', true,  /\.(mp4|webm|mov)$/));
 
 // THIS DEFINES A NATIVE DOM IS READY FUNCTION TO USE SIMILAR TO $(document).ready FROM JQUERY
 var domIsReady = (function(domIsReady) {
@@ -105,40 +109,148 @@ var domIsReady = (function(domIsReady) {
   }
 })(window);
 
+//  ADDED FOR POLYFILL FOR EVENT LISTENERS EventListener | @jon_neal | //github.com/jonathantneal/EventListener
+!window.addEventListener &&
+  window.Element &&
+  (function() {
+    function addToPrototype(name, method) {
+      Window.prototype[name] = HTMLDocument.prototype[name] = Element.prototype[
+        name
+      ] = method;
+    }
+
+    var registry = [];
+
+    addToPrototype("addEventListener", function(type, listener) {
+      var target = this;
+
+      registry.unshift({
+        __listener: function(event) {
+          event.currentTarget = target;
+          event.pageX = event.clientX + document.documentElement.scrollLeft;
+          event.pageY = event.clientY + document.documentElement.scrollTop;
+          event.preventDefault = function() {
+            event.returnValue = false;
+          };
+          event.relatedTarget = event.fromElement || null;
+          event.stopPropagation = function() {
+            event.cancelBubble = true;
+          };
+          event.relatedTarget = event.fromElement || null;
+          event.target = event.srcElement || target;
+          event.timeStamp = +new Date();
+
+          listener.call(target, event);
+        },
+        listener: listener,
+        target: target,
+        type: type
+      });
+
+      this.attachEvent("on" + type, registry[0].__listener);
+    });
+
+    addToPrototype("removeEventListener", function(type, listener) {
+      for (var index = 0, length = registry.length; index < length; ++index) {
+        if (
+          registry[index].target == this &&
+          registry[index].type == type &&
+          registry[index].listener == listener
+        ) {
+          return this.detachEvent(
+            "on" + type,
+            registry.splice(index, 1)[0].__listener
+          );
+        }
+      }
+    });
+
+    addToPrototype("dispatchEvent", function(eventObject) {
+      try {
+        return this.fireEvent("on" + eventObject.type, eventObject);
+      } catch (error) {
+        for (var index = 0, length = registry.length; index < length; ++index) {
+          if (
+            registry[index].target == this &&
+            registry[index].type == eventObject.type
+          ) {
+            registry[index].call(this, eventObject);
+          }
+        }
+      }
+    });
+  })();
+
+//MOBILE NAVIGATION FUNCTION
+(function() {
+  var button = document.getElementById("cn-button"),
+    wrapper = document.getElementById("cn-wrapper");
+
+  //open and close menu when the button is clicked
+  var open = false;
+  button.addEventListener("click", handler, false);
+
+  function handler() {
+    if (!open) {
+      this.innerHTML = "X";
+      classie.add(wrapper, "opened-nav");
+    } else {
+      this.innerHTML = "Nav";
+      classie.remove(wrapper, "opened-nav");
+    }
+    open = !open;
+  }
+  function closeWrapper() {
+    classie.remove(wrapper, "opened-nav");
+  }
+})();
+
 (function(domIsReady) {
   domIsReady(function() {
-    let tl = new TimelineMax(); // animation for desktop Nav
-    let tl2 = new TimelineMax(); // Animation for movbile Nav
-
-    const controller = new ScrollMagic.Controller();
-
-    tl.to(".nav", 0.2, { opacity: 1, display: "block" }, "Navi");
-
-    tl2.from(
-      ".cn-button",
-      0.5,
-      { opacity: 0, display: "none", y: "200" },
-      "Navi"
-    );
-
-    const scene = new ScrollMagic.Scene({
-      triggerElement: "#headerfigure",
-      triggerHook: "onLeave"
-    })
-      .setTween(tl)
-      .addTo(controller);
-
-    const scene2 = new ScrollMagic.Scene({
-      triggerElement: "#skills",
-      triggerHook: 0.5
-    })
-      .setTween(tl2)
-      .addTo(controller);
+    myLib.addAnimation({
+      className: "fadeInOnThreshold",
+      animation: "appear",
+      check: "threshold",
+      options: {
+        marker: "100vh",
+        offset: -110
+      }
+    });
 
     // Typing animation functionality with Promises
 
-    $(".option-main")
-      .typingAnimation4("write", "Hello", 18, 1000, 2000, false)
+    $(".option-1")
+      .typingAnimation4("write", "Skills", 12, 2000, 100, true)
+      .then(function() {
+        return $(".option-2").typingAnimation4(
+          "write",
+          "Resume",
+          12,
+          0,
+          100,
+          true
+        );
+      })
+      .then(function() {
+        return $(".option-3").typingAnimation4(
+          "write",
+          "Projects",
+          12,
+          0,
+          1000,
+          true
+        );
+      })
+      .then(function() {
+        return $(".option-main").typingAnimation4(
+          "write",
+          "Hello",
+          18,
+          1000,
+          2000,
+          false
+        );
+      })
       .then(function() {
         return $(".option-main").typingAnimation4(
           "write",
@@ -218,46 +330,69 @@ var domIsReady = (function(domIsReady) {
           3000,
           false
         );
-      })
-      .then(function() {
-        document.getElementById("headerfigure").classList.add("anim-movein");
       });
+
+    /*
+        document.querySelector(".option-1").addEventListener("click", function() {
+          myLib.scrollIt(
+            document.getElementById("skills"),
+            1200,
+            "easeInOutQuint",
+            "-10%"
+          );
+        });
+    
+        document.querySelector(".option-2").addEventListener("click", function() {
+          myLib.scrollIt(
+            document.getElementById("resume"),
+            1200,
+            "easeInOutQuint",
+            "-10%"
+          );
+        });
+    
+        document.querySelector(".option-3").addEventListener("click", function() {
+          myLib.scrollIt(
+            document.getElementById("projects"),
+            1200,
+            "easeInOutQuint",
+            "-10%"
+          );
+        });
+    
+        document.querySelector(".option-4").addEventListener("click", function() {
+          myLib.scrollIt(
+            document.getElementById("skills"),
+            1200,
+            "easeInOutQuint",
+            "-10%"
+          );
+        });
+    
+        document.querySelector(".option-5").addEventListener("click", function() {
+          myLib.scrollIt(
+            document.getElementById("resume"),
+            1200,
+            "easeInOutQuint",
+            "-10%"
+          );
+        });
+    
+        document.querySelector(".option-6").addEventListener("click", function() {
+          myLib.scrollIt(
+            document.getElementById("projects"),
+            1200,
+            "easeInOutQuint",
+            "-10%"
+          );
+        });
+    
+        */
+    window.addEventListener("scroll", myLib.enableAnimations);
 
     // navigation Scrolling
 
     var scroll = new SmoothScroll();
-
-    document
-      .getElementById("headerfigure")
-      .addEventListener("click", function(e) {
-        e.preventDefault();
-
-        scroll.animateScroll(
-          document.getElementById("skills"),
-          document.getElementById("headerfigure"),
-          {
-            speed: 1200,
-            speedAsDuration: false,
-            offset: function(a, b) {
-              const w = Math.max(
-                document.documentElement.clientWidth,
-                window.innerWidth || 0
-              );
-              const h = Math.max(
-                document.documentElement.clientHeight,
-                window.innerHeight || 0
-              );
-
-              //console.log(Math.ceil(windowHeight * 0.1));
-
-              if (w >= 900) {
-                return Math.ceil(h * 0.1);
-              }
-              return 0;
-            }
-          }
-        );
-      });
 
     document
       .getElementById("scrollSkills2")
@@ -276,6 +411,7 @@ var domIsReady = (function(domIsReady) {
                 document.documentElement.clientHeight ||
                 document.getElementsByTagName("body")[0].clientHeight;
 
+              console.log(Math.ceil(windowHeight * 0.1));
               return Math.ceil(windowHeight * 0.1);
             }
           }
@@ -299,6 +435,7 @@ var domIsReady = (function(domIsReady) {
                 document.documentElement.clientHeight ||
                 document.getElementsByTagName("body")[0].clientHeight;
 
+              console.log(Math.ceil(windowHeight * 0.1));
               return Math.ceil(windowHeight * 0.1);
             }
           }
@@ -322,6 +459,7 @@ var domIsReady = (function(domIsReady) {
                 document.documentElement.clientHeight ||
                 document.getElementsByTagName("body")[0].clientHeight;
 
+              console.log(Math.ceil(windowHeight * 0.1));
               return Math.ceil(windowHeight * 0.1);
             }
           }
@@ -329,27 +467,6 @@ var domIsReady = (function(domIsReady) {
       });
 
     //Mobile Navigation
-
-    var button = document.getElementById("cn-button"),
-      wrapper = document.getElementById("cn-wrapper");
-
-    //open and close menu when the button is clicked
-    var open = false;
-    button.addEventListener("click", handler, false);
-
-    function handler() {
-      if (!open) {
-        this.innerHTML = "X";
-        classie.add(wrapper, "opened-nav");
-      } else {
-        this.innerHTML = "Nav";
-        classie.remove(wrapper, "opened-nav");
-      }
-      open = !open;
-    }
-    function closeWrapper() {
-      classie.remove(wrapper, "opened-nav");
-    }
 
     document.getElementById("scrollTop").addEventListener("click", function(e) {
       e.preventDefault();
@@ -406,6 +523,341 @@ var domIsReady = (function(domIsReady) {
       });
   });
 })(domIsReady);
+
+var myLib = (function() {
+  var animations = [];
+  var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  var flag = true;
+  var originalDisplay = null;
+  var requestID = null;
+  var fadingAllow = true;
+
+  // Utility function used by animation function callback
+  function addClass(ele, cls) {
+    if (!hasClass(ele, cls)) ele.className += " " + cls;
+  }
+
+  function hasClass(ele, cls) {
+    if (ele instanceof SVGAElement) {
+      console.log("this is an SVG");
+      console.log(ele.getAttribute("class"));
+    }
+    return !!ele.className.match(new RegExp("(\\s|^)" + cls + "(\\s|$)"));
+  }
+
+  function removeClass(ele, cls) {
+    console.log(ele);
+    if (hasClass(ele, cls)) {
+      var reg = new RegExp("(\\s|^)" + cls + "(\\s|$)");
+      ele.className = ele.className.replace(reg, " ");
+    }
+  }
+
+  function fadeIn(el) {
+    if (fadingAllow) {
+      el.style.opacity = 0;
+      el.style.display = "block";
+
+      (function fade() {
+        var val = parseFloat(el.style.opacity) || 0;
+        if (!((val += 0.1) > 1)) {
+          el.style.opacity = val;
+          requestID = requestAnimationFrame(fade);
+        } else {
+          cancelAnimationFrame(requestID);
+        }
+      })();
+    }
+  }
+
+  function fadeOut(el) {
+    if (fadingAllow) {
+      el.style.opacity = 1;
+      //el.style.display = "none";
+      (function fade() {
+        if ((el.style.opacity -= 0.1) == 0) {
+          el.style.display = "none";
+          cancelAnimationFrame(requestID);
+        } else {
+          requestID = requestAnimationFrame(fade);
+        }
+      })();
+    } else {
+      console.log("fading not allowed");
+    }
+  }
+
+  return {
+    smoothScroll: function(targetclass, duration) {
+      var target = document.querySelector(targetclass);
+      var targetPosition = target.getBoundingClientRect().top;
+      var startPosition = window.pageYOffset || window.scrollY;
+      var distance = targetPosition - startPosition;
+      var startTime = null;
+
+      function loop(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        var timeElapsed = currentTime - startTime;
+        var run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(loop);
+      }
+
+      function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return (c / 2) * t * t * t * t + b;
+        t -= 2;
+        return (-c / 2) * (t * t * t * t - 2) + b;
+      }
+
+      requestAnimationFrame(loop);
+    },
+    myTest: function() {
+      console.log("Hellow there");
+    },
+    implementFadeOut: function(ele) {
+      fadeOut(ele);
+    },
+    implementFadeIn: function(ele) {
+      fadeIn(ele);
+    },
+    scrollIt: function(
+      destination,
+      duration = 200,
+      easing = "linear",
+      offset,
+      callback
+    ) {
+      //fadingAllow = false;
+
+      const easings = {
+        linear(t) {
+          return t;
+        },
+        easeInQuad(t) {
+          return t * t;
+        },
+        easeOutQuad(t) {
+          return t * (2 - t);
+        },
+        easeInOutQuad(t) {
+          return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        },
+        easeInCubic(t) {
+          return t * t * t;
+        },
+        easeOutCubic(t) {
+          return --t * t * t + 1;
+        },
+        easeInOutCubic(t) {
+          return t < 0.5
+            ? 4 * t * t * t
+            : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+        },
+        easeInQuart(t) {
+          return t * t * t * t;
+        },
+        easeOutQuart(t) {
+          return 1 - --t * t * t * t;
+        },
+        easeInOutQuart(t) {
+          return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * --t * t * t * t;
+        },
+        easeInQuint(t) {
+          return t * t * t * t * t;
+        },
+        easeOutQuint(t) {
+          return 1 + --t * t * t * t * t;
+        },
+        easeInOutQuint(t) {
+          return t < 0.5
+            ? 16 * t * t * t * t * t
+            : 1 + 16 * --t * t * t * t * t;
+        }
+      };
+
+      const start = window.pageYOffset;
+      const startTime =
+        "now" in window.performance ? performance.now() : new Date().getTime();
+
+      const documentHeight = Math.max(
+        document.body.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.clientHeight,
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetHeight
+      );
+      const windowHeight =
+        window.innerHeight ||
+        document.documentElement.clientHeight ||
+        document.getElementsByTagName("body")[0].clientHeight;
+
+      offset =
+        typeof offset === "number"
+          ? offset
+          : (parseInt(offset) / 100) * windowHeight;
+
+      const destinationOffset =
+        typeof destination === "number"
+          ? destination
+          : destination.offsetTop + offset;
+      const destinationOffsetToScroll = Math.round(
+        documentHeight - destinationOffset < windowHeight
+          ? documentHeight - windowHeight
+          : destinationOffset
+      );
+
+      if ("requestAnimationFrame" in window === false) {
+        window.scroll(0, destinationOffsetToScroll);
+        if (callback) {
+          callback();
+        }
+        return;
+      }
+
+      function scroll() {
+        const now =
+          "now" in window.performance
+            ? performance.now()
+            : new Date().getTime();
+        const time = Math.min(1, (now - startTime) / duration);
+        const timeFunction = easings[easing](time);
+        window.scroll(
+          0,
+          Math.ceil(timeFunction * (destinationOffsetToScroll - start) + start)
+        );
+
+        if (window.pageYOffset === destinationOffsetToScroll) {
+          //fadingAllow = true;
+          if (callback) {
+            callback();
+          }
+          return;
+        }
+        requestAnimationFrame(scroll);
+      }
+
+      scroll();
+    },
+    addAnimation: function(object) {
+      animations.push(object);
+    },
+    getAnimations: function() {
+      return [...animations];
+    },
+    enableAnimations: function() {
+      for (var itr = 0; itr < animations.length; itr++) {
+        if (animations[itr].check === "inView") {
+          //var elements = document.getElementsByClassName('myonscroll1');
+          var elements = document.getElementsByClassName(
+            animations[itr].className
+          );
+
+          //iterate throughout the collection
+          for (var i = 0; i < elements.length; i++) {
+            //find if the item is inside the viewport and what percetage is inside
+            var rect = elements[i].getBoundingClientRect();
+            var percentageShown;
+
+            if (rect.bottom <= 0 || rect.top >= window.innerHeight) {
+              percentageShown = 0;
+            } else if (
+              rect.top < 0 &&
+              rect.bottom > 0 &&
+              rect.bottom <= window.innerHeight
+            ) {
+              percentageShown = rect.bottom / rect.height;
+            } else if (
+              rect.top < 0 &&
+              rect.bottom > 0 &&
+              rect.bottom > window.innerHeight
+            ) {
+              percentageShown = window.innerHeight / rect.height;
+            } else if (
+              rect.top >= 0 &&
+              rect.bottom > 0 &&
+              rect.bottom <= window.innerHeight
+            ) {
+              percentageShown = 100;
+            } else if (
+              rect.top >= 0 &&
+              rect.bottom > 0 &&
+              rect.bottom > window.innerHeight
+            ) {
+              percentageShown = (window.innerHeight - rect.top) / rect.height;
+            } else {
+              console.log("the item didnt register - start");
+              console.log("top: " + rect.top + ",  bottom: " + rect.bottom);
+              console.log("the item didnt register - end");
+            }
+
+            //console.log('the percentage shown is ' + percentageShown.toFixed(2) + ' %');
+            //console.log(elements[i]);
+
+            if (percentageShown >= animations[itr].options.percentage) {
+              //console.log(hasClass(elements[i], 'myonscroll1'));
+              //addClass(elements[i], 'animate-footer-text')
+              //removeClass(elements[i], 'myonscroll1');
+              addClass(elements[i], animations[itr].animation);
+              //removeClass(elements[i], AnimateElements[itr]);
+            }
+          }
+        } else if (animations[itr].check === "threshold") {
+          var current =
+            window.pageYOffset || document.documentElement.scrollTop;
+
+          var threshold =
+            typeof animations[itr].options.marker === "number"
+              ? animations[itr].options.marker
+              : window.innerHeight;
+          var offset = animations[itr].options.offset || 0;
+
+          // Element has gone over the threshold
+          if (current > threshold + offset) {
+            // element has gone below theshold while scrolling down
+            if (current > lastScrollTop) {
+              if (flag) {
+                var elements = document.getElementsByClassName(
+                  animations[itr].className
+                );
+                //iterate throughout the collection
+                for (var i = 0; i < elements.length; i++) {
+                  fadeIn(elements[i]);
+                }
+                flag = !flag;
+              }
+            }
+            // element has gone below theshold while scrolling up
+            else {
+            }
+          }
+          // element is below threshold
+          else {
+            // element has gone below theshold while scrolling up
+            if (current < lastScrollTop) {
+              if (!flag) {
+                var elements = document.getElementsByClassName(
+                  animations[itr].className
+                );
+
+                //iterate throughout the collection
+                for (var i = 0; i < elements.length; i++) {
+                  fadeOut(elements[i]);
+                }
+                flag = !flag;
+              }
+            }
+            // element has gone below theshold while scrolling down
+            else {
+            }
+          }
+        }
+      }
+
+      lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    }
+  };
+})();
 
 /***
  * Jquery like function that takes a single ID or class
@@ -641,13 +1093,13 @@ function $(qualifier) {
                     callback();
                   }
                   /*
-                                    if (!callback) {
-                                        removeClass(element, blinkClass);
-                                    }
-                                    else {
-                                        callback();
-                                    }
-                                    */
+                                                      if (!callback) {
+                                                          removeClass(element, blinkClass);
+                                                      }
+                                                      else {
+                                                          callback();
+                                                      }
+                                                      */
                   //element.style.borderRight =  "2px solid transparent";
                 }, postDelay);
               }
@@ -722,13 +1174,13 @@ function $(qualifier) {
                     }
                     resolve();
                     /*
-                                        if (!callback) {
-                                            removeClass(element, blinkClass);
-                                        }
-                                        else {
-                                            callback();
-                                        }
-                                        */
+                                                            if (!callback) {
+                                                                removeClass(element, blinkClass);
+                                                            }
+                                                            else {
+                                                                callback();
+                                                            }
+                                                            */
                     //element.style.borderRight =  "2px solid transparent";
                   }, postDelay);
                 }
@@ -753,3 +1205,8 @@ function $(qualifier) {
     console.log("Error Occured");
   }
 }
+
+/**
+ * My Attempt are a function constructor that will be a utility
+ * class with all comon functionality for navigation and classes
+ */

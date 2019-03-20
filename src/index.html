@@ -14,22 +14,40 @@
     <main>
         <nav class="nav fadeInOnThreshold">
             <div class="nav__inner">
-                <p class="nav__inner--item blinking-2 option-4">Skills</p>
-                <p class="nav__inner--item blinking-2 option-5">Resume</p>
-                <p class="nav__inner--item blinking-2 option-6">Projects</p>
+                <p id="scrollSkills2" class="nav__inner--item blinking-2 option-4">Skills</p>
+                <p id="scrollResume2" class="nav__inner--item blinking-2 option-5">Resume</p>
+                <p id="scrollProjects2" class="nav__inner--item blinking-2 option-6">Projects</p>
             </div>
         </nav>
 
-        
+        <button class="cn-button" id="cn-button">NAV</button>
+        <div class="cn-wrapper" id="cn-wrapper">
+            <ul>
+                <li><a href="#" id="scrollProjects"><span class="icon-picture">Projects</span></a></li>
+                <li><a href="#" id="scrollResume"><span class="icon-picture">Resume</span></a></li>
+                <li><a href="#" id="scrollSkills"><span class="icon-picture">Skills</span></a></li>
+                <li><a href="#" id="scrollTop"><span class="icon-picture">Top</span></a></li>
+            </ul>
+        </div>
+    
+
         <header class="header">
             <div class="header__nav">
-                <p class="header__nav--item option-1"></p>
-                <p class="header__nav--item option-2"></p>
-                <p class="header__nav--item option-3"></p>
+                <p class="header__nav--item option-1" id="option-1"></p>
+                <p class="header__nav--item option-2" id="option-2"></p>
+                <p class="header__nav--item option-3" id="option-3"></p>
             </div>
             <div class="header__body">
-                <p class="header__body--item option-main"></p>
-                <p class="header__body--item option-main2"></p>
+                <p class="header__body--item option-main" id="option-main1"></p>
+                <p class="header__body--item option-main2" id="option-main2"></p>
+            </div>
+            <div class="header__bottom">
+                <figure class="header__bottom__fig" id="headerfigure">
+                    <svg class="header__bottom__fig--icon">
+                        <use href="./assets/SVG/symbol-defs.svg#icon-circle-down" xlink:href="./assets/SVG/symbol-defs.svg#icon-circle-dowm">
+                        </use>
+                    </svg>
+                </figure>
             </div>
         </header>
         <section class="skills" id="skills">
@@ -58,12 +76,20 @@
                     <h3 class="card__header">sass</h3>
                 </div>
                 <div class="card">
-                    <img class="card__image--large" src="./assets/images/webpack.png" alt="Webpack Logo">
+                    <img class="card__image" src="./assets/images/git.png" alt="Sass Logo">
+                    <h3 class="card__header">git</h3>
+                </div>
+                <div class="card">
+                    <img class="card__image--large" src="./assets/images/webpack4.png" alt="Webpack Logo">
                     <h3 class="card__header">webpack</h3>
                 </div>
                 <div class="card">
                     <img class="card__image--large" src="./assets/images/babel.png" alt="Babel Logo">
                     <h3 class="card__header">babel</h3>
+                </div>
+                <div class="card">
+                    <img class="card__image" src="./assets/images/react.png" alt="Sass Logo">
+                    <h3 class="card__header">React</h3>
                 </div>
             </div>
         </section>
@@ -168,14 +194,6 @@
                                                             <use href="./assets/SVG/symbol-defs.svg#icon-checkmark" xlink:href="./assets/SVG/symbol-defs.svg#icon-checkmark"></use>
                                                         </svg>
                                                     </figure>
-                                                    <p class="list__text">Responsive Design</p>
-                                                </div>
-                                                <div class="list">
-                                                    <figure class="list__fig">
-                                                        <svg class="list__fig--icon">
-                                                            <use href="./assets/SVG/symbol-defs.svg#icon-checkmark" xlink:href="./assets/SVG/symbol-defs.svg#icon-checkmark"></use>
-                                                        </svg>
-                                                    </figure>
                                                     <p class="list__text">Bootstrap</p>
                                                 </div>
                                             </div>
@@ -194,31 +212,7 @@
                                                             <use href="./assets/SVG/symbol-defs.svg#icon-checkmark" xlink:href="./assets/SVG/symbol-defs.svg#icon-checkmark"></use>
                                                         </svg>
                                                     </figure>
-                                                    <p class="list__text">ES5</p>
-                                                </div>
-                                                <div class="list">
-                                                    <figure class="list__fig">
-                                                        <svg class="list__fig--icon">
-                                                            <use href="./assets/SVG/symbol-defs.svg#icon-checkmark" xlink:href="./assets/SVG/symbol-defs.svg#icon-checkmark"></use>
-                                                        </svg>
-                                                    </figure>
-                                                    <p class="list__text">ES6</p>
-                                                </div>
-                                                <div class="list">
-                                                    <figure class="list__fig">
-                                                        <svg class="list__fig--icon">
-                                                            <use href="./assets/SVG/symbol-defs.svg#icon-checkmark" xlink:href="./assets/SVG/symbol-defs.svg#icon-checkmark"></use>
-                                                        </svg>
-                                                    </figure>
-                                                    <p class="list__text">ES7</p>
-                                                </div>
-                                                <div class="list">
-                                                    <figure class="list__fig">
-                                                        <svg class="list__fig--icon">
-                                                            <use href="./assets/SVG/symbol-defs.svg#icon-checkmark" xlink:href="./assets/SVG/symbol-defs.svg#icon-checkmark"></use>
-                                                        </svg>
-                                                    </figure>
-                                                    <p class="list__text">AJAX</p>
+                                                    <p class="list__text">ES5/ES6</p>
                                                 </div>
                                                 <div class="list">
                                                     <figure class="list__fig">
@@ -227,6 +221,15 @@
                                                         </svg>
                                                     </figure>
                                                     <p class="list__text">Jquery</p>
+                                                </div>
+                                                <div class="list">
+                                                    <figure class="list__fig">
+                                                        <svg class="list__fig--icon">
+                                                            <use href="./assets/SVG/symbol-defs.svg#icon-checkmark"
+                                                                xlink:href="./assets/SVG/symbol-defs.svg#icon-checkmark"></use>
+                                                        </svg>
+                                                    </figure>
+                                                    <p class="list__text">React</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -304,20 +307,20 @@
                                 </div>
                                 <div class="resSubBody">
                                     <div class="resSubBody__item">
-                                        <h4 class="resSubBody__text--1"><span class="resSubBody__text--2 addAt">Programmer/ IT CyberSecurity Analyst</span>Pacific Gas & Electric</h4>
+                                        <h4 class="resSubBody__text--1"><span class="resSubBody__text--2 addAt">Programmer/ IT Analyst</span>Pacific Gas & Electric</h4>
                                         <p class="resSubBody__text--3">San Francisco, CA</p>
                                         <p class="resSubBody__text--3">January 2017 - Present</p>
-                                        <p class="resSubBody__text--5"> Developed and maintained Third-Party Security Team SharePoint(SP) database and UI applications</p>
-                                        <p class="resSubBody__text--5"> Developed SP Sites/Pages using Vanilla JS, Jquery and D3.js in order access/modify SP backend via REST Calls</p>
-                                        <p class="resSubBody__text--5"> Utilized SQL, VBA scripts, and Javascript to enhance current system tools reporting, and metrics </p>
-                                        <p class="resSubBody__text--5"> Managed team repositories/tools in MS Access, SharePoint, and MetricStream.</p>
+                                        <p class="resSubBody__text--5"> Developed and maintained Third-Party Security(TSR) team database and UI applications</p>
+                                        <p class="resSubBody__text--5"> Developed SPAs in Sharepoint using ES5/ES6 JS, Jquery, D3.js and chart.js in order access/modify backend via REST Calls</p>
+                                        <p class="resSubBody__text--5"> Automated current system tools for awareness campaigns, leadership metrics and reporting</p>
+                                        <p class="resSubBody__text--5"> Developed UI for cross team collaboration and data access to TSR backend.</p>
                                     </div>
                                     <div class="resSubBody__item">
                                         <h4 class="resSubBody__text--1"><span class="resSubBody__text--2 addAt">Programmer/ IT Analyst</span>Pacific Gas & Electric</h4>
                                         <p class="resSubBody__text--3">San Francisco, CA</p>
                                         <p class="resSubBody__text--3">August 2015 - December 2016</p>
                                         <p class="resSubBody__text--5">Developed scripting solutions for Energy Procurement Support team Ad-hoc requests.</p>
-                                        <p class="resSubBody__text--5">Developed UI functionality for Energy Procurement System tools using SQL, and VBA.</p>
+                                        <p class="resSubBody__text--5">Developed UI functionality for Energy Procurement System tools using SQL, and VBA and JS.</p>
                                         <p class="resSubBody__text--5">Automated administrative tasks and workflows using VBA, javascript and SharePoint Rest API</p>
                                     </div>
                                     <div class="resSubBody__item">
@@ -413,29 +416,29 @@
 				</div>
 				<div class="projects__container__website">
 					<figure class="projects__container__figure">
-						<img class="projects__container__figure--image" src="./assets/images/BudgetApp.png" alt="Budget APP screenshot">
-						<div class="projects__container__figure__caption">
-							<h2 class="projects__container__figure__caption--heading1">BudgetAppController</h2>
-							<div class="projects__container__figure__caption--box">
-								<h3 class="projects__container__figure__caption--heading2">Libraries</h3>
-								<p class="projects__container__figure__caption--item">Vanila JS, ES5</p>
-								<p class="projects__container__figure__caption--item"></p>
-							</div>
-	
-							<div class="projects__container__figure__caption--box">
-								<h3 class="projects__container__figure__caption--heading2">Tools</h3>
-								<p class="projects__container__figure__caption--item">NPM, Sass preprocesor </p>
-								<p class="projects__container__figure__caption--item">VScode, Git</p>
-							</div>
-	
-							<div class="projects__container__figure__caption--box">
-								<h3 class="projects__container__figure__caption--heading2">Concepts</h3>
-								<p class="projects__container__figure__caption--item">Responsive design</p>
-                                <p class="projects__container__figure__caption--item">Mobile First design</p>
-                                <p class="projects__container__figure__caption--item">BEM style</p>
-							</div>
-							
-						</div>
+                        <img class="projects__container__figure--image" src="./assets/images/BudgetApp.png" alt="Budget APP screenshot">
+                        <a href="https://kennybecerra.github.io/BudgetApp/" target="_blank">
+                            <div class="projects__container__figure__caption">
+                                <h2 class="projects__container__figure__caption--heading1">BudgetAppController</h2>
+                                <div class="projects__container__figure__caption--box">
+                                    <h3 class="projects__container__figure__caption--heading2">Libraries</h3>
+                                    <p class="projects__container__figure__caption--item">Vanila JS, ES5</p>
+                                    <p class="projects__container__figure__caption--item"></p>
+                                </div>
+                                <div class="projects__container__figure__caption--box">
+                                    <h3 class="projects__container__figure__caption--heading2">Tools</h3>
+                                    <p class="projects__container__figure__caption--item">NPM, Sass preprocesor </p>
+                                    <p class="projects__container__figure__caption--item">VScode, Git</p>
+                                </div>
+                                <div class="projects__container__figure__caption--box">
+                                    <h3 class="projects__container__figure__caption--heading2">Concepts</h3>
+                                    <p class="projects__container__figure__caption--item">Responsive design</p>
+                                    <p class="projects__container__figure__caption--item">Mobile First design</p>
+                                    <p class="projects__container__figure__caption--item">BEM style</p>
+                                </div>
+                            </div>
+                        </a>
+						
 					</figure>
 				</div>
 				
@@ -451,33 +454,34 @@
                         <!--
                         <img class="projects__container__figure--image" src="./assets/images/Coding-2_Medium.jpg" alt="Project not available yet">
                         -->
-						<figcaption class="projects__container__figure__caption">
-							<h2 class="projects__container__figure__caption--heading1">Food App</h2>
-							<div class="projects__container__figure__caption--box">
-								<h3 class="projects__container__figure__caption--heading2">Libraries</h3>
-								<p class="projects__container__figure__caption--item">ES5/ES6 javascript</p>
-							</div>
+                        <a href="https://kennybecerra.github.io/FoodApp/" target="_blank">
+                        <figcaption class="projects__container__figure__caption">
+                            <h2 class="projects__container__figure__caption--heading1">Food App</h2>
+                            <div class="projects__container__figure__caption--box">
+                                <h3 class="projects__container__figure__caption--heading2">Libraries</h3>
+                                <p class="projects__container__figure__caption--item">ES5/ES6 javascript</p>
+                            </div>
                             <!--
-							<div class="projects__container__figure__caption--box">
-								<h3 class="projects__container__figure__caption--heading2">Frameworks</h3>
-								<p class="projects__container__figure__caption--item">item 1</p>
-								<p class="projects__container__figure__caption--item">item 2</p>
-							</div>
+                            <div class="projects__container__figure__caption--box">
+                                <h3 class="projects__container__figure__caption--heading2">Frameworks</h3>
+                                <p class="projects__container__figure__caption--item">item 1</p>
+                                <p class="projects__container__figure__caption--item">item 2</p>
+                            </div>
                             -->
-							<div class="projects__container__figure__caption--box">
-								<h3 class="projects__container__figure__caption--heading2">Tools</h3>
-								<p class="projects__container__figure__caption--item">NPM, Sass Preprocesor, Auoprefixer </p>
-								<p class="projects__container__figure__caption--item">Webpack, Babel, VScode, Git</p>
-							</div>
-	
-							<div class="projects__container__figure__caption--box">
-								<h3 class="projects__container__figure__caption--heading2">Concepts</h3>
-								<p class="projects__container__figure__caption--item">Responsive design</p>
+                            <div class="projects__container__figure__caption--box">
+                                <h3 class="projects__container__figure__caption--heading2">Tools</h3>
+                                <p class="projects__container__figure__caption--item">NPM, Sass Preprocesor, Auoprefixer </p>
+                                <p class="projects__container__figure__caption--item">Webpack, Babel, VScode, Git</p>
+                            </div>
+                            <div class="projects__container__figure__caption--box">
+                                <h3 class="projects__container__figure__caption--heading2">Concepts</h3>
+                                <p class="projects__container__figure__caption--item">Responsive design</p>
                                 <p class="projects__container__figure__caption--item">Mobile First design</p>
                                 <p class="projects__container__figure__caption--item">BEM style</p>
-							</div>
-							
-						</figcaption>
+                            </div>
+                        </figcaption>
+                    </a>
+						
 					</figure>
 				</div>
 				
@@ -493,36 +497,35 @@
                         <!--
                         <img class="projects__container__figure--image" src="./assets/images/Coding-2_Medium.jpg" alt="Project not available yet">
                         -->
-						<figcaption class="projects__container__figure__caption">
-							<h2 class="projects__container__figure__caption--heading1">Camping App</h2>
-							<div class="projects__container__figure__caption--box">
-								<h3 class="projects__container__figure__caption--heading2">Libraries</h3>
-								<p class="projects__container__figure__caption--item">ES5/ES6 javascript</p>
-							</div>
-    
-                            <!--
-							<div class="projects__container__figure__caption--box">
-								<h3 
-								class="projects__container__figure__caption--heading2">Frameworks</h3>
-								<p class="projects__container__figure__caption--item">item 1</p>
-								<p class="projects__container__figure__caption--item">item 2</p>
+                        <a href="https://kennybecerra.github.io/CampingApp/" target="_blank">
+                        <figcaption class="projects__container__figure__caption">
+                            <h2 class="projects__container__figure__caption--heading1">Camping App</h2>
+                            <div class="projects__container__figure__caption--box">
+                                <h3 class="projects__container__figure__caption--heading2">Libraries</h3>
+                                <p class="projects__container__figure__caption--item">ES5/ES6 javascript</p>
                             </div>
-                        -->
-	
-							<div class="projects__container__figure__caption--box">
-								<h3 class="projects__container__figure__caption--heading2">Tools</h3>
-								<p class="projects__container__figure__caption--item">NPM, Sass Preprocesor, Auoprefixer </p>
-								<p class="projects__container__figure__caption--item">Webpack, Babel, VScode, Git</p>
-							</div>
-	
-							<div class="projects__container__figure__caption--box">
-								<h3 class="projects__container__figure__caption--heading2">Concepts</h3>
+                            <!--
+                                <div class="projects__container__figure__caption--box">
+                                    <h3 
+                                    class="projects__container__figure__caption--heading2">Frameworks</h3>
+                                    <p class="projects__container__figure__caption--item">item 1</p>
+                                    <p class="projects__container__figure__caption--item">item 2</p>
+                                </div>
+                            -->
+                            <div class="projects__container__figure__caption--box">
+                                <h3 class="projects__container__figure__caption--heading2">Tools</h3>
+                                <p class="projects__container__figure__caption--item">NPM, Sass Preprocesor, Auoprefixer </p>
+                                <p class="projects__container__figure__caption--item">Webpack, Babel, VScode, Git</p>
+                            </div>
+                            <div class="projects__container__figure__caption--box">
+                                <h3 class="projects__container__figure__caption--heading2">Concepts</h3>
                                 <p class="projects__container__figure__caption--item">Responsive design</p>
                                 <p class="projects__container__figure__caption--item">Mobile First design</p>
                                 <p class="projects__container__figure__caption--item">BEM style</p>
-							</div>
-							
-						</figcaption>
+                            </div>
+                        </figcaption>
+                        </a>
+						
 					</figure>
 				</div>
 				
@@ -534,36 +537,39 @@
 				</div>
 				<div class="projects__container__website">
 					<figure class="projects__container__figure">
-						<img class="projects__container__figure--image" src="./assets/images/TSR-UI.png" alt="Project not available yet">
-						<figcaption class="projects__container__figure__caption">
-							<h2 class="projects__container__figure__caption--heading1">TSR-UI</h2>
-							<div class="projects__container__figure__caption--box">
-								<h3 class="projects__container__figure__caption--heading2">Libraries</h3>
-								<p class="projects__container__figure__caption--item">Vanilla JS</p>
-                                <p class="projects__container__figure__caption--item">D3.js</p>
-                                <p class="projects__container__figure__caption--item">JQUERY</p>
-                                <p class="projects__container__figure__caption--item">Semantic UI</p>
-                                <p class="projects__container__figure__caption--item">Skeleton CSS</p>
-                            </div>
-                            <!--
-							<div class="projects__container__figure__caption--box">
-								<h3 class="projects__container__figure__caption--heading2">Frameworks</h3>
-								<p class="projects__container__figure__caption--item">item 1</p>
-								<p class="projects__container__figure__caption--item">item 2</p>
-							</div>
-                            -->
-							<div class="projects__container__figure__caption--box">
-								<h3 class="projects__container__figure__caption--heading2">Tools</h3>
-								<p class="projects__container__figure__caption--item">NPM, Sass Preprocesor, Auoprefixer </p>
-								<p class="projects__container__figure__caption--item">Webpack, VScode, Git</p>
-							</div>
-	
-							<div class="projects__container__figure__caption--box">
-								<h3 class="projects__container__figure__caption--heading2">Concepts</h3>
-								<p class="projects__container__figure__caption--item">MVC Design Pattern</p>
-							</div>
-							
-						</figcaption>
+                        <img class="projects__container__figure--image" src="./assets/images/TSR-UI.png" alt="Project not available yet">
+                        <a href="https://kennybecerra.github.io/WorkApp/">
+
+                            <figcaption class="projects__container__figure__caption">
+                                <h2 class="projects__container__figure__caption--heading1">WorkApp</h2>
+                                <div class="projects__container__figure__caption--box">
+                                    <h3 class="projects__container__figure__caption--heading2">Libraries</h3>
+                                    <p class="projects__container__figure__caption--item">Vanilla JS</p>
+                                    <p class="projects__container__figure__caption--item">D3.js</p>
+                                    <p class="projects__container__figure__caption--item">JQUERY</p>
+                                    <p class="projects__container__figure__caption--item">Semantic UI</p>
+                                    <p class="projects__container__figure__caption--item">Skeleton CSS</p>
+                                </div>
+                                <!--
+                                <div class="projects__container__figure__caption--box">
+                                    <h3 class="projects__container__figure__caption--heading2">Frameworks</h3>
+                                    <p class="projects__container__figure__caption--item">item 1</p>
+                                    <p class="projects__container__figure__caption--item">item 2</p>
+                                </div>
+                                -->
+                                <div class="projects__container__figure__caption--box">
+                                    <h3 class="projects__container__figure__caption--heading2">Tools</h3>
+                                    <p class="projects__container__figure__caption--item">NPM, Sass Preprocesor, Auoprefixer </p>
+                                    <p class="projects__container__figure__caption--item">Webpack, VScode, Git</p>
+                                </div>
+                                <div class="projects__container__figure__caption--box">
+                                    <h3 class="projects__container__figure__caption--heading2">Concepts</h3>
+                                    <p class="projects__container__figure__caption--item">MVC Design Pattern</p>
+                                </div>
+                            </figcaption>
+
+                        </a>
+						
 					</figure>
 				</div>
 				

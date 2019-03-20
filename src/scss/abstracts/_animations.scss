@@ -1,56 +1,60 @@
 .anim-typewriter {
-    animation: typewriter 4s steps(40) 1s 1 normal both,
+  animation: typewriter 4s steps(40) 1s 1 normal both,
     blinkTextCursor 500ms steps(40) infinite normal;
 }
 
+.anim-movein {
+  animation: moveInButton 1s ease 0s 1 normal both;
+  //moveUpDown 1s ease-in-out 1s infinite normal;
+}
+
 .blinking {
-      animation: blinkTextCursor 500ms steps(40) infinite normal;
+  animation: blinkTextCursor 500ms steps(40) infinite normal;
 }
 
 .blinking-2 {
-
-      &::after {
-            content: "_";
-            animation: blinkTextCursor_2 1000ms steps(40) infinite normal;
-      }
+  &::after {
+    content: "_";
+    animation: blinkTextCursor_2 1000ms steps(40) infinite normal;
+  }
 }
 
-
 @keyframes typewriter {
-    from {
-          width: 0;
-    }
-    to {
-          width: 16em;
-    }
+  from {
+    width: 0;
+  }
+  to {
+    width: 16em;
+  }
 }
 
 @keyframes blinkTextCursor {
-    from {
-          border-right-color: rgba(255, 255, 255, 0.75);
-    }
-    to {
-          border-right-color: transparent;
-    }
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
 }
 
 @keyframes blinkTextCursor_2 {
-      from {
-            opacity: 1
-      }
-      to {
-            opacity: 0;
-      }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(15rem);
   }
 
-  @keyframes moveInButton {
-      0% {
-        opacity: 0;
-        transform: translateY(10rem);
-      }
-    
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
