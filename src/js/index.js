@@ -339,14 +339,15 @@ var domIsReady = (function(domIsReady) {
 
     function handler() {
       if (!open) {
-        this.innerHTML = "X";
+        button.innerHTML = "X";
         classie.add(wrapper, "opened-nav");
       } else {
-        this.innerHTML = "Nav";
+        button.innerHTML = "Nav";
         classie.remove(wrapper, "opened-nav");
       }
       open = !open;
     }
+
     function closeWrapper() {
       classie.remove(wrapper, "opened-nav");
     }
@@ -355,6 +356,7 @@ var domIsReady = (function(domIsReady) {
       e.preventDefault();
 
       scroll.animateScroll(0);
+      handler();
     });
 
     document
