@@ -84,6 +84,7 @@
   }
 
   @include ResponsiveMobileFirst(tab-port) {
+    visibility: hidden;
     z-index: -1;
   }
 }
