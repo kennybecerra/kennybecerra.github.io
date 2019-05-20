@@ -4,30 +4,19 @@
     &:visited {
       text-transform: uppercase;
       text-decoration: none;
-      //padding: 1.2vw 3.5vw;
       border-radius: 10rem;
       display: inline-block;
       transition: all .2s;
       position: relative;
-
-      //font-size: 1.4vw;  
-      //margin-top: 3vw;
       padding: .8em 1.6em;;
       font-size: .8em;
       margin: 0px auto;
   
-      //change for the <button> element
       border: none;
       cursor: pointer;
   
       color: $color-white;
-      /*
-      @include ResponsiveMobileFirst(big-desktop) {
-        padding: 1vw 2.5vw;
-        font-size: 1vw;
-        margin-top: 3vw;
-      }
-      */
+
     }
   
     &:hover {
@@ -47,17 +36,25 @@
       transform: translateY(.1rem);
       box-shadow: 0 .5rem 1rem rgba($color-black,.2);
     }
+
   
-    &--white {
-      background-color: $color-white;
-      color: $color-grey-dark;
+
+     &--white {
+        border: 2px solid $color-grey-light-1!important;
+        background-color: transparent;
+        color: $color-grey-light-1;
+
+        &:hover {
+          border: 2px solid $color-grey-light-1;
+          color: $color-grey-light-1;
+        }
       
       &::after {
-        background-color: $color-white;
+        background-color: transparent;
       }
   
     }
-  
+
     &--green {
       background-color: $color-primary;
       color: $color-white;
