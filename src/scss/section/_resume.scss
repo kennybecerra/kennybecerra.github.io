@@ -403,6 +403,13 @@
       line-height: 2.2rem;
       margin-left: 2rem;
     }
+
+    &--6 {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #333;
+      margin-bottom: 10px;
+    }
   }
 
   &__item {
@@ -449,7 +456,7 @@
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  min-width: 30%;
+  margin-right: 12px;
 
   &__fig {
     display: flex;
