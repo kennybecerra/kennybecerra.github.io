@@ -1,19 +1,19 @@
 .nav {
   position: fixed;
   top: 0px;
-
-  height: 10%;
+  right: 0px;
+  height: 0px;
   width: 100%;
   font-family: inherit;
   padding: 0px;
 
   opacity: 0;
-  z-index: -1;
-  display: none;
+  z-index: -2;
   color: white;
+  overflow: hidden;
 
   @include ResponsiveMobileFirst(tab-port) {
-    z-index: 10;
+    height: 10%;
   }
 
   &__inner {
@@ -42,6 +42,90 @@
     }
   }
 }
+
+
+.mobileNav {
+
+  position: fixed;
+  top: 110%;
+  right: 15%;
+  transform: translate(50%, -50%);
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 10;
+  cursor: pointer;
+
+  @include ResponsiveMobileFirst(tab-port) {
+    right: -30%;
+  }
+
+  &__options {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  &__item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    list-style-type: none;
+    color: #33a4c9;
+    text-align: center;
+    border-radius: 50%;
+    height: 80%;
+    width: 80%;
+    background-color: white;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    font: {
+      size: 12px;
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__mask {
+    position: absolute;
+    list-style-type: none;
+
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  }
+
+  &__burger {
+    list-style-type: none;
+    position: absolute;
+    height: 3%;
+    width: 40%;
+    background-color: #33a4c9;
+    z-index: 5;
+    left: 30%;
+
+    &:nth-last-child(1) {
+      top: 60%;
+    }
+    &:nth-last-child(2) {
+      top: 50%;
+    }
+    &:nth-last-child(3) {
+      top: 40%;
+    }
+  }
+}
+
+
 
 .cn-button {
   position: fixed;

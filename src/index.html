@@ -14,19 +14,19 @@
     <main>
       <nav class="nav fadeInOnThreshold">
         <div class="nav__inner">
-          <p id="scrollSkills2" class="nav__inner--item blinking-2 option-4">
+          <p id="scrollSkills2" class="nav__inner--item blinking-2 option-1">
             Skills
           </p>
-          <p id="scrollResume2" class="nav__inner--item blinking-2 option-5">
+          <p id="scrollResume2" class="nav__inner--item blinking-2 option-2">
             Resume
           </p>
-          <p id="scrollProjects2" class="nav__inner--item blinking-2 option-6">
+          <p id="scrollProjects2" class="nav__inner--item blinking-2 option-3">
             Projects
           </p>
         </div>
       </nav>
 
-      <button class="cn-button" id="cn-button">NAV</button>
+      <!-- <button class="cn-button" id="cn-button">NAV</button>
       <div class="cn-wrapper" id="cn-wrapper">
         <ul>
           <li>
@@ -50,17 +50,32 @@
             </a>
           </li>
         </ul>
+      </div> -->
+
+      <div class="mobileNav">
+
+        <ul class="mobileNav__options">
+          <li class="mobileNav__item option-0">Top</li>
+          <li class="mobileNav__item option-1">Skills</li>
+          <li class="mobileNav__item option-2">Resume</li>
+          <li class="mobileNav__item option-3">Projects</li>
+          <li class="mobileNav__mask"></li>
+          <li class="mobileNav__burger"></li>
+          <li class="mobileNav__burger"></li>
+          <li class="mobileNav__burger"></li>
+        </ul>
       </div>
 
       <header class="header">
         <div class="header__nav">
-          <p class="header__nav--item option-1" id="option-1"></p>
-          <p class="header__nav--item option-2" id="option-2"></p>
-          <p class="header__nav--item option-3" id="option-3"></p>
+          <p class="header__nav--item option-1"></p>
+          <p class="header__nav--item option-2"></p>
+          <p class="header__nav--item option-3"></p>
         </div>
         <div class="header__body">
-          <p class="header__body--item option-main" id="option-main1"></p>
-          <p class="header__body--item option-main2" id="option-main2"></p>
+          <div class="header__body--item option-main" id="typingAnimation">
+          </div>
+          <div class="header__body--item option-main2" id="option-main2"></div>
         </div>
         <div class="header__bottom">
           <figure class="header__bottom__fig" id="headerfigure">
@@ -1223,7 +1238,7 @@
         </div>
         <div class="footer__bottom">
           <p class="footer__bottom--text">
-            Made by Kenny Becerra &copy; 2018. All rights reserved
+            Made by Kenny Becerra &copy; 2020. All rights reserved
           </p>
         </div>
       </footer>

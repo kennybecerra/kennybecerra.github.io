@@ -1,5 +1,5 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -16,17 +16,6 @@ module.exports = {
   },
   resolve: {
     modules: ["node_modules"],
-    alias: {
-      TweenLite: "gsap/src/minified/TweenLite.min.js",
-      TweenMax: "gsap/src/minified/TweenMax.min.js",
-      TimelineLite: "gsap/src/minified/TimelineLite.min.js",
-      TimelineMax: "gsap/src/minified/TimelineMax.min.js",
-      ScrollMagic: "scrollmagic/scrollmagic/minified/ScrollMagic.min.js",
-      "animation.gsap":
-        "scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js",
-      "debug.addIndicators":
-        "scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"
-    }
   },
   module: {
     rules: [
@@ -54,6 +43,7 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
+              esModule: false,
               name: "./assets/images/[name].[ext]"
             }
           }
@@ -66,6 +56,7 @@ module.exports = {
             loader: "file-loader",
             options: {
               //limit: 10,
+              esModule: false,
               name: "./assets/SVG/[name].[ext]"
             }
           }
@@ -78,6 +69,7 @@ module.exports = {
             loader: "file-loader",
             options: {
               //limit: 10,
+              esModule: false,
               name: "./assets/videos/[name].[ext]"
             }
           }
@@ -88,6 +80,7 @@ module.exports = {
         use: {
           loader: "html-loader",
           options: {
+            minimize: true,
             attrs: ["img:src", "source:src", "use:href"]
           }
         }
@@ -99,6 +92,7 @@ module.exports = {
             loader: "file-loader",
             options: {
               //limit: 10,
+              esModule: false,
               name: "./assets/documents/[name].[ext]"
             }
           }
@@ -111,6 +105,7 @@ module.exports = {
             loader: "file-loader",
             options: {
               //limit: 10,
+              esModule: false,
               name: "./assets/fonts/[name].[ext]"
             }
           }

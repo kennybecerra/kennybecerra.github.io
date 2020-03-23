@@ -52,14 +52,18 @@
     justify-content: center;
     align-items: center;
     padding: 0px;
-    //padding-bottom: 3em;
+   
 
     @include ResponsiveDesktopFirst(phone) {
-      //padding-bottom: 1em;
+      
     }
 
     &--item {
       font-size: 7rem;
+
+      &#typingAnimation {
+        text-align: center;
+      }
 
       @include ResponsiveDesktopFirst(tab-land) {
         font-size: 4.5rem;
