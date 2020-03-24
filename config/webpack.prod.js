@@ -1,11 +1,12 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin} = require('clean-webpack-plugin');
 const path = require("path");
 
 module.exports = {
   entry: "./src/js/index.js",
   output: {
-    filename: "./js/main.js",
+    filename: "./js/[name].[contenthash].js",
     path: path.resolve(__dirname, "../dist")
   },
   mode: "production",
@@ -117,6 +118,7 @@ module.exports = {
           }
         ]
       },
+
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
@@ -133,13 +135,14 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(), 
     new HtmlWebpackPlugin({
       template: "./src/index.html"
     }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: "./css/[name].css",
+      filename: "./css/[name].[contenthash].css",
       chunkFilename: "[id].css"
     })
   ]
