@@ -20,24 +20,22 @@ body {
     font-size: 2em;
 }
 
-html {
-  --scrollbarBG: rgba(207,216,220, .7);
-  --thumbBG: #90A4AE;
-}
+// Scroll Bar settings
+
 body::-webkit-scrollbar {
   width: 10px;
 }
 body {
   scrollbar-width: thin;
-  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  scrollbar-color: $thumbBG $scrollbarBG;
 }
 body::-webkit-scrollbar-track {
-  background: var(--scrollbarBG);
+  background: $scrollbarBG;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: var(--thumbBG) ;
+  background-color: $thumbBG;
   border-radius: 6px;
-  border: 1px solid var(--scrollbarBG);
+  border: 1px solid $scrollbarBG;
 }
 
 
@@ -54,3 +52,4 @@ body::-webkit-scrollbar-thumb {
   src: url('../assets/fonts/Roboto-regular.ttf');
 }
 */
+

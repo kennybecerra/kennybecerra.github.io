@@ -4,6 +4,7 @@ import pdf from '../assets/documents/Kenny_Becerra_Resume.pdf';
 import icon from '../assets/images/favicon.ico';
 import anime from 'animejs/lib/anime.es.js';
 import Typewriter from 'typewriter-effect/dist/core';
+import * as util from "./util";
 
 // Functions meant to include the assets files if they can not be included via the css or html
 function requireAll(r) { r.keys().forEach(r); }
@@ -21,16 +22,13 @@ const typingCommonOptions = {
 const heroSectionTyping = new Typewriter('#typingAnimation', typingCommonOptions);
 
 heroSectionTyping
-	.pauseFor(2500)
+	.pauseFor(1500)
 	.typeString("Hello")
 	.pauseFor(300)
 	.typeString(", I'm Kenny")
 	.pauseFor(1000)
 	.deleteAll()
-	.typeString("I'm a Computer Engineer")
-	.pauseFor(1000)
-	.deleteChars(17)
-	.typeString("Frontend Developer")
+	.typeString("I'm a Frontend Developer")
 	.pauseFor(1000)
 	.typeString("<br/>Welcome to my site.")
 	.callFunction(() => {
@@ -41,20 +39,22 @@ heroSectionTyping
 			new Typewriter(".header__nav--item.option-3", typingCommonOptions)
 		]
 
-		// Call back hell
-		navigationTyping[0]
-			.typeString("Skills")
-			.callFunction(() => {
-				navigationTyping[1]
-					.typeString("Resume")
-					.callFunction(() => {
-						navigationTyping[2]
-							.typeString("Projects")
-							.start()
-					})
-					.start()
-			}) 
-			.start()
+		
+		navigationTyping[0].typeString("Skills").start()
+		navigationTyping[1].typeString("Resume").start()
+		navigationTyping[2].typeString("Projects")
+		.callFunction(() => {
+			anime({
+				targets: ".chevron_container",
+				opacity: [0, 1],
+				duration: 1000,
+				direction: "normal",
+				easing: "easeInOutSine",
+				delay: 1000,
+				autoplay: true
+			})
+		})		
+		.start()
 	})
 	.start();
 
@@ -62,16 +62,31 @@ heroSectionTyping
 
 // Setting navigation click buttons
 const navBarDestop = document.querySelector("nav");
+const aboutSection = document.querySelector("#about");
 const secondSection = document.querySelector("#skills");
 const thirdSection = document.querySelector("#resume");
 const fourthSection = document.querySelector("#projects");
+const scrollElement =  window.document.scrollingElement || window.document.body || window.document.documentElement;
+
+document.querySelector(".chevron_container").addEventListener("click", (e) => {
+	e.preventDefault()
+	anime({
+		targets: scrollElement,
+		scrollTop: (aboutSection.getBoundingClientRect().top - navBarDestop.getBoundingClientRect().height + window.scrollY),
+		duration: 700,
+		easing: "easeOutQuad"
+	})
+})
+
 
 document.querySelectorAll(".option-0").forEach( (item) => {
 	item.addEventListener("click", (e) => {
 		e.preventDefault()
-		window.scrollTo({
-			top: 0,
-			behavior: "smooth"
+		anime({
+			targets: scrollElement,
+			scrollTop: 0,
+			duration: 700,
+			easing: "easeOutQuad"
 		})
 	})
 })
@@ -79,21 +94,24 @@ document.querySelectorAll(".option-0").forEach( (item) => {
 document.querySelectorAll(".option-1").forEach( (item) => {
 	item.addEventListener("click", (e) => {
 		e.preventDefault()
-		const navBarDestopHeight = navBarDestop.getBoundingClientRect().height;
-		window.scrollTo({
-			top: secondSection.getBoundingClientRect().top - navBarDestopHeight + window.scrollY ,
-			behavior: "smooth"
+		anime({
+			targets: scrollElement,
+			scrollTop: (secondSection.getBoundingClientRect().top - navBarDestop.getBoundingClientRect().height + window.scrollY),
+			duration: 700,
+			easing: "easeOutQuad"
 		})
+
 	})
 })
 
 document.querySelectorAll(".option-2").forEach( (item) => {
 	item.addEventListener("click", (e) => {
 		e.preventDefault()
-		const navBarDestopHeight = navBarDestop.getBoundingClientRect().height;
-		window.scrollTo({
-			top: thirdSection.getBoundingClientRect().top - navBarDestopHeight + window.scrollY,
-			behavior: "smooth"
+		anime({
+			targets: scrollElement,
+			scrollTop: (thirdSection.getBoundingClientRect().top - navBarDestop.getBoundingClientRect().height + window.scrollY),
+			duration: 700,
+			easing: "easeOutQuad"
 		})
 	})
 })
@@ -101,16 +119,15 @@ document.querySelectorAll(".option-2").forEach( (item) => {
 document.querySelectorAll(".option-3").forEach( (item) => {
 	item.addEventListener("click", (e) => {
 		e.preventDefault()
-		const navBarDestopHeight = navBarDestop.getBoundingClientRect().height;
-		window.scrollTo({
-			top: fourthSection.getBoundingClientRect().top - navBarDestopHeight + window.scrollY,
-			behavior: "smooth"
+		anime({
+			targets: scrollElement,
+			scrollTop: (fourthSection.getBoundingClientRect().top - navBarDestop.getBoundingClientRect().height + window.scrollY),
+			duration: 700,
+			easing: "easeOutQuad"
 		})
 	})
 })
 
-// Setting NavBar fading animation
-const fadeStartEndCorrection = 300;
 
 // Nav bar fading animation on scroll
 const navBarAnimation = anime({
@@ -120,6 +137,7 @@ const navBarAnimation = anime({
 	},
 	zIndex: {
 		value: [-2,2],
+		easing: "easeOutSine",
 		round: true
 	},
 	easing: "easeInOutSine",
@@ -142,15 +160,16 @@ const mobileNavFade = anime({
 // On Scroll event
 window.addEventListener("scroll", () => {
 	const { height } = navBarDestop.getBoundingClientRect();
-	const { top } = secondSection.getBoundingClientRect();
-	const animStart = height*2
+	const { top } = aboutSection.getBoundingClientRect();
+	const {top: top2} = secondSection.getBoundingClientRect();
+	const animStart = height*3
 	const animEnd = height
 	const mobileAnimStart = window.innerHeight * .95;
 	const mobileAnimEnd = window.innerHeight * .70;
 
 	// Logic desktop nav fading animation on scroll threshold
 	if ( top <= animStart && top >= animEnd) {
-		navBarAnimation.seek(((animStart - top)/height) * navBarAnimation.duration)
+		navBarAnimation.seek(((animStart - top)/(animStart - animEnd)) * navBarAnimation.duration)
 	} 
 	else if (top > animStart && navBarAnimation.progress !== 0) {
 		navBarAnimation.seek(0);
@@ -162,19 +181,20 @@ window.addEventListener("scroll", () => {
 		//Nothing
 	}
 
-	// logic for mobile nav fading on scroll threshold
-	if (top <= mobileAnimStart && top >= mobileAnimEnd) {
-		mobileNavFade.seek(  ((mobileAnimStart - top)/(mobileAnimStart - mobileAnimEnd))  * mobileNavFade.duration);
-	}
-	else if (top > mobileAnimStart && mobileNavFade.progress !== 0) {
-		mobileNavFade.seek(0);
-	}
-	else if (top < mobileAnimEnd && mobileNavFade.progress !== 100) {
-		mobileNavFade.seek(mobileNavFade.duration);
-	}
-	else {
-		//Nothing
-	}
+
+	// // logic for mobile nav fading on scroll threshold
+	// if (top2 <= mobileAnimStart && top2 >= mobileAnimEnd) {
+	// 	mobileNavFade.seek(  ((mobileAnimStart - top2)/(mobileAnimStart - mobileAnimEnd))  * mobileNavFade.duration);
+	// }
+	// else if (top2 > mobileAnimStart && mobileNavFade.progress !== 0) {
+	// 	mobileNavFade.seek(0);
+	// }
+	// else if (top2 < mobileAnimEnd && mobileNavFade.progress !== 100) {
+	// 	mobileNavFade.seek(mobileNavFade.duration);
+	// }
+	// else {
+	// 	//Nothing
+	// }
 
 
 })
@@ -217,7 +237,6 @@ mobileNav.add({
 
 
 document.querySelector(".mobileNav").addEventListener("click", (e) => {
-	console.log("mobile was clicked")
 	e.preventDefault();
 	if (mobileNav.progress === 0) {
 		if(mobileNav.reversed) {
@@ -234,3 +253,42 @@ document.querySelector(".mobileNav").addEventListener("click", (e) => {
 		mobileNav.reverse();
 	}
 })
+
+
+
+/**
+ * CUBE ANIMATIONS
+ */
+
+const allCubes = document.querySelectorAll(".cube");
+const allControls = document.querySelectorAll(".control_button");
+
+let cubeSides = [
+	["show-front","show-left","show-top", "show-right", "show-bottom", "show-back"], 
+	["show-front","show-top","show-right", "show-left", "show-bottom", "show-back"] 
+]
+
+allControls.forEach( (controlButton, buttonIndex) => {
+	
+	controlButton.addEventListener("click", (e) => {
+		e.preventDefault()
+
+		//remove active class from all controls buttons then add active class to current button for icon animation
+		allControls.forEach((control) => {util.removeClass(control, "active")	})
+		util.addClass(e.currentTarget, "active");
+
+		//iterate through all cubes, and update which side needs to be shown for each cube
+		allCubes.forEach((cube, cubeIndex) => {
+
+			let removeArray = cubeSides[cubeIndex].filter( (cubeside, index) => index !== buttonIndex )
+
+			removeArray.forEach( (removeString) => {
+				util.removeClass(cube , removeString)
+			})
+			util.addClass(cube,cubeSides[cubeIndex][buttonIndex]);
+		})
+	})
+})
+
+
+

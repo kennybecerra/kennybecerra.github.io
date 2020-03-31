@@ -41,6 +41,11 @@
       </div>
 
       <header class="header">
+        <div class="testing-video">
+          <video class="bg-video" autoplay muted loop>
+            <source src="./assets/videos/Black_Keys.mp4" type="video/mp4">
+          </video>
+        </div>
         <div class="header__nav">
           <p class="header__nav--item option-1"></p>
           <p class="header__nav--item option-2"></p>
@@ -52,57 +57,601 @@
           <div class="header__body--item option-main2" id="option-main2"></div>
         </div>
         <div class="header__bottom">
-          <figure class="header__bottom__fig" id="headerfigure">
-            <svg class="header__bottom__fig--icon">
-              <use
-                href="./assets/SVG/symbol-defs.svg#icon-circle-down"
-                xlink:href="./assets/SVG/symbol-defs.svg#icon-circle-dowm"
-              ></use>
-            </svg>
-          </figure>
+          <div class="chevron_container">
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+            <span class="text">Scroll down</span>
+          </div>
         </div>
       </header>
+      <section class="about" id="about">
+        <div class="left_container">
+          <div class="scene">
+            <div class="cube show-front">
+              <div class="cube__face cube__face--front">
+                <h2>About me</h2>
+              </div>
+              <div class="cube__face cube__face--left">
+                <h2>Education</h2>
+              </div>
+              <div class="cube__face cube__face--top">
+                <h2>Passions</h2>
+              </div>
+              <div class="cube__face cube__face--right"></div>
+              <div class="cube__face cube__face--bottom"></div>
+              <div class="cube__face cube__face--back"></div>
+            </div>
+          </div>
+        </div>
+        <div class="right_container">
+         
+            <div class="scene">
+              <div class="cube show-front">
+                <div class="cube__face cube__face--front">
+                  <h2>About me</h2>
+                  <p>I am a software developer with a passion for front-end development. I have 3+ years of experience building web applications using Vanilla JS, jQuery, and experienced using frameworks like React, and Ember. Checkout my github to see some of the Front-end dev projects I've worked on.</p>
+                </div>
+                <div class="cube__face cube__face--top">
+                  <h2>Education</h2>
+                  <p>Bachelors of Science in Computer Engineering, 2015.</p>
+                </div>
+                <div class="cube__face cube__face--right">
+                  <h2>Passions</h2>
+                  <p>As you can tell from my site I am a big fan of web animations, both CSS and JS based. I follow JSConf and CSS tricks whenever possible and I am excited about upcoming browers API updates to enhance animations (CSS Houdini and WebGPU).</p>
+                  <p>On my free time I enjoy long runs and particpate in the occasional 5k/10k around the city.</p>
+                </div>
+                <div class="cube__face cube__face--left">
+                  <h2>Education</h2>
+                  <p>Bachelors of Science in Computer Engineering, 2015.</p>
+                </div>
+                <div class="cube__face cube__face--bottom"></div>
+                <div class="cube__face cube__face--back"></div>
+              </div>
+            </div>
+
+        </div>
+        <ul class="control_container">
+          <li class="control_button active">
+            <svg >
+              <use
+                href="./assets/SVG/symbol-defs.svg#icon-user"
+                xlink:href="./assets/SVG/symbol-defs.svg#icon-user"
+              ></use>
+            </svg>
+          </li>
+          <li class="control_button">
+            <svg >
+              <use
+                href="./assets/SVG/symbol-defs.svg#icon-graduation-cap"
+                xlink:href="./assets/SVG/symbol-defs.svg#icon-graduation-cap"
+              ></use>
+            </svg>
+          </li>
+          <li class="control_button">
+            <svg >
+              <use
+                href="./assets/SVG/symbol-defs.svg#icon-heart"
+                xlink:href="./assets/SVG/symbol-defs.svg#icon-heart"
+              ></use>
+            </svg>
+          </li>
+        </ul>
+      </section>
       <section class="skills" id="skills">
         <header class="skills__header">
           <h2 class="skills__header--text">Technical Skills</h2>
         </header>
         <div class="skills__body">
-          <div class="card">
-            <img class="card__image" src="./assets/images/html5.png" alt="HTML5 Logo" />
-            <h3 class="card__header">html 5</h3>
+          <div class="right_container">
+            <div class="card">
+              <img class="card__image" src="./assets/images/html5.png" alt="HTML5 Logo" />
+              <h3 class="card__header">html 5</h3>
+            </div>
+            <div class="card">
+              <img class="card__image" src="./assets/images/css3.png" alt="CSS3 Logo" />
+              <h3 class="card__header">css 3</h3>
+            </div>
+            <div class="card">
+              <img class="card__image" src="./assets/images/js.png" alt="Javascript Logo" />
+              <h3 class="card__header">javascript</h3>
+            </div>
+            <div class="card">
+              <img class="card__image" src="./assets/images/jquery-icon.png" alt="Jquery Logo" />
+              <h3 class="card__header">jquery</h3>
+            </div>
+            <div class="card">
+              <img class="card__image" src="./assets/images/sass.png" alt="Sass Logo" />
+              <h3 class="card__header">sass</h3>
+            </div>
+            <div class="card">
+              <img class="card__image" src="./assets/images/git.png" alt="Sass Logo" />
+              <h3 class="card__header">git</h3>
+            </div>
+            <div class="card">
+              <img class="card__image--large" src="./assets/images/webpack4.png" alt="Webpack Logo" />
+              <h3 class="card__header">webpack</h3>
+            </div>
+            <div class="card">
+              <img class="card__image--large" src="./assets/images/babel.png" alt="Babel Logo" />
+              <h3 class="card__header">babel</h3>
+            </div>
+            <div class="card">
+              <img class="card__image" src="./assets/images/react.png" alt="Sass Logo" />
+              <h3 class="card__header">React</h3>
+            </div>
           </div>
-          <div class="card">
-            <img class="card__image" src="./assets/images/css3.png" alt="CSS3 Logo" />
-            <h3 class="card__header">css 3</h3>
+        </div>
+      </section>
+      <section class="projects" id="projects">
+        <header class="projects__header">
+          <h2 class="projects__header--text">Projects</h2>
+        </header>
+        <div class="projects__container myonscroll2">
+          <div class="projects__container__header">
+            <img
+              class="projects__container__header--1"
+              src="./assets/images/browser-1.png"
+              alt="broswer header"
+            />
+            <img
+              class="projects__container__header--2"
+              src="./assets/images/browser-2.png"
+              alt="browser header 2"
+            />
           </div>
-          <div class="card">
-            <img class="card__image" src="./assets/images/js.png" alt="Javascript Logo" />
-            <h3 class="card__header">javascript</h3>
+          <div class="projects__container__website">
+            <figure class="projects__container__figure">
+              <img
+                class="projects__container__figure--image"
+                src="//image.thum.io/get/https://kennybecerra.github.io/FoodApp/"
+                alt="Food App Project"
+              />
+            
+              <figcaption class="projects__container__figure__caption">
+                <h2 class="projects__container__figure__caption--heading1">
+                  Food App
+                </h2>
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">
+                    Libraries
+                  </h3>
+                  <p class="projects__container__figure__caption--item">
+                    ES5/ES6 JavaScript, AnimeJS, CSS GRID, Flexbox
+                  </p>
+                </div>
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">
+                    Tools
+                  </h3>
+                  <p class="projects__container__figure__caption--item">
+                    NPM, Sass Preprocesor, Auoprefixer
+                  </p>
+                  <p class="projects__container__figure__caption--item">
+                    Webpack, Babel, VScode, Git
+                  </p>
+                </div>
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">
+                    Concepts
+                  </h3>
+                  <p class="projects__container__figure__caption--item">
+                    Responsive design
+                  </p>
+                  <p class="projects__container__figure__caption--item">
+                    Mobile First design
+                  </p>
+                  <p class="projects__container__figure__caption--item">
+                    BEM style
+                  </p>
+                </div>
+                <div class="projects__container__figure__caption--box-2">
+                  <a
+                    class="btn btn--white projects__container__figure__caption--box-2-btn"
+                    href="https://github.com/kennybecerra/FoodApp"
+                    target="_blank"
+                  >
+                    Code
+                  </a>
+                  <a
+                    class="btn btn--white projects__container__figure__caption--box-2-btn"
+                    href="https://kennybecerra.github.io/FoodApp/"
+                    target="_blank"
+                  >
+                    Website
+                  </a>
+                </div>
+              </figcaption>
+            </figure>
           </div>
-          <div class="card">
-            <img class="card__image" src="./assets/images/jquery-icon.png" alt="Jquery Logo" />
-            <h3 class="card__header">jquery</h3>
+        </div>
+        <div class="projects__container myonscroll2">
+          <div class="projects__container__header">
+            <img
+              class="projects__container__header--1"
+              src="./assets/images/browser-1.png"
+              alt="broswer header"
+            />
+            <img
+              class="projects__container__header--2"
+              src="./assets/images/browser-2.png"
+              alt="browser header 2"
+            />
           </div>
-          <div class="card">
-            <img class="card__image" src="./assets/images/sass.png" alt="Sass Logo" />
-            <h3 class="card__header">sass</h3>
+          <div class="projects__container__website">
+            <figure class="projects__container__figure">
+              <img
+                class="projects__container__figure--image"
+                src="//image.thum.io/get/https://kennybecerra.github.io/CampingApp/"
+                alt="Food App Project"
+              />>
+
+              <figcaption class="projects__container__figure__caption">
+                <h2 class="projects__container__figure__caption--heading1">
+                  Camping App
+                </h2>
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">
+                    Libraries
+                  </h3>
+                  <p class="projects__container__figure__caption--item">
+                    ES5/ES6 javascript
+                  </p>
+                </div>
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">
+                    Tools
+                  </h3>
+                  <p class="projects__container__figure__caption--item">
+                    NPM, Sass Preprocesor, Auoprefixer
+                  </p>
+                  <p class="projects__container__figure__caption--item">
+                    Webpack, Babel, VScode, Git
+                  </p>
+                </div>
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">
+                    Concepts
+                  </h3>
+                  <p class="projects__container__figure__caption--item">
+                    Responsive design
+                  </p>
+                  <p class="projects__container__figure__caption--item">
+                    Mobile First design
+                  </p>
+                  <p class="projects__container__figure__caption--item">
+                    BEM style
+                  </p>
+                </div>
+                <div class="projects__container__figure__caption--box-2">
+                  <a
+                    class="btn btn--white projects__container__figure__caption--box-2-btn"
+                    href="https://github.com/kennybecerra/CampingApp"
+                    target="_blank"
+                  >
+                    Code
+                  </a>
+                  <a
+                    class="btn btn--white projects__container__figure__caption--box-2-btn"
+                    href="https://kennybecerra.github.io/CampingApp/"
+                    target="_blank"
+                  >
+                    Website
+                  </a>
+                </div>
+              </figcaption>
+          
+            </figure>
           </div>
-          <div class="card">
-            <img class="card__image" src="./assets/images/git.png" alt="Sass Logo" />
-            <h3 class="card__header">git</h3>
+        </div>
+        <div class="projects__container myonscroll2">
+          <div class="projects__container__header">
+            <img
+              class="projects__container__header--1"
+              src="./assets/images/browser-1.png"
+              alt="broswer header"
+            />
+            <img
+              class="projects__container__header--2"
+              src="./assets/images/browser-2.png"
+              alt="browser header 2"
+            />
           </div>
-          <div class="card">
-            <img class="card__image--large" src="./assets/images/webpack4.png" alt="Webpack Logo" />
-            <h3 class="card__header">webpack</h3>
+          <div class="projects__container__website">
+            <figure class="projects__container__figure">
+              <img
+                class="projects__container__figure--image"
+                src="./assets/images/TSR-UI.png"
+                alt="Project not available yet"
+              />
+            
+              <figcaption class="projects__container__figure__caption">
+                <h2 class="projects__container__figure__caption--heading1">
+                  WorkApp
+                </h2>
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">
+                    Libraries
+                  </h3>
+                  <p class="projects__container__figure__caption--item">
+                    Vanilla JS
+                  </p>
+                  <p class="projects__container__figure__caption--item">
+                    D3.js
+                  </p>
+                  <p class="projects__container__figure__caption--item">
+                    JQUERY
+                  </p>
+                  <p class="projects__container__figure__caption--item">
+                    Semantic UI
+                  </p>
+                  <p class="projects__container__figure__caption--item">
+                    Skeleton CSS
+                  </p>
+                </div>
+            
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">
+                    Tools
+                  </h3>
+                  <p class="projects__container__figure__caption--item">
+                    NPM, Sass Preprocesor, Auoprefixer
+                  </p>
+                  <p class="projects__container__figure__caption--item">
+                    Webpack, VScode, Git
+                  </p>
+                </div>
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">
+                    Concepts
+                  </h3>
+                  <p class="projects__container__figure__caption--item">
+                    MVC Design Pattern
+                  </p>
+                </div>
+                <div class="projects__container__figure__caption--box-2">
+                  <a
+                    class="btn btn--white projects__container__figure__caption--box-2-btn"
+                    href="https://github.com/kennybecerra/WorkApp"
+                    target="_blank"
+                  >
+                    Code
+                  </a>
+                  <a
+                    class="btn btn--white projects__container__figure__caption--box-2-btn"
+                    href="https://kennybecerra.github.io/WorkApp/"
+                    target="_blank"
+                  >
+                    Website
+                  </a>
+                </div>
+              </figcaption>
+            
+            </figure>
           </div>
-          <div class="card">
-            <img class="card__image--large" src="./assets/images/babel.png" alt="Babel Logo" />
-            <h3 class="card__header">babel</h3>
+        </div>
+        <div class="projects__container myonscroll2">
+          <div class="projects__container__header">
+            <img
+              class="projects__container__header--1"
+              src="./assets/images/browser-1.png"
+              alt="broswer header"
+            />
+            <img
+              class="projects__container__header--2"
+              src="./assets/images/browser-2.png"
+              alt="browser header 2"
+            />
           </div>
-          <div class="card">
-            <img class="card__image" src="./assets/images/react.png" alt="Sass Logo" />
-            <h3 class="card__header">React</h3>
+          <div class="projects__container__website">
+            <figure class="projects__container__figure">
+              <img
+                class="projects__container__figure--image"
+                src="./assets/images/RecipeApp.png"
+                alt="Recipe App Project"
+              />
+              <figcaption class="projects__container__figure__caption">
+                <h2 class="projects__container__figure__caption--heading1">
+                  Recipe App
+                </h2>
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">
+                    Frameworks
+                  </h3>
+                  <p class="projects__container__figure__caption--item">
+                    React
+                  </p>
+                </div>
+
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">
+                    Tools
+                  </h3>
+                  <p class="projects__container__figure__caption--item">
+                    NPM, SASS, CSS Modules
+                  </p>
+                  <p class="projects__container__figure__caption--item">
+                    Webpack, VScode, Git
+                  </p>
+                </div>
+
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">
+                    Concepts
+                  </h3>
+                  <p class="projects__container__figure__caption--item">
+                    Mobile First Design, Responsive Design
+                  </p>
+                  <p class="projects__container__figure__caption--item">
+                    BEM Style
+                  </p>
+                </div>
+                <div class="projects__container__figure__caption--box-2">
+                  <a
+                    class="btn btn--white projects__container__figure__caption--box-2-btn"
+                    href="https://github.com/kennybecerra/recipe-app"
+                    target="_blank"
+                  >
+                    Code
+                  </a>
+                  <a
+                    class="btn btn--white projects__container__figure__caption--box-2-btn"
+                    href="https://kennybecerra.github.io/recipe-app/"
+                    target="_blank"
+                  >
+                    Website
+                  </a>
+                </div>
+              </figcaption>
+            </figure>
           </div>
+        </div>
+        <div class="projects__container myonscroll2">
+          <div class="projects__container__header">
+            <img
+              class="projects__container__header--1"
+              src="./assets/images/browser-1.png"
+              alt="broswer header"
+            />
+            <img
+              class="projects__container__header--2"
+              src="./assets/images/browser-2.png"
+              alt="browser header 2"
+            />
+          </div>
+          <div class="projects__container__website">
+            <figure class="projects__container__figure">
+              <img
+                class="projects__container__figure--image"
+                src="//image.thum.io/get/https://burgerapp-75e9c.firebaseapp.com/"
+                alt="Burger App Project"
+              />
+              <figcaption class="projects__container__figure__caption">
+                <h2 class="projects__container__figure__caption--heading1">Burger App</h2>
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">Frameworks</h3>
+                  <p class="projects__container__figure__caption--item">React</p>
+                </div>
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">Libraries</h3>
+                  <p class="projects__container__figure__caption--item">
+                    Redux, React-Router, Firebase REST API
+                  </p>
+                </div>
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">Tools</h3>
+                  <p class="projects__container__figure__caption--item">NPM, SASS, CSS Modules</p>
+                  <p class="projects__container__figure__caption--item">Webpack, VScode, Git</p>
+                </div>
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">Concepts</h3>
+                  <p class="projects__container__figure__caption--item">
+                    Mobile First Design, Responsive Design
+                  </p>
+                </div>
+                <div class="projects__container__figure__caption--box-2">
+                  <a
+                    class="btn btn--white projects__container__figure__caption--box-2-btn"
+                    href="https://github.com/kennybecerra/BurgerApp"
+                    target="_blank"
+                  >
+                    Code
+                  </a>
+                  <a
+                    class="btn btn--white projects__container__figure__caption--box-2-btn"
+                    href="https://burgerapp-75e9c.firebaseapp.com/"
+                    target="_blank"
+                  >
+                    Website
+                  </a>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="projects__container myonscroll2">
+          <div class="projects__container__header">
+            <img
+              class="projects__container__header--1"
+              src="./assets/images/browser-1.png"
+              alt="broswer header"
+            />
+            <img
+              class="projects__container__header--2"
+              src="./assets/images/browser-2.png"
+              alt="browser header 2"
+            />
+          </div>
+          <div class="projects__container__website">
+            <figure class="projects__container__figure">
+              <img
+                class="projects__container__figure--image"
+                src="./assets/images/Coding-2_Medium.jpg"
+                alt="Project not available yet"
+              />
+              <figcaption class="projects__container__figure__caption">
+                <h2 class="projects__container__figure__caption--heading1">
+                  COMING SOON
+                </h2>
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">
+                    Libraries
+                  </h3>
+                  <p class="projects__container__figure__caption--item">
+                    item 1
+                  </p>
+                  <p class="projects__container__figure__caption--item">
+                    item 2
+                  </p>
+                </div>
+               
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">
+                    Frameworks
+                  </h3>
+                  <p class="projects__container__figure__caption--item">
+                    item 1
+                  </p>
+                  <p class="projects__container__figure__caption--item">
+                    item 2
+                  </p>
+                </div>
+
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">
+                    Tools
+                  </h3>
+                  <p class="projects__container__figure__caption--item">
+                    NPM, Sass Preprocesor, Auoprefixer
+                  </p>
+                  <p class="projects__container__figure__caption--item">
+                    Webpack, VScode, Git
+                  </p>
+                </div>
+
+                <div class="projects__container__figure__caption--box">
+                  <h3 class="projects__container__figure__caption--heading2">
+                    Concepts
+                  </h3>
+                  <p class="projects__container__figure__caption--item">
+                    item 1
+                  </p>
+                  <p class="projects__container__figure__caption--item">
+                    item 2
+                  </p>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="projects__bottom">
+          <a
+            href="https://github.com/kennybecerra"
+            class="header__button btn btn--black"
+            target="_blank"
+            >View Github</a
+          >
         </div>
       </section>
       <section class="resumeContainer" id="resume">
@@ -588,586 +1137,6 @@
           >
         </footer>
       </section>
-      <section class="projects" id="projects">
-        <header class="projects__header">
-          <h2 class="projects__header--text">Projects</h2>
-        </header>
-        <div class="projects__container myonscroll2">
-          <div class="projects__container__header">
-            <img
-              class="projects__container__header--1"
-              src="./assets/images/browser-1.png"
-              alt="broswer header"
-            />
-            <img
-              class="projects__container__header--2"
-              src="./assets/images/browser-2.png"
-              alt="browser header 2"
-            />
-          </div>
-          <div class="projects__container__website">
-            <figure class="projects__container__figure">
-              <img
-                class="projects__container__figure--image"
-                src="./assets/images/BudgetApp.png"
-                alt="Budget APP screenshot"
-              />
-              <!-- <a href="https://kennybecerra.github.io/BudgetApp/" target="_blank"> -->
-              <div class="projects__container__figure__caption">
-                <h2 class="projects__container__figure__caption--heading1">
-                  BudgetAppController
-                </h2>
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Libraries
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    Vanila JS, ES5
-                  </p>
-                  <p class="projects__container__figure__caption--item"></p>
-                </div>
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Tools
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    NPM, Sass preprocesor
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    VScode, Git
-                  </p>
-                </div>
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Concepts
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    Responsive design
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    Mobile First design
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    BEM style
-                  </p>
-                </div>
-                <div class="projects__container__figure__caption--box-2">
-                  <a
-                    class="btn btn--white projects__container__figure__caption--box-2-btn"
-                    href="https://github.com/kennybecerra/BudgetApp"
-                    target="_blank"
-                  >
-                    Code
-                  </a>
-                  <a
-                    class="btn btn--white projects__container__figure__caption--box-2-btn"
-                    href="https://kennybecerra.github.io/BudgetApp/"
-                    target="_blank"
-                  >
-                    Website
-                  </a>
-                </div>
-              </div>
-              <!-- </a> -->
-            </figure>
-          </div>
-        </div>
-        <div class="projects__container myonscroll2">
-          <div class="projects__container__header">
-            <img
-              class="projects__container__header--1"
-              src="./assets/images/browser-1.png"
-              alt="broswer header"
-            />
-            <img
-              class="projects__container__header--2"
-              src="./assets/images/browser-2.png"
-              alt="browser header 2"
-            />
-          </div>
-          <div class="projects__container__website">
-            <figure class="projects__container__figure">
-              <img
-                class="projects__container__figure--image"
-                src="//image.thum.io/get/https://kennybecerra.github.io/FoodApp/"
-                alt="Food App Project"
-              />
-              <!-- <a href="https://kennybecerra.github.io/FoodApp/" target="_blank"> -->
-              <figcaption class="projects__container__figure__caption">
-                <h2 class="projects__container__figure__caption--heading1">
-                  Food App
-                </h2>
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Libraries
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    ES5/ES6 JavaScript, AnimeJS, CSS GRID, Flexbox
-                  </p>
-                </div>
-                <!--
-                            <div class="projects__container__figure__caption--box">
-                                <h3 class="projects__container__figure__caption--heading2">Frameworks</h3>
-                                <p class="projects__container__figure__caption--item">item 1</p>
-                                <p class="projects__container__figure__caption--item">item 2</p>
-                            </div>
-                            -->
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Tools
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    NPM, Sass Preprocesor, Auoprefixer
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    Webpack, Babel, VScode, Git
-                  </p>
-                </div>
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Concepts
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    Responsive design
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    Mobile First design
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    BEM style
-                  </p>
-                </div>
-                <div class="projects__container__figure__caption--box-2">
-                  <a
-                    class="btn btn--white projects__container__figure__caption--box-2-btn"
-                    href="https://github.com/kennybecerra/FoodApp"
-                    target="_blank"
-                  >
-                    Code
-                  </a>
-                  <a
-                    class="btn btn--white projects__container__figure__caption--box-2-btn"
-                    href="https://kennybecerra.github.io/FoodApp/"
-                    target="_blank"
-                  >
-                    Website
-                  </a>
-                </div>
-              </figcaption>
-              <!-- </a> -->
-            </figure>
-          </div>
-        </div>
-        <div class="projects__container myonscroll2">
-          <div class="projects__container__header">
-            <img
-              class="projects__container__header--1"
-              src="./assets/images/browser-1.png"
-              alt="broswer header"
-            />
-            <img
-              class="projects__container__header--2"
-              src="./assets/images/browser-2.png"
-              alt="browser header 2"
-            />
-          </div>
-          <div class="projects__container__website">
-            <figure class="projects__container__figure">
-              <img
-                class="projects__container__figure--image"
-                src="//image.thum.io/get/https://kennybecerra.github.io/CampingApp/"
-                alt="Food App Project"
-              />>
-
-              <!-- <a href="https://kennybecerra.github.io/CampingApp/" target="_blank"> -->
-              <figcaption class="projects__container__figure__caption">
-                <h2 class="projects__container__figure__caption--heading1">
-                  Camping App
-                </h2>
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Libraries
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    ES5/ES6 javascript
-                  </p>
-                </div>
-                <!--
-                                <div class="projects__container__figure__caption--box">
-                                    <h3 
-                                    class="projects__container__figure__caption--heading2">Frameworks</h3>
-                                    <p class="projects__container__figure__caption--item">item 1</p>
-                                    <p class="projects__container__figure__caption--item">item 2</p>
-                                </div>
-                            -->
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Tools
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    NPM, Sass Preprocesor, Auoprefixer
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    Webpack, Babel, VScode, Git
-                  </p>
-                </div>
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Concepts
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    Responsive design
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    Mobile First design
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    BEM style
-                  </p>
-                </div>
-                <div class="projects__container__figure__caption--box-2">
-                  <a
-                    class="btn btn--white projects__container__figure__caption--box-2-btn"
-                    href="https://github.com/kennybecerra/CampingApp"
-                    target="_blank"
-                  >
-                    Code
-                  </a>
-                  <a
-                    class="btn btn--white projects__container__figure__caption--box-2-btn"
-                    href="https://kennybecerra.github.io/CampingApp/"
-                    target="_blank"
-                  >
-                    Website
-                  </a>
-                </div>
-              </figcaption>
-              <!-- </a> -->
-            </figure>
-          </div>
-        </div>
-        <div class="projects__container myonscroll2">
-          <div class="projects__container__header">
-            <img
-              class="projects__container__header--1"
-              src="./assets/images/browser-1.png"
-              alt="broswer header"
-            />
-            <img
-              class="projects__container__header--2"
-              src="./assets/images/browser-2.png"
-              alt="browser header 2"
-            />
-          </div>
-          <div class="projects__container__website">
-            <figure class="projects__container__figure">
-              <img
-                class="projects__container__figure--image"
-                src="./assets/images/TSR-UI.png"
-                alt="Project not available yet"
-              />
-              <!-- <a href="https://kennybecerra.github.io/WorkApp/" target="_blank"> -->
-              <figcaption class="projects__container__figure__caption">
-                <h2 class="projects__container__figure__caption--heading1">
-                  WorkApp
-                </h2>
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Libraries
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    Vanilla JS
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    D3.js
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    JQUERY
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    Semantic UI
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    Skeleton CSS
-                  </p>
-                </div>
-                <!--
-                                <div class="projects__container__figure__caption--box">
-                                    <h3 class="projects__container__figure__caption--heading2">Frameworks</h3>
-                                    <p class="projects__container__figure__caption--item">item 1</p>
-                                    <p class="projects__container__figure__caption--item">item 2</p>
-                                </div>
-                                -->
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Tools
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    NPM, Sass Preprocesor, Auoprefixer
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    Webpack, VScode, Git
-                  </p>
-                </div>
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Concepts
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    MVC Design Pattern
-                  </p>
-                </div>
-                <div class="projects__container__figure__caption--box-2">
-                  <a
-                    class="btn btn--white projects__container__figure__caption--box-2-btn"
-                    href="https://github.com/kennybecerra/WorkApp"
-                    target="_blank"
-                  >
-                    Code
-                  </a>
-                  <a
-                    class="btn btn--white projects__container__figure__caption--box-2-btn"
-                    href="https://kennybecerra.github.io/WorkApp/"
-                    target="_blank"
-                  >
-                    Website
-                  </a>
-                </div>
-              </figcaption>
-              <!-- </a> -->
-            </figure>
-          </div>
-        </div>
-        <div class="projects__container myonscroll2">
-          <div class="projects__container__header">
-            <img
-              class="projects__container__header--1"
-              src="./assets/images/browser-1.png"
-              alt="broswer header"
-            />
-            <img
-              class="projects__container__header--2"
-              src="./assets/images/browser-2.png"
-              alt="browser header 2"
-            />
-          </div>
-          <div class="projects__container__website">
-            <figure class="projects__container__figure">
-              <img
-                class="projects__container__figure--image"
-                src="./assets/images/RecipeApp.png"
-                alt="Recipe App Project"
-              />
-              <figcaption class="projects__container__figure__caption">
-                <h2 class="projects__container__figure__caption--heading1">
-                  Recipe App
-                </h2>
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Frameworks
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    React
-                  </p>
-                </div>
-
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Tools
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    NPM, SASS, CSS Modules
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    Webpack, VScode, Git
-                  </p>
-                </div>
-
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Concepts
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    Mobile First Design, Responsive Design
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    BEM Style
-                  </p>
-                </div>
-                <div class="projects__container__figure__caption--box-2">
-                  <a
-                    class="btn btn--white projects__container__figure__caption--box-2-btn"
-                    href="https://github.com/kennybecerra/recipe-app"
-                    target="_blank"
-                  >
-                    Code
-                  </a>
-                  <a
-                    class="btn btn--white projects__container__figure__caption--box-2-btn"
-                    href="https://kennybecerra.github.io/recipe-app/"
-                    target="_blank"
-                  >
-                    Website
-                  </a>
-                </div>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-        <div class="projects__container myonscroll2">
-          <div class="projects__container__header">
-            <img
-              class="projects__container__header--1"
-              src="./assets/images/browser-1.png"
-              alt="broswer header"
-            />
-            <img
-              class="projects__container__header--2"
-              src="./assets/images/browser-2.png"
-              alt="browser header 2"
-            />
-          </div>
-          <div class="projects__container__website">
-            <figure class="projects__container__figure">
-              <img
-                class="projects__container__figure--image"
-                src="//image.thum.io/get/https://burgerapp-75e9c.firebaseapp.com/"
-                alt="Burger App Project"
-              />
-              <figcaption class="projects__container__figure__caption">
-                <h2 class="projects__container__figure__caption--heading1">Burger App</h2>
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">Frameworks</h3>
-                  <p class="projects__container__figure__caption--item">React</p>
-                </div>
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">Libraries</h3>
-                  <p class="projects__container__figure__caption--item">
-                    Redux, React-Router, Firebase REST API
-                  </p>
-                </div>
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">Tools</h3>
-                  <p class="projects__container__figure__caption--item">NPM, SASS, CSS Modules</p>
-                  <p class="projects__container__figure__caption--item">Webpack, VScode, Git</p>
-                </div>
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">Concepts</h3>
-                  <p class="projects__container__figure__caption--item">
-                    Mobile First Design, Responsive Design
-                  </p>
-                </div>
-                <div class="projects__container__figure__caption--box-2">
-                  <a
-                    class="btn btn--white projects__container__figure__caption--box-2-btn"
-                    href="https://github.com/kennybecerra/BurgerApp"
-                    target="_blank"
-                  >
-                    Code
-                  </a>
-                  <a
-                    class="btn btn--white projects__container__figure__caption--box-2-btn"
-                    href="https://burgerapp-75e9c.firebaseapp.com/"
-                    target="_blank"
-                  >
-                    Website
-                  </a>
-                </div>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-        <div class="projects__container myonscroll2">
-          <div class="projects__container__header">
-            <img
-              class="projects__container__header--1"
-              src="./assets/images/browser-1.png"
-              alt="broswer header"
-            />
-            <img
-              class="projects__container__header--2"
-              src="./assets/images/browser-2.png"
-              alt="browser header 2"
-            />
-          </div>
-          <div class="projects__container__website">
-            <figure class="projects__container__figure">
-              <img
-                class="projects__container__figure--image"
-                src="./assets/images/Coding-2_Medium.jpg"
-                alt="Project not available yet"
-              />
-              <figcaption class="projects__container__figure__caption">
-                <h2 class="projects__container__figure__caption--heading1">
-                  COMING SOON
-                </h2>
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Libraries
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    item 1
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    item 2
-                  </p>
-                </div>
-                <!---->
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Frameworks
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    item 1
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    item 2
-                  </p>
-                </div>
-
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Tools
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    NPM, Sass Preprocesor, Auoprefixer
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    Webpack, VScode, Git
-                  </p>
-                </div>
-
-                <div class="projects__container__figure__caption--box">
-                  <h3 class="projects__container__figure__caption--heading2">
-                    Concepts
-                  </h3>
-                  <p class="projects__container__figure__caption--item">
-                    item 1
-                  </p>
-                  <p class="projects__container__figure__caption--item">
-                    item 2
-                  </p>
-                </div>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-        <!--
-			<div class="projects__container">This is project 2</div>
-			<div class="projects__container">This is project 3</div>
-			<div class="projects__container">This is project 4</div>
-			<div class="projects__container">This is project 5</div>
-			<div class="projects__container">This is project 6</div>
-            -->
-        <div class="projects__bottom">
-          <a
-            href="https://github.com/kennybecerra"
-            class="header__button btn btn--black"
-            target="_blank"
-            >View Github</a
-          >
-        </div>
-      </section>
       <footer class="footer" id="FOOTER">
         <div class="footer__top">
           <div class="footer__section">
@@ -1180,9 +1149,7 @@
                   ></use>
                 </svg>
               </div>
-              <!--
-                        <p class="footer__section--text myonscroll1">Email</p>
-                        -->
+            
             </a>
           </div>
           <div class="footer__section">
@@ -1195,9 +1162,7 @@
                   ></use>
                 </svg>
               </div>
-              <!--
-                        <p class="footer__section--text myonscroll1">Github</p>
-                        -->
+              
             </a>
           </div>
           <div class="footer__section">
@@ -1214,9 +1179,7 @@
                   ></use>
                 </svg>
               </div>
-              <!--
-                        <p class="footer__section--text myonscroll1">LinkedIn</p>
-                        -->
+            
             </a>
           </div>
           <div class="footer__section">
@@ -1233,9 +1196,7 @@
                   ></use>
                 </svg>
               </div>
-              <!--
-                        <p class="footer__section--text myonscroll1">Resume</p>
-                        -->
+            
             </a>
           </div>
         </div>
