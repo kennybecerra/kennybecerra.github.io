@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Portfolio Website - Kenny Becerra</title>
     <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,700" rel="stylesheet" />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,700" rel="stylesheet" /> -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
   </head>
 
   <body>
@@ -98,7 +100,7 @@
                 </div>
                 <div class="cube__face cube__face--right">
                   <h2>Passions</h2>
-                  <p>As you can tell from my site I am a big fan of web animations, both CSS and JS based. I follow JSConf and CSS tricks whenever possible and I am excited about upcoming browers API updates to enhance animations (CSS Houdini and WebGPU).</p>
+                  <p>I am a fan of web animations, both CSS and JS based. I follow JSConf and CSS tricks whenever possible and I am excited about upcoming browers API updates to enhance animations (CSS Houdini and WebGPU).</p>
                   <p>On my free time I enjoy long runs and particpate in the occasional 5k/10k around the city.</p>
                 </div>
                 <div class="cube__face cube__face--left">
@@ -138,54 +140,128 @@
           </li>
         </ul>
       </section>
-      <section class="skills" id="skills">
-        <header class="skills__header">
-          <h2 class="skills__header--text">Technical Skills</h2>
-        </header>
-        <div class="skills__body">
-          <div class="right_container">
-            <div class="card">
-              <img class="card__image" src="./assets/images/html5.png" alt="HTML5 Logo" />
-              <h3 class="card__header">html 5</h3>
-            </div>
-            <div class="card">
-              <img class="card__image" src="./assets/images/css3.png" alt="CSS3 Logo" />
-              <h3 class="card__header">css 3</h3>
-            </div>
-            <div class="card">
-              <img class="card__image" src="./assets/images/js.png" alt="Javascript Logo" />
-              <h3 class="card__header">javascript</h3>
-            </div>
-            <div class="card">
-              <img class="card__image" src="./assets/images/jquery-icon.png" alt="Jquery Logo" />
-              <h3 class="card__header">jquery</h3>
-            </div>
-            <div class="card">
-              <img class="card__image" src="./assets/images/sass.png" alt="Sass Logo" />
-              <h3 class="card__header">sass</h3>
-            </div>
-            <div class="card">
-              <img class="card__image" src="./assets/images/git.png" alt="Sass Logo" />
-              <h3 class="card__header">git</h3>
-            </div>
-            <div class="card">
-              <img class="card__image--large" src="./assets/images/webpack4.png" alt="Webpack Logo" />
-              <h3 class="card__header">webpack</h3>
-            </div>
-            <div class="card">
-              <img class="card__image--large" src="./assets/images/babel.png" alt="Babel Logo" />
-              <h3 class="card__header">babel</h3>
-            </div>
-            <div class="card">
-              <img class="card__image" src="./assets/images/react.png" alt="Sass Logo" />
-              <h3 class="card__header">React</h3>
-            </div>
+      <!-- <section id="experience" class="experience">
+        <div class="workCard">
+          <img src="./assets/images/inxeption.png" alt="inxeption">
+          <div class="text">
+            <h2>Frontend Developer</h2>
+            <h4>july 2019 - Present</h4>
+            <ul>
+              <li> Responsible for converting Adobe XD mockups into functional web pages utilizing React.js, Ember.js, and vanilla JavaScript.</li>
+              <li> Collaborated with product managers, designers, and backend engineers to resolve bugs and build new features in existing applications.</li>
+              <li> Built a development environment/toolset (using node.js, express, handlebars, and MJML) for developing cross email-client compatible templates for web app notifications and outreach.</li>
+            </ul>
           </div>
+        </div>
+      </section> -->
+      <section class="skills" id="skills">
+        <div class="skills__body">
+          <div class="card__container">
+            <div class="card">
+              <h2>HTML / CSS</h2>
+              <hr class="line" />
+              <div class="icons">
+                <svg>
+                  <image x="20%" y="20%" width="60%" height="60%" xlink:href="./assets/images/html5.png"></image>
+                  <circle id="sd" class="medium" cx="50%" cy="50%" r="49%" fill="transparent" stroke="white" stroke-width="2px" />
+                </svg>
+                <svg>
+                  <image x="20%" y="20%" width="60%" height="60%" xlink:href="./assets/images/css3.png"></image>
+                  <circle id="sd" class="medium" cx="50%" cy="50%" r="49%" fill="transparent" stroke="white" stroke-width="2px" />
+                </svg>
+                <svg>
+                  <image x="20%" y="20%" width="60%" height="60%" xlink:href="./assets/images/sass.png"></image>
+                  <circle id="sd" class="medium" cx="50%" cy="50%" r="49%" fill="transparent" stroke="white" stroke-width="2px" />
+                </svg>
+              </div>
+              <ul>
+                <li>Profficient in HTML5 and using templating engines like <span class="keyword">Handlebars.</span>.</li>
+                <li>Experience in using CSS pre-processessors like <span class="keyword">SCSS (SASS)</span>.</li>
+                <li>Experience converting wireframes into HTML/CSS.</li>
+                <li>Experience supporting (IE11).</li>
+                <li>Experience in using CSS libraries like 
+                  <span class="keyword">Bootstrap</span>
+                  <span class="keyword">Semantic UI</span>
+                  <span class="keyword">Materialize</span>.
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <h2>JavaScript</h2>
+              <hr class="line" />
+              <div class="icons">
+                <svg>
+                  <image x="20%" y="20%" width="60%" height="60%" xlink:href="./assets/images/js.png"></image>
+                  <circle id="sd" class="medium" cx="50%" cy="50%" r="49%" fill="transparent" stroke="white" stroke-width="2px" />
+                </svg>
+                <svg>
+                  <image x="20%" y="20%" width="60%" height="60%" xlink:href="./assets/images/babel.png"></image>
+                  <circle id="sd" class="medium" cx="50%" cy="50%" r="49%" fill="transparent" stroke="white" stroke-width="2px" />
+                </svg>
+                <svg>
+                  <image x="20%" y="20%" width="60%" height="60%" xlink:href="./assets/images/jquery-icon.png"></image>
+                  <circle id="sd" class="medium" cx="50%" cy="50%" r="49%" fill="transparent" stroke="white" stroke-width="2px" />
+                </svg>
+              </div>
+              <ul>
+                <li>Profficient in modern JavaScript (classes, promises, async).</li>
+                <li>Experience in using <span class="keyword">babel</span> for browsaers compatibility.</li>
+                <li>Experience in using multiple utility libraries like 
+                  <span class="keyword">jQuery</span>, 
+                  <span class="keyword">lodash</span>, 
+                  <span class="keyword">moment</span>, 
+                  <span class="keyword">anime</span>, 
+                  <span class="keyword">immutableJS</span>.
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <h2>JS Frameworks</h2>
+              <hr class="line" />
+              <div class="icons">
+                <svg>
+                  <image x="20%" y="20%" width="60%" height="60%" xlink:href="./assets/images/react.png"></image>
+                  <circle id="sd" class="medium" cx="50%" cy="50%" r="49%" fill="transparent" stroke="white" stroke-width="2px" />
+                </svg>
+                <svg>
+                  <image x="20%" y="20%" width="60%" height="60%" xlink:href="./assets/images/ember.png"></image>
+                  <circle id="sd" class="medium" cx="50%" cy="50%" r="49%" fill="transparent" stroke="white" stroke-width="2px" />
+                </svg>
+                <svg>
+                  <image x="20%" y="20%" width="60%" height="60%" xlink:href="./assets/images/node.png"></image>
+                  <circle id="sd" class="medium" cx="50%" cy="50%" r="49%" fill="transparent" stroke="white" stroke-width="2px" />
+                </svg>
+              </div>
+              <ul>
+                <li>Profficient in modern <span class="keyword">React</span> (hooks, context) with <span class="keyword">Redux</span> for state management. </li>
+                <li>Experience using <span class="keyword">Ember</span> (2.X.X) with Redux for state management.</li>
+                <li>Experience using <span class="keyword">Node/Express</span> for API mocking, and scripting for tooling.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h2>Tooling</h2>
+              <hr class="line" />
+              <div class="icons">
+                <svg>
+                  <image x="20%" y="20%" width="60%" height="60%" xlink:href="./assets/images/webpack.png"></image>
+                  <circle id="sd" class="medium" cx="50%" cy="50%" r="49%" fill="transparent" stroke="white" stroke-width="2px" />
+                </svg>
+                <svg>
+                  <image x="20%" y="20%" width="60%" height="60%" xlink:href="./assets/images/git.png"></image>
+                  <circle id="sd" class="medium" cx="50%" cy="50%" r="49%" fill="transparent" stroke="white" stroke-width="2px" />
+                </svg>
+              </div>
+              <ul>
+                <li>Expereince using <span class="keyword">webpack</span> for web development (hot reload, asset management, transpilation).</li>
+                <li>Expereince using <span class="keyword">grunt</span> as task runner for web development.</li>
+                <li>Experience using <span class="keyword">git</span> for version control.</li>
+              </ul>
+            </div>
         </div>
       </section>
       <section class="projects" id="projects">
         <header class="projects__header">
-          <h2 class="projects__header--text">Projects</h2>
+          <h2 class="projects__header--text">Side Projects</h2>
         </header>
         <div class="projects__container myonscroll2">
           <div class="projects__container__header">
@@ -949,7 +1025,7 @@
                     </div>
                     <div class="resSubBody__item">
                       <h4 class="resSubBody__text--1">
-                        <span class="resSubBody__text--2 addAt">Programmer/ IT Analyst</span>Pacific
+                        <span class="resSubBody__text--2 addAt">Programmer</span>Pacific
                         Gas & Electric
                       </h4>
                       <p class="resSubBody__text--3">San Francisco, CA</p>
@@ -974,7 +1050,7 @@
                     </div>
                     <div class="resSubBody__item">
                       <h4 class="resSubBody__text--1">
-                        <span class="resSubBody__text--2 addAt">Programmer/ IT Analyst</span>Pacific
+                        <span class="resSubBody__text--2 addAt">Programmer</span>Pacific
                         Gas & Electric
                       </h4>
                       <p class="resSubBody__text--3">San Francisco, CA</p>
@@ -1137,7 +1213,7 @@
           >
         </footer>
       </section>
-      <footer class="footer" id="FOOTER">
+      <footer class="footer" id="footer">
         <div class="footer__top">
           <div class="footer__section">
             <a href="mailto:kennybecerra.j@gmail.com" class="footer__section--link">
