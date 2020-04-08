@@ -63,7 +63,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(mp4|webm|mov)$/,
+        test: /\.(mp4|webm|mov|ogv)$/,
         use: [
           {
             loader: "file-loader",
@@ -81,7 +81,7 @@ module.exports = {
           loader: "html-loader",
           options: {
             minimize: true,
-            attrs: ["img:src", "source:src", "use:href"]
+            attrs: ["img:src", "source:src", "use:href", "use:xlink:href", "image:href","image:xlink:href"]
           }
         }
       },

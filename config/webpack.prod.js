@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin} = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const path = require("path");
 
 module.exports = {
@@ -66,7 +66,32 @@ module.exports = {
               esModule: false,
               name: "./assets/images/[name].[ext]"
             }
-          }
+          } 
+          //, {
+          //   loader: "image-webpack-loader",
+          //   options: {
+          //     disable: true,
+          //     mozjpeg: {
+          //       progressive: true,
+          //       quality: 65
+          //     },
+          //     // optipng.enabled: false will disable optipng
+          //     optipng: {
+          //       enabled: false,
+          //     },
+          //     pngquant: {
+          //       quality: [0.65, 0.90],
+          //       speed: 4
+          //     },
+          //     gifsicle: {
+          //       interlaced: false,
+          //     },
+          //     // the webp option will enable WEBP
+          //     webp: {
+          //       quality: 75
+          //     }
+          //   }
+          // }
         ]
       },
       {
@@ -83,7 +108,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(mp4|webm|mov)$/,
+        test: /\.(mp4|webm|mov|ogv)$/,
         use: [
           {
             loader: "file-loader",
@@ -101,7 +126,7 @@ module.exports = {
           loader: "html-loader",
           options: {
             minimize: true,
-            attrs: ["img:src", "source:src", "use:href"]
+            attrs: ["img:src", "source:src", "use:href", "use:xlink:href","image:href","image:xlink:href"]
           }
         }
       },

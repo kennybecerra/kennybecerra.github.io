@@ -1,5 +1,5 @@
 .skills {
-  padding: 5rem 0px;
+  padding: 5rem 0px 20rem 0px;
 
   display: flex;
   flex-direction: column;
@@ -56,8 +56,8 @@
 
           svg {
 
-            height: 80px;
-            width: 80px;
+            height: 72px;
+            width: 72px;
             margin-right: 10px;
 
             circle {
@@ -152,6 +152,7 @@
 
 
   @include ResponsiveMobileFirst(tab-port) { 
+    padding: 5rem 0px;
 
     .card__container {
       flex-direction: row;
@@ -160,6 +161,13 @@
 
         width: 320px;
         height: 550px;
+
+        .icons {
+          svg {
+            height: 80px;
+            width: 80px;
+          }
+        }
 
         ul {
           li {

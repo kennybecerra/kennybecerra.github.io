@@ -226,5 +226,16 @@
       }
     }
   }
+
+  @include ResponsiveMobileFirst(big-desktop) {
+    justify-content: center;
+    
+    .leftSide,
+    .rightSide {
+      flex: 0 0 800px;
+
+      max-width: 800px;
+    }
+  }
 }
 

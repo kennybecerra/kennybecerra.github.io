@@ -1,5 +1,6 @@
 node_modules/
-dist/*
+dist/**
 css/*
 assets/**
 package-lock.json
+src/**/unused/*

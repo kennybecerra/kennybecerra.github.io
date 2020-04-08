@@ -273,4 +273,67 @@
 
 		}
 
+		@include ResponsiveMobileFirst(big-desktop) {
+
+			& .left_container,
+			& .right_container {
+				flex: 0 0 900px;
+				max-width: 900px;
+
+				.scene {
+					width: 900px;
+					height: 900px;
+				}
+				
+				.cube {
+					transform: translateZ(-450px); 
+				}
+			}
+
+			& .left_container {
+
+				.cube__face {
+					justify-content: flex-end;
+
+					h2 {
+						margin-bottom: 90px;
+						font-weight: 500;
+					}
+				}
+
+				.cube__face--front  { transform: rotateY(  0deg) translateZ(450px); }
+				.cube__face--right  { transform: rotateY( 90deg) translateZ(450px); }
+				.cube__face--back   { transform: rotateY(180deg) translateZ(450px); }
+				.cube__face--left   { transform: rotateY(-90deg) translateZ(450px); }
+				.cube__face--top    { transform: rotateX( 90deg) translateZ(450px); }
+				.cube__face--bottom { transform: rotateX(-90deg) translateZ(450px); }
+	
+				.cube.show-front  { transform: translateZ(-450px) rotateY(   0deg); }
+				.cube.show-right  { transform: translateZ(-450px) rotateY( -90deg); }
+				.cube.show-back   { transform: translateZ(-450px) rotateY(-180deg); }
+				.cube.show-left   { transform: translateZ(-450px) rotateY(  90deg); }
+				.cube.show-top    { transform: translateZ(-450px) rotateX( -90deg); }
+				.cube.show-bottom { transform: translateZ(-450px) rotateX(  90deg); }
+
+			}
+
+			& .right_container {
+
+				.cube__face--front  { transform: rotateY(  0deg) translateZ(450px); background-image: unset; background-color: #070a0e;}
+				.cube__face--right  { transform: rotateY( 90deg) translateZ(450px); background-image: unset; background-color: #0e1621;}
+				.cube__face--back   { transform: rotateY(180deg) translateZ(450px); background-image: unset; background-color: #112234;}
+				.cube__face--left   { transform: rotateY(-90deg) translateZ(450px); background-image: unset; background-color: #4f5253;}
+				.cube__face--top    { transform: rotateX( 90deg) translateZ(450px); background-image: unset; background-color: #4f1933;}
+				.cube__face--bottom { transform: rotateX(-90deg) translateZ(450px); background-image: unset; background-color: #4f5253;}
+	
+				.cube.show-front  { transform: translateZ(-450px) rotateY(   0deg); }
+				.cube.show-right  { transform: translateZ(-450px) rotateY( -90deg); }
+				.cube.show-back   { transform: translateZ(-450px) rotateY(-180deg); }
+				.cube.show-left   { transform: translateZ(-450px) rotateY(  90deg); }
+				.cube.show-top    { transform: translateZ(-450px) rotateX( -90deg); }
+				.cube.show-bottom { transform: translateZ(-450px) rotateX(  90deg); }
+
+			}
+		}
+
 }
