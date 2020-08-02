@@ -1,7 +1,5 @@
 import anime from 'animejs/lib/anime.es.js';
 
-// add intersection observer
-
 const projectContainers = document.querySelectorAll('.project');
 const isMobile = window.matchMedia('(max-width: 900px)');
 
@@ -27,7 +25,6 @@ const createAnimationTimeline = (project) => {
       );
 
       let output = [-0.4, -0.4].map((item) => Math.round(item * width));
-      console.log(output);
 
       return output;
     },
@@ -42,7 +39,7 @@ const createAnimationTimeline = (project) => {
     translateZ: (el, i) => {
       return [isMobile.matches ? 70 : 130, isMobile.matches ? 70 : 130];
     },
-    duration: 800,
+    duration: 600,
     boxShadow: [
       '-80px 60px 15px 5px rgba(0, 0, 0, 0.4)',
       '-40px 40px 15px 5px rgba(0, 0, 0, 0.4)',
@@ -88,7 +85,7 @@ const createAnimationTimeline = (project) => {
         '0px 2px 10px 3px rgba(0, 0, 0, 0.5)',
       ],
     },
-    800
+    600
   );
 
   projectAnimation.add(
@@ -140,7 +137,7 @@ const createAnimationTimeline = (project) => {
 
   return projectAnimation;
 };
-console.log(projectContainers);
+
 projectContainers.forEach((project) => {
   let onetimeFlag = false;
   let prevScrollPos = window.scrollY;
@@ -148,16 +145,12 @@ projectContainers.forEach((project) => {
   const animationTimeline = createAnimationTimeline(project);
   window.addEventListener('scroll', (event) => {
     const { height, top } = project.getBoundingClientRect();
-    const ratioOfProjectShown =
-      (window.innerHeight - top - height * 0.7) / height;
+    const ratioOfProjectShown = (window.innerHeight - top) / height;
     directionY = window.scrollY > prevScrollPos ? 'down' : 'up';
     prevScrollPos = window.scrollY;
 
-    if (ratioOfProjectShown > 0.8) {
+    if (ratioOfProjectShown > (isMobile.matches ? 0.7 : 1)) {
       if (directionY === 'down' && !onetimeFlag) {
-        console.log('DOWN');
-        console.log(ratioOfProjectShown);
-
         if (!animationTimeline.completed && animationTimeline.progress === 0)
           animationTimeline.play();
 
@@ -165,9 +158,6 @@ projectContainers.forEach((project) => {
       }
 
       if (directionY === 'up' && onetimeFlag) {
-        console.log('UP');
-        console.log(ratioOfProjectShown);
-
         onetimeFlag = false;
       }
     }

@@ -1,5 +1,7 @@
 import './assets';
-import './hero';
-import './cubes';
-import './navigation';
-import './projects';
+window.addEventListener('DOMContentLoaded', () => {
+  import('./hero');
+  import('./cubes');
+  import('./navigation');
+  import('./projects');
+});
