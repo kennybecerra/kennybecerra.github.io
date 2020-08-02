@@ -4,16 +4,9 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 
   background-color: white;
-
-  /*
-    background-image: url('../assets/images/coverPhoto.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    */
 
   padding: 1em 0px;
 
@@ -27,6 +20,7 @@
     align-items: center;
 
     padding: 1em 0px;
+    margin-bottom: 30px;
 
     &--text {
       font-size: 2.5em;
@@ -49,156 +43,130 @@
     padding: 1em 0px;
   }
 
-  &__container {
-    flex-basis: auto;
-    flex-grow: 0;
-    flex-shrink: 1;
-    width: 380px;
-    //max-width: 380px;
-    height: 450px;
-    color: #fff;
-    margin: 10px;
-    position: relative;
-    z-index: 0;
-    transition: all 0.3s;
-    background-color: #999;
-    border-radius: 7px;
-    border: 1px solid #333;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+  & .project {
+    width: 100%;
+
+    max-width: 1200px;
+    padding: 10px;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(minmax(min-content, 1fr), 3);
+    row-gap: 2rem;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+
+    transform-style: preserve-3d;
+    perspective: 3000px;
+
+    @include ResponsiveMobileFirst(tab-port) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(minmax(min-content, 1fr), 2);
+      column-gap: 2rem;
+    }
 
     &__header {
-      width: 100%;
-      justify-self: center;
-      display: flex;
-      justify-content: space-between;
-      padding: 5px 5px 4px 5px;
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
 
-      background-color: #121212;
-      background-color: rgba(0, 0, 0, 0.7);
-      background-color: #292c33;
+      color: black;
+      font-weight: 700;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 3rem;
+      line-height: 4rem;
+      text-align: center;
 
-      &--1 {
-        width: 50%;
-        height: 18px;
-        opacity: 1;
-        //filter: brightness(300%);
-      }
+      margin-bottom: 20px;
+    }
 
-      &--2 {
-        width: 5%;
-        height: 18px;
+    &__img {
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
 
-        //filter: brightness(300%);
+      // width: 500px;
+      width: 90%;
+      max-width: 500px;
+      height: auto;
+      transform-style: preserve-3d;
+
+      @include ResponsiveMobileFirst(tab-port) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        max-width: 600px;
       }
     }
 
-    &__website {
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-    }
+    &__description {
+      grid-column: 1 / -1;
+      grid-row: 3 / 4;
 
-    &__figure {
-      width: 100%;
       display: flex;
+      flex-direction: column;
+
       justify-content: center;
+      align-items: center;
+      font-family: 'Open Sans', sans-serif;
+      overflow: hidden;
 
-      &--image {
-        //width: 100%;
-        height: 450px;
-        object-fit: cover;
-        //display: block
-        transition: all 0.5s;
-        transform: scale(1.2);
+      @include ResponsiveMobileFirst(tab-port) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
       }
 
-      &__caption {
+      &--text {
+        margin: 8px 0px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        text-align: center;
+
+        @include ResponsiveMobileFirst(tab-port) {
+          margin-bottom: 15px;
+          font-size: 2.2rem;
+          line-height: 2.5rem;
+        }
+      }
+
+      .project__list {
+        margin-left: 10px;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        padding-left: 1rem;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
-        transform: translateY(20%);
-        opacity: 0;
-        transition: all 0.5s;
-
-        &--box {
-          width: 75%;
+        align-items: flex-start;
+        & .listItem {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
+          justify-content: space-around;
           align-items: center;
 
-          &-2 {
-            width: 80%;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-around;
+          &_svg {
+            width: 35px;
+            height: auto;
+            stroke-width: 20px;
+            margin-right: 10px;
+          }
 
-            &-btn {
-              padding: 0px 0px;
-              flex-basis: 35%;
-              text-decoration: none;
-              display: flex;
-              align-items: center;
-              justify-content: center;
+          &_text {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.8rem;
+            line-height: 2.2rem;
+
+            @include ResponsiveMobileFirst(tab-port) {
+              font-size: 2.2rem;
+              line-height: 2.5rem;
             }
           }
         }
-
-
-        &--heading1 {
-          font-size: 2.5rem;
-          font-weight: 400;
-          line-height: 2.5rem;
-          text-align: center;
-          color: #fff;
-          align-self: center;
-        }
-
-        &--heading2 {
-          font-style: bold;
-          font-size: 2rem;
-          font-weight: 400;
-          line-height: 2rem;
-          text-decoration: underline;
-          color: #fff;
-          text-transform: uppercase;
-          margin: 0px 0px 1rem 0px;
-          // padding: 0.5rem 0;
-        }
-
-        &--item {
-          font-size: 1.8rem;
-          font-weight: 400;
-          line-height: 2rem;
-          color: #fff;
-          text-align: center;
-          // padding: 0.3rem 0px;
-        }
       }
+    }
 
-      &:hover,
-      &:focus {
-        & .projects__container__figure__caption {
-          opacity: 1;
-          transform: translateY(0%);
-        }
+    &__buttons {
+      padding: 10px;
+      margin-top: 10px;
 
-        & .projects__container__figure--image {
-          transform: scale(1);
-          //filter: brightness(80%);
-          opacity: 0.3;
-          background-color: #000;
-        }
+      & a.btn {
+        margin: 0px 10px;
       }
     }
   }
