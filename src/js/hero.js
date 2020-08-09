@@ -13,14 +13,12 @@ const heroSectionTyping = new Typewriter(
 );
 
 heroSectionTyping
-  .pauseFor(1500)
-  .typeString('Hello')
-  .pauseFor(300)
-  .typeString(", I'm Kenny")
   .pauseFor(1000)
+  .typeString('Hello')
+  .pauseFor(500)
   .deleteAll()
   .typeString("I'm a Frontend Developer.")
-  .pauseFor(1000)
+  .pauseFor(500)
   .typeString('<br/>Welcome to my site.')
   .callFunction(() => {
     const navigationTyping = [
@@ -40,7 +38,7 @@ heroSectionTyping
           duration: 1000,
           direction: 'normal',
           easing: 'easeInOutSine',
-          delay: 1000,
+          delay: 500,
           autoplay: true,
         });
       })
