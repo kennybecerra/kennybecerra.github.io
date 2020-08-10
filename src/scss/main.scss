@@ -1,25 +1,22 @@
-
-
 // ABSTRACTS
-@import "abstracts/variables";
-@import "abstracts/animations";
-@import "abstracts/mixins";
+@import 'abstracts/variables';
+@import 'abstracts/animations';
+@import 'abstracts/mixins';
 
 // BASE
-@import "base/base";
-
+@import 'base/base';
 
 // COMPONENTS
-@import "components/button";
+@import 'components/button';
 
 // LAYOUT
-@import "layout/grid";
+@import 'layout/grid';
 
 // SECTION
-@import "section/header";
-@import "section/nav";
-@import "section/about";
-@import "section/resume";
-@import "section/projects";
-@import "section/footer";
-@import "section/skills";
+@import 'section/header';
+@import 'section/nav';
+@import 'section/about';
+@import 'section/resume';
+@import 'section/projects';
+@import 'section/footer';
+@import 'section/skills';

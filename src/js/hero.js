@@ -17,7 +17,7 @@ heroSectionTyping
   .typeString('Hello')
   .pauseFor(500)
   .deleteAll()
-  .typeString("I'm a Frontend Developer.")
+  .typeString("I'm a Frontend Engineer")
   .pauseFor(500)
   .typeString('<br/>Welcome to my site.')
   .callFunction(() => {

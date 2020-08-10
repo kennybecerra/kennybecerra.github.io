@@ -1,7 +1,7 @@
 import './assets';
+import './cubes';
+import './navigation';
+import './hero';
 window.addEventListener('DOMContentLoaded', () => {
-  import('./hero');
-  import('./cubes');
-  import('./navigation');
   import('./projects');
 });

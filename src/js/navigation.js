@@ -186,20 +186,20 @@ mobileNav.add(
   0
 );
 
-document.querySelector('.mobileNav').addEventListener('click', (e) => {
-  e.preventDefault();
-  if (mobileNav.progress === 0) {
-    if (mobileNav.reversed) {
-      mobileNav.reverse();
-    }
-    mobileNav.play();
-  } else if (mobileNav.progress === 100) {
-    if (!mobileNav.reversed) {
-      mobileNav.reverse();
-      mobileNav.completed = false; // Work around to stop flickering
-    }
-    mobileNav.play();
-  } else {
-    mobileNav.reverse();
-  }
-});
+// document.querySelector('.mobileNav').addEventListener('click', (e) => {
+//   e.preventDefault();
+//   if (mobileNav.progress === 0) {
+//     if (mobileNav.reversed) {
+//       mobileNav.reverse();
+//     }
+//     mobileNav.play();
+//   } else if (mobileNav.progress === 100) {
+//     if (!mobileNav.reversed) {
+//       mobileNav.reverse();
+//       mobileNav.completed = false; // Work around to stop flickering
+//     }
+//     mobileNav.play();
+//   } else {
+//     mobileNav.reverse();
+//   }
+// });

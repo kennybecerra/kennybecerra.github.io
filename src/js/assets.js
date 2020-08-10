@@ -7,8 +7,8 @@ import icon from '../assets/images/favicon.ico';
 function requireAll(r) {
   r.keys().forEach(r);
 }
-requireAll(require.context('../assets/SVG/', false, /\.svg$/));
-requireAll(require.context('../assets/images/', false, /\.(png|jpeg|jpg)$/));
-requireAll(
-  require.context('../assets/videos/', false, /\.(mp4|webm|mov|ogv)$/)
-);
+// requireAll(require.context('../assets/SVG/', false, /\.svg$/));
+// requireAll(require.context('../assets/images/', false, /\.(png|jpeg|jpg)$/));
+// requireAll(
+//   require.context('../assets/videos/', false, /\.(mp4|webm|mov|ogv)$/)
+// );
