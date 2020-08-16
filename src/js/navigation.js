@@ -88,7 +88,7 @@ const navBarAnimation = anime({
     value: [0, 1],
   },
   zIndex: {
-    value: [-2, 2],
+    value: [-2, 5],
     easing: 'easeOutSine',
     round: true,
   },
@@ -130,20 +130,6 @@ window.addEventListener('scroll', () => {
   } else {
     //Nothing
   }
-
-  // // logic for mobile nav fading on scroll threshold
-  // if (top2 <= mobileAnimStart && top2 >= mobileAnimEnd) {
-  // 	mobileNavFade.seek(  ((mobileAnimStart - top2)/(mobileAnimStart - mobileAnimEnd))  * mobileNavFade.duration);
-  // }
-  // else if (top2 > mobileAnimStart && mobileNavFade.progress !== 0) {
-  // 	mobileNavFade.seek(0);
-  // }
-  // else if (top2 < mobileAnimEnd && mobileNavFade.progress !== 100) {
-  // 	mobileNavFade.seek(mobileNavFade.duration);
-  // }
-  // else {
-  // 	//Nothing
-  // }
 });
 
 const mobileNav = anime.timeline({
