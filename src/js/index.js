@@ -1,4 +1,4 @@
-import './assets';
+// import './assets';
 import './cubes';
 import './navigation';
 import './hero';
