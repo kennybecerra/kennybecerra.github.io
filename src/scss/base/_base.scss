@@ -38,24 +38,6 @@ body::-webkit-scrollbar-thumb {
   border: 1px solid $scrollbarBG;
 }
 
-.keyword {
-  // text-decoration: underline;
-  // font-weight: 700;
-  // text-transform: uppercase;
-}
-
-/*
-@font-face {
-    font-family: 'Roboto';
-    src: url('../assets/fonts/Roboto-regular.ttf');
-}
-*/
-
-// @font-face {
-//   font-family: 'Roboto';
-//   src: url('../assets/fonts/Roboto-regular.ttf');
-// }
-
 @include font-face('Roboto', '../assets/fonts/Roboto-Thin', 100, null, ttf);
 @include font-face(
   'Roboto',

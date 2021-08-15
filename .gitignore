@@ -4,3 +4,4 @@ css/*
 assets/**
 package-lock.json
 src/**/unused/*
+npm-debug.log

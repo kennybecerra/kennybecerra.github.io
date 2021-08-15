@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .about {
   width: 100%;
   position: relative;
@@ -231,7 +233,7 @@
       }
 
       .cube {
-        transform: translateZ(-$tabletCubeLength/2);
+        transform: translateZ(math.div(-$tabletCubeLength, 2));
       }
 
       .cube__face {
@@ -243,8 +245,8 @@
         }
 
         p {
-          font-size: $tabletCubeLength/25;
-          line-height: $tabletCubeLength/15;
+          font-size: math.div($tabletCubeLength, 25);
+          line-height: math.div($tabletCubeLength, 15);
           font-weight: 300;
         }
       }
@@ -255,99 +257,99 @@
         justify-content: flex-end;
 
         h2 {
-          margin-bottom: $tabletCubeLength/20;
+          margin-bottom: math.div($tabletCubeLength, 20);
           font-weight: 500;
         }
       }
 
       .cube__face--front {
-        transform: rotateY(0deg) translateZ($tabletCubeLength/2);
+        transform: rotateY(0deg) translateZ(math.div($tabletCubeLength, 2));
       }
       .cube__face--right {
-        transform: rotateY(90deg) translateZ($tabletCubeLength/2);
+        transform: rotateY(90deg) translateZ(math.div($tabletCubeLength, 2));
       }
       .cube__face--back {
-        transform: rotateY(180deg) translateZ($tabletCubeLength/2);
+        transform: rotateY(180deg) translateZ(math.div($tabletCubeLength, 2));
       }
       .cube__face--left {
-        transform: rotateY(-90deg) translateZ($tabletCubeLength/2);
+        transform: rotateY(-90deg) translateZ(math.div($tabletCubeLength, 2));
       }
       .cube__face--top {
-        transform: rotateX(90deg) translateZ($tabletCubeLength/2);
+        transform: rotateX(90deg) translateZ(math.div($tabletCubeLength, 2));
       }
       .cube__face--bottom {
-        transform: rotateX(-90deg) translateZ($tabletCubeLength/2);
+        transform: rotateX(-90deg) translateZ(math.div($tabletCubeLength, 2));
       }
 
       .cube.show-front {
-        transform: translateZ(-$tabletCubeLength/2) rotateY(0deg);
+        transform: translateZ(math.div(-$tabletCubeLength, 2)) rotateY(0deg);
       }
       .cube.show-right {
-        transform: translateZ(-$tabletCubeLength/2) rotateY(-90deg);
+        transform: translateZ(math.div(-$tabletCubeLength, 2)) rotateY(-90deg);
       }
       .cube.show-back {
-        transform: translateZ(-$tabletCubeLength/2) rotateY(-180deg);
+        transform: translateZ(math.div(-$tabletCubeLength, 2)) rotateY(-180deg);
       }
       .cube.show-left {
-        transform: translateZ(-$tabletCubeLength/2) rotateY(90deg);
+        transform: translateZ(math.div(-$tabletCubeLength, 2)) rotateY(90deg);
       }
       .cube.show-top {
-        transform: translateZ(-$tabletCubeLength/2) rotateX(-90deg);
+        transform: translateZ(math.div(-$tabletCubeLength, 2)) rotateX(-90deg);
       }
       .cube.show-bottom {
-        transform: translateZ(-$tabletCubeLength/2) rotateX(90deg);
+        transform: translateZ(math.div(-$tabletCubeLength, 2)) rotateX(90deg);
       }
     }
 
     & .right_container {
       .cube__face--front {
-        transform: rotateY(0deg) translateZ($tabletCubeLength/2);
+        transform: rotateY(0deg) translateZ(math.div($tabletCubeLength, 2));
         background-image: unset;
         background-color: #070a0e;
       }
       .cube__face--right {
-        transform: rotateY(90deg) translateZ($tabletCubeLength/2);
+        transform: rotateY(90deg) translateZ(math.div($tabletCubeLength, 2));
         background-image: unset;
         background-color: #0e1621;
       }
       .cube__face--back {
-        transform: rotateY(180deg) translateZ($tabletCubeLength/2);
+        transform: rotateY(180deg) translateZ(math.div($tabletCubeLength, 2));
         background-image: unset;
         background-color: #112234;
       }
       .cube__face--left {
-        transform: rotateY(-90deg) translateZ($tabletCubeLength/2);
+        transform: rotateY(-90deg) translateZ(math.div($tabletCubeLength, 2));
         background-image: unset;
         background-color: #4f5253;
       }
       .cube__face--top {
-        transform: rotateX(90deg) translateZ($tabletCubeLength/2);
+        transform: rotateX(90deg) translateZ(math.div($tabletCubeLength, 2));
         background-image: unset;
         background-color: #4f1933;
       }
       .cube__face--bottom {
-        transform: rotateX(-90deg) translateZ($tabletCubeLength/2);
+        transform: rotateX(-90deg) translateZ(math.div($tabletCubeLength, 2));
         background-image: unset;
         background-color: #4f5253;
       }
 
       .cube.show-front {
-        transform: translateZ(-$tabletCubeLength/2) rotateY(0deg);
+        transform: translateZ(math.div(-$tabletCubeLength, 2)) rotateY(0deg);
       }
       .cube.show-right {
-        transform: translateZ(-$tabletCubeLength/2) rotateY(-90deg);
+        transform: translateZ(math.div(-$tabletCubeLength, 2)) rotateY(-90deg);
       }
       .cube.show-back {
-        transform: translateZ(-$tabletCubeLength/2) rotateY(-180deg);
+        transform: translateZ(math.div(-$tabletCubeLength, 2)) rotateY(-180deg);
       }
       .cube.show-left {
-        transform: translateZ(-$tabletCubeLength/2) rotateY(90deg);
+        transform: translateZ(math.div(-$tabletCubeLength, 2)) rotateY(90deg);
       }
       .cube.show-top {
-        transform: translateZ(-$tabletCubeLength/2) rotateX(-90deg);
+        transform: translateZ(math.div(-$tabletCubeLength, 2)) rotateX(-90deg);
       }
       .cube.show-bottom {
-        transform: translateZ(-$tabletCubeLength/2) rotateX(90deg);
+        transform: translateZ(math.div(-$tabletCubeLength, 2)) rotateX(90deg);
       }
 
       .cube__face {
@@ -372,7 +374,7 @@
       }
 
       .cube {
-        transform: translateZ(-$desktopCubeLength/2);
+        transform: translateZ(math.div(-$desktopCubeLength, 2));
       }
 
       .cube__face {
@@ -394,93 +396,93 @@
       }
 
       .cube__face--front {
-        transform: rotateY(0deg) translateZ($desktopCubeLength/2);
+        transform: rotateY(0deg) translateZ(math.div($desktopCubeLength, 2));
       }
       .cube__face--right {
-        transform: rotateY(90deg) translateZ($desktopCubeLength/2);
+        transform: rotateY(90deg) translateZ(math.div($desktopCubeLength, 2));
       }
       .cube__face--back {
-        transform: rotateY(180deg) translateZ($desktopCubeLength/2);
+        transform: rotateY(180deg) translateZ(math.div($desktopCubeLength, 2));
       }
       .cube__face--left {
-        transform: rotateY(-90deg) translateZ($desktopCubeLength/2);
+        transform: rotateY(-90deg) translateZ(math.div($desktopCubeLength, 2));
       }
       .cube__face--top {
-        transform: rotateX(90deg) translateZ($desktopCubeLength/2);
+        transform: rotateX(90deg) translateZ(math.div($desktopCubeLength, 2));
       }
       .cube__face--bottom {
-        transform: rotateX(-90deg) translateZ($desktopCubeLength/2);
+        transform: rotateX(-90deg) translateZ(math.div($desktopCubeLength, 2));
       }
 
       .cube.show-front {
-        transform: translateZ(-$desktopCubeLength/2) rotateY(0deg);
+        transform: translateZ(math.div(-$desktopCubeLength, 2)) rotateY(0deg);
       }
       .cube.show-right {
-        transform: translateZ(-$desktopCubeLength/2) rotateY(-90deg);
+        transform: translateZ(math.div(-$desktopCubeLength, 2)) rotateY(-90deg);
       }
       .cube.show-back {
-        transform: translateZ(-$desktopCubeLength/2) rotateY(-180deg);
+        transform: translateZ(math.div(-$desktopCubeLength, 2)) rotateY(-180deg);
       }
       .cube.show-left {
-        transform: translateZ(-$desktopCubeLength/2) rotateY(90deg);
+        transform: translateZ(math.div(-$desktopCubeLength, 2)) rotateY(90deg);
       }
       .cube.show-top {
-        transform: translateZ(-$desktopCubeLength/2) rotateX(-90deg);
+        transform: translateZ(math.div(-$desktopCubeLength, 2)) rotateX(-90deg);
       }
       .cube.show-bottom {
-        transform: translateZ(-$desktopCubeLength/2) rotateX(90deg);
+        transform: translateZ(math.div(-$desktopCubeLength, 2)) rotateX(90deg);
       }
     }
 
     & .right_container {
       .cube__face--front {
-        transform: rotateY(0deg) translateZ($desktopCubeLength/2);
+        transform: rotateY(0deg) translateZ(math.div($desktopCubeLength, 2));
         background-image: unset;
         background-color: #070a0e;
       }
       .cube__face--right {
-        transform: rotateY(90deg) translateZ($desktopCubeLength/2);
+        transform: rotateY(90deg) translateZ(math.div($desktopCubeLength, 2));
         background-image: unset;
         background-color: #0e1621;
       }
       .cube__face--back {
-        transform: rotateY(180deg) translateZ($desktopCubeLength/2);
+        transform: rotateY(180deg) translateZ(math.div($desktopCubeLength, 2));
         background-image: unset;
         background-color: #112234;
       }
       .cube__face--left {
-        transform: rotateY(-90deg) translateZ($desktopCubeLength/2);
+        transform: rotateY(-90deg) translateZ(math.div($desktopCubeLength, 2));
         background-image: unset;
         background-color: #4f5253;
       }
       .cube__face--top {
-        transform: rotateX(90deg) translateZ($desktopCubeLength/2);
+        transform: rotateX(90deg) translateZ(math.div($desktopCubeLength, 2));
         background-image: unset;
         background-color: #4f1933;
       }
       .cube__face--bottom {
-        transform: rotateX(-90deg) translateZ($desktopCubeLength/2);
+        transform: rotateX(-90deg) translateZ(math.div($desktopCubeLength, 2));
         background-image: unset;
         background-color: #4f5253;
       }
 
       .cube.show-front {
-        transform: translateZ(-$desktopCubeLength/2) rotateY(0deg);
+        transform: translateZ(math.div(-$desktopCubeLength, 2)) rotateY(0deg);
       }
       .cube.show-right {
-        transform: translateZ(-$desktopCubeLength/2) rotateY(-90deg);
+        transform: translateZ(math.div(-$desktopCubeLength, 2)) rotateY(-90deg);
       }
       .cube.show-back {
-        transform: translateZ(-$desktopCubeLength/2) rotateY(-180deg);
+        transform: translateZ(math.div(-$desktopCubeLength, 2)) rotateY(-180deg);
       }
       .cube.show-left {
-        transform: translateZ(-$desktopCubeLength/2) rotateY(90deg);
+        transform: translateZ(math.div(-$desktopCubeLength, 2)) rotateY(90deg);
       }
       .cube.show-top {
-        transform: translateZ(-$desktopCubeLength/2) rotateX(-90deg);
+        transform: translateZ(math.div(-$desktopCubeLength, 2)) rotateX(-90deg);
       }
       .cube.show-bottom {
-        transform: translateZ(-$desktopCubeLength/2) rotateX(90deg);
+        transform: translateZ(math.div(-$desktopCubeLength, 2)) rotateX(90deg);
       }
     }
   }

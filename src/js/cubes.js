@@ -1,4 +1,4 @@
-import * as util from './util';
+import {removeClass, addClass} from './util';
 
 /**
  * CUBE ANIMATIONS
@@ -32,9 +32,9 @@ allControls.forEach((controlButton, buttonIndex) => {
 
     //remove active class from all controls buttons then add active class to current button for icon animation
     allControls.forEach((control) => {
-      util.removeClass(control, 'active');
+      removeClass(control, 'active');
     });
-    util.addClass(e.currentTarget, 'active');
+    addClass(e.currentTarget, 'active');
 
     //iterate through all cubes, and update which side needs to be shown for each cube
     allCubes.forEach((cube, cubeIndex) => {
@@ -43,9 +43,9 @@ allControls.forEach((controlButton, buttonIndex) => {
       );
 
       removeArray.forEach((removeString) => {
-        util.removeClass(cube, removeString);
+        removeClass(cube, removeString);
       });
-      util.addClass(cube, cubeSides[cubeIndex][buttonIndex]);
+      addClass(cube, cubeSides[cubeIndex][buttonIndex]);
     });
   });
 });
