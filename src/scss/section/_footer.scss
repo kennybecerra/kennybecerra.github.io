@@ -1,0 +1,108 @@
+
+.footer {
+    background: #292c33;
+ 
+    height: 12rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: center;
+
+
+    &__top {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        
+    }
+
+    &__bottom {
+        flex-basis: 100%;
+
+        background: #1d1e25;
+        padding: .7em;
+    
+        &--text {
+            color: #909db7;
+            text-align: center;
+            font-size: .8em;
+        }
+    }
+
+    &__section {
+    
+        height: auto;
+        padding: 1em .5em;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+
+        &--link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            font-weight: 400;
+            text-align: center;
+            width: 100%; 
+
+            &:link {
+                text-decoration: none;
+                color: transparent; 
+            }
+            &:visited {
+                text-decoration: none;
+                color: transparent; 
+            }
+            &:hover {
+                text-decoration: none;
+                color: transparent; 
+            }
+            &:active {
+                text-decoration: none;
+                color: transparent; 
+            }
+        }
+
+        &--text {
+            display: inline-block;
+            color: #FFF;
+            font-size: 1.5rem;
+            opacity: 1;
+        }
+
+        &--icon-1,
+        &--icon-2,
+        &--icon-3,
+        &--icon-4 {
+            fill: #FFF;
+            height: 1.5em;
+            width: 1.5em;
+            transition: all .3s;
+        }
+
+        &--icon-1:hover {
+            fill: $color-gmail;
+            
+        }
+
+        &--icon-2:hover {
+            fill: $color-github;
+            
+        }
+
+        &--icon-3:hover {
+            fill: $color-linkedin;
+            
+        }
+
+        &--icon-4:hover {
+            fill: $color-pdf;
+            
+        }
+
+
+    }
+}
+   

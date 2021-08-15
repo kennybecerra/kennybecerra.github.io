@@ -1,0 +1,366 @@
+// Utility function used by animation function callback
+export function addClass(ele, cls) {
+  if (!hasClass(ele, cls)) ele.className += ' ' + cls;
+}
+
+export function hasClass(ele, cls) {
+  if (ele instanceof SVGAElement) {
+    console.log('this is an SVG');
+    console.log(ele.getAttribute('class'));
+  }
+  return !!ele.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+}
+
+export function removeClass(ele, cls) {
+  if (hasClass(ele, cls)) {
+    var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+    ele.className = ele.className.replace(reg, '');
+  }
+}
+
+/***
+ * Jquery like function that takes a single ID or class
+ * selector and return a class of MinUtil.  MinUtil is
+ * function contrusctor that add functionality to an
+ * element.
+ *  */
+
+function $(qualifier) {
+  function MinUtil2(selector) {
+    var element = document.querySelector(selector);
+    var requestID = null;
+
+    // Utility function used by animation function callback
+    function addClass(ele, cls) {
+      if (!hasClass(ele, cls)) ele.className += ' ' + cls;
+    }
+
+    function hasClass(ele, cls) {
+      if (ele instanceof SVGAElement) {
+        console.log('this is an SVG');
+        console.log(ele.getAttribute('class'));
+      }
+      return !!ele.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+    }
+
+    function removeClass(ele, cls) {
+      if (hasClass(ele, cls)) {
+        var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+        ele.className = ele.className.replace(reg, ' ');
+      }
+    }
+
+    this.addClass = function (param) {
+      if (!hasClass(element, param)) element.className += ' ' + param;
+    };
+    this.removeClass = function (param) {
+      if (hasClass(element, param)) {
+        var reg = new RegExp('(\\s|^)' + param + '(\\s|$)');
+        element.className = element.className.replace(reg, ' ');
+      }
+    };
+    this.typingAnimation = function (setting, textOrNum, speed, delay) {
+      var itr = 0;
+      var fps = speed;
+      var letters;
+
+      if (setting === 'write') {
+        letters = textOrNum.split('');
+        var max = textOrNum.length;
+
+        element.style.borderRight = '2px solid rgba(255, 255, 255, 0.75)';
+        addClass(element, 'blinking');
+        setTimeout(() => {
+          function addLetter() {
+            setTimeout(function () {
+              element.innerHTML += letters.shift();
+              itr++;
+
+              if (itr < max) {
+                requestID = requestAnimationFrame(addLetter);
+              } else {
+                setTimeout(() => {
+                  removeClass(element, 'blinking');
+                  element.style.borderRight = '2px solid transparent';
+                }, 1500);
+              }
+            }, 1000 / fps);
+          }
+          requestID = requestAnimationFrame(addLetter);
+        }, delay);
+      } else if (setting === 'delete') {
+        element.style.borderRight = '2px solid rgba(255, 255, 255, 0.75)';
+        addClass(element, 'blinking');
+        setTimeout(() => {
+          function eraseLetter() {
+            setTimeout(function () {
+              letters = element.textContent.split('');
+              letters.pop();
+              element.textContent = letters.join('');
+              itr++;
+
+              if (itr < textOrNum) {
+                requestID = requestAnimationFrame(eraseLetter);
+              } else {
+                setTimeout(() => {
+                  removeClass(element, 'blinking');
+                  element.style.borderRight = '2px solid transparent';
+                }, 1500);
+              }
+            }, 1000 / fps);
+          }
+          requestID = requestAnimationFrame(eraseLetter);
+        }, delay);
+      } else {
+        console.log('there was an issue with the settings');
+      }
+    };
+    this.typingAnimation2 = function (
+      setting,
+      textOrNum,
+      speed,
+      delay,
+      postDelay,
+      chain,
+    ) {
+      var itr = 0;
+      var fps = speed;
+      var letters;
+      var blinkClass = 'blinking-2';
+
+      if (setting === 'write') {
+        letters = textOrNum.split('');
+        var max = textOrNum.length;
+
+        //element.style.borderRight =  "2px solid rgba(255, 255, 255, 0.75)";
+
+        addClass(element, blinkClass);
+        setTimeout(() => {
+          function addLetter() {
+            setTimeout(function () {
+              element.innerHTML += letters.shift();
+              itr++;
+
+              if (itr < max) {
+                requestID = requestAnimationFrame(addLetter);
+              } else {
+                setTimeout(() => {
+                  if (!chain) {
+                    removeClass(element, blinkClass);
+                  }
+                  //element.style.borderRight =  "2px solid transparent";
+                }, postDelay);
+              }
+            }, 1000 / fps);
+          }
+          requestID = requestAnimationFrame(addLetter);
+        }, delay);
+      } else if (setting === 'delete') {
+        //element.style.borderRight =  "2px solid rgba(255, 255, 255, 0.75)";
+
+        addClass(element, blinkClass);
+        setTimeout(() => {
+          function eraseLetter() {
+            setTimeout(function () {
+              letters = element.textContent.split('');
+              letters.pop();
+              element.textContent = letters.join('');
+              itr++;
+
+              if (itr < textOrNum) {
+                requestID = requestAnimationFrame(eraseLetter);
+              } else {
+                setTimeout(() => {
+                  if (!chain) {
+                    removeClass(element, blinkClass);
+                  }
+                  //element.style.borderRight =  "2px solid transparent";
+                }, postDelay);
+              }
+            }, 1000 / fps);
+          }
+          requestID = requestAnimationFrame(eraseLetter);
+        }, delay);
+      } else {
+        console.log('there was an issue with the settings');
+      }
+    };
+    this.typingAnimation3 = function (
+      setting,
+      textOrNum,
+      speed,
+      delay,
+      postDelay,
+      remove,
+      callback,
+    ) {
+      var itr = 0;
+      var fps = speed;
+      var letters;
+      var blinkClass = 'blinking-2';
+
+      if (setting === 'write') {
+        letters = textOrNum.split('');
+        var max = textOrNum.length;
+
+        //element.style.borderRight =  "2px solid rgba(255, 255, 255, 0.75)";
+
+        addClass(element, blinkClass);
+        setTimeout(() => {
+          function addLetter() {
+            setTimeout(function () {
+              element.innerHTML += letters.shift();
+              itr++;
+
+              if (itr < max) {
+                requestID = requestAnimationFrame(addLetter);
+              } else {
+                setTimeout(() => {
+                  if (remove) {
+                    removeClass(element, blinkClass);
+                  }
+                  if (callback) {
+                    callback();
+                  }
+                  //element.style.borderRight =  "2px solid transparent";
+                }, postDelay);
+              }
+            }, 1000 / fps);
+          }
+          requestID = requestAnimationFrame(addLetter);
+        }, delay);
+      } else if (setting === 'delete') {
+        //element.style.borderRight =  "2px solid rgba(255, 255, 255, 0.75)";
+
+        addClass(element, blinkClass);
+        setTimeout(() => {
+          function eraseLetter() {
+            setTimeout(function () {
+              letters = element.textContent.split('');
+              letters.pop();
+              element.textContent = letters.join('');
+              itr++;
+
+              if (itr < textOrNum) {
+                requestID = requestAnimationFrame(eraseLetter);
+              } else {
+                setTimeout(() => {
+                  if (remove) {
+                    removeClass(element, blinkClass);
+                  }
+                  if (callback) {
+                    callback();
+                  }
+                  /*
+                                      if (!callback) {
+                                          removeClass(element, blinkClass);
+                                      }
+                                      else {
+                                          callback();
+                                      }
+                                      */
+                  //element.style.borderRight =  "2px solid transparent";
+                }, postDelay);
+              }
+            }, 1000 / fps);
+          }
+          requestID = requestAnimationFrame(eraseLetter);
+        }, delay);
+      } else {
+        console.log('there was an issue with the settings');
+      }
+    };
+    this.typingAnimation4 = function (
+      setting,
+      textOrNum,
+      speed,
+      delay,
+      postDelay,
+      remove,
+    ) {
+      var itr = 0;
+      var fps = speed;
+      var letters;
+      var blinkClass = 'blinking-2';
+
+      return new Promise(function (resolve, reject) {
+        if (setting === 'write') {
+          letters = textOrNum.split('');
+          var max = textOrNum.length;
+
+          //element.style.borderRight =  "2px solid rgba(255, 255, 255, 0.75)";
+
+          addClass(element, blinkClass);
+          setTimeout(() => {
+            function addLetter() {
+              setTimeout(function () {
+                element.innerHTML += letters.shift();
+                itr++;
+
+                if (itr < max) {
+                  requestID = requestAnimationFrame(addLetter);
+                } else {
+                  setTimeout(() => {
+                    if (remove) {
+                      removeClass(element, blinkClass);
+                    }
+                    resolve();
+                    //element.style.borderRight =  "2px solid transparent";
+                  }, postDelay);
+                }
+              }, 1000 / fps);
+            }
+            requestID = requestAnimationFrame(addLetter);
+          }, delay);
+        } else if (setting === 'delete') {
+          //element.style.borderRight =  "2px solid rgba(255, 255, 255, 0.75)";
+
+          addClass(element, blinkClass);
+          setTimeout(() => {
+            function eraseLetter() {
+              setTimeout(function () {
+                letters = element.textContent.split('');
+                letters.pop();
+                element.textContent = letters.join('');
+                itr++;
+
+                if (itr < textOrNum) {
+                  requestID = requestAnimationFrame(eraseLetter);
+                } else {
+                  setTimeout(() => {
+                    if (remove) {
+                      removeClass(element, blinkClass);
+                    }
+                    resolve();
+                    /*
+                                          if (!callback) {
+                                              removeClass(element, blinkClass);
+                                          }
+                                          else {
+                                              callback();
+                                          }
+                                          */
+                    //element.style.borderRight =  "2px solid transparent";
+                  }, postDelay);
+                }
+              }, 1000 / fps);
+            }
+            requestID = requestAnimationFrame(eraseLetter);
+          }, delay);
+        } else {
+          reject('Error : ' + 'there was an issue with the settings');
+          //console.log('there was an issue with the settings');
+        }
+      });
+    };
+  }
+
+  if (
+    typeof qualifier === 'string' &&
+    (qualifier.charAt(0) === '.' || qualifier.charAt(0) === '#')
+  ) {
+    return new MinUtil2(qualifier);
+  } else {
+    console.log('Error Occured');
+  }
+}

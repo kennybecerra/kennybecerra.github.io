@@ -1,0 +1,91 @@
+.anim-typewriter {
+  animation: typewriter 4s steps(40) 1s 1 normal both,
+    blinkTextCursor 500ms steps(40) infinite normal;
+}
+
+.anim-movein {
+  animation: moveInButton 1s ease 0s 1 normal both;
+ 
+}
+
+.blinking {
+  animation: blinkTextCursor 500ms steps(40) infinite normal;
+}
+
+.blinking-2 {
+  &::after {
+    content: "_";
+    animation: blinkTextCursor_2 1000ms steps(40) infinite normal;
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 16em;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes blinkTextCursor_2 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(15rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+	0% {
+		// box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		// box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-10px);
+	}
+	100% {
+		// box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+
+@keyframes floatshadow {
+	0% {
+    transform: translate(-50%, 0px);
+    opacity: 1;
+
+	}
+	50% {
+    transform: translate(-50%, 10px);
+    opacity: .5;
+	}
+	100% {
+    transform: translate(-50%, 0px);
+    opacity: 1;
+	}
+}

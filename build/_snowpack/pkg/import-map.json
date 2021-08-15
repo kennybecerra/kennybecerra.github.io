@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "animejs/lib/anime.es.js": "./animejs/lib/anime.es.js",
+    "typewriter-effect/dist/core": "./typewriter-effect/dist/core.js"
+  }
+}
