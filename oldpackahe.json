@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --config=config/webpack.dev.js --open",
+    "dev": "webpack --config=config/webpack.dev.js --mode development",
+    "prod": "webpack --config=config/webpack.prod.js --mode production"
+  },
+  "browserslist": [
+    "last 5 versions"
+  ],
+  "keywords": [],
+  "author": "Kenny Becerra",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "animejs": "^3.2.0",
+    "babel-polyfill": "^6.26.0",
+    "typewriter-effect": "^2.13.0"
+  }
+}
