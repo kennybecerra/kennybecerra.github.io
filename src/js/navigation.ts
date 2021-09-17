@@ -6,19 +6,13 @@ const aboutSection = document.querySelector('#about');
 const secondSection = document.querySelector('#skills');
 const thirdSection = document.querySelector('#resume');
 const fourthSection = document.querySelector('#projects');
-const scrollElement =
-  window.document.scrollingElement ||
-  window.document.body ||
-  window.document.documentElement;
+const scrollElement = window.document.scrollingElement || window.document.body || window.document.documentElement;
 
 document.querySelector('.chevron_container').addEventListener('click', (e) => {
   e.preventDefault();
   anime({
     targets: scrollElement,
-    scrollTop:
-      aboutSection.getBoundingClientRect().top -
-      navBarDestop.getBoundingClientRect().height +
-      window.scrollY,
+    scrollTop: aboutSection.getBoundingClientRect().top - navBarDestop.getBoundingClientRect().height + window.scrollY,
     duration: 700,
     easing: 'easeOutQuad',
   });
@@ -42,9 +36,7 @@ document.querySelectorAll('.option-1').forEach((item) => {
     anime({
       targets: scrollElement,
       scrollTop:
-        secondSection.getBoundingClientRect().top -
-        navBarDestop.getBoundingClientRect().height +
-        window.scrollY,
+        secondSection.getBoundingClientRect().top - navBarDestop.getBoundingClientRect().height + window.scrollY,
       duration: 700,
       easing: 'easeOutQuad',
     });
@@ -57,9 +49,7 @@ document.querySelectorAll('.option-2').forEach((item) => {
     anime({
       targets: scrollElement,
       scrollTop:
-        thirdSection.getBoundingClientRect().top -
-        navBarDestop.getBoundingClientRect().height +
-        window.scrollY,
+        thirdSection.getBoundingClientRect().top - navBarDestop.getBoundingClientRect().height + window.scrollY,
       duration: 700,
       easing: 'easeOutQuad',
     });
@@ -72,9 +62,7 @@ document.querySelectorAll('.option-3').forEach((item) => {
     anime({
       targets: scrollElement,
       scrollTop:
-        fourthSection.getBoundingClientRect().top -
-        navBarDestop.getBoundingClientRect().height +
-        window.scrollY,
+        fourthSection.getBoundingClientRect().top - navBarDestop.getBoundingClientRect().height + window.scrollY,
       duration: 700,
       easing: 'easeOutQuad',
     });
@@ -120,9 +108,7 @@ window.addEventListener('scroll', () => {
 
   // Logic desktop nav fading animation on scroll threshold
   if (top <= animStart && top >= animEnd) {
-    navBarAnimation.seek(
-      ((animStart - top) / (animStart - animEnd)) * navBarAnimation.duration
-    );
+    navBarAnimation.seek(((animStart - top) / (animStart - animEnd)) * navBarAnimation.duration);
   } else if (top > animStart && navBarAnimation.progress !== 0) {
     navBarAnimation.seek(0);
   } else if (top < animEnd && navBarAnimation.progress !== 100) {

@@ -4,3 +4,7 @@ css/*
 assets/**
 package-lock.json
 src/**/unused/*
+
+# PARCEL EXTRAS
+.cache
+.parcel-cache

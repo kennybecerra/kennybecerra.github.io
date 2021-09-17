@@ -7,10 +7,7 @@ const typingCommonOptions = {
   autoStart: false,
 };
 
-const heroSectionTyping = new Typewriter(
-  '#typingAnimation',
-  typingCommonOptions
-);
+const heroSectionTyping = new Typewriter('#typingAnimation', typingCommonOptions);
 
 heroSectionTyping
   .pauseFor(1000)

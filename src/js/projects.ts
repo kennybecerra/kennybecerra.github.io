@@ -20,30 +20,21 @@ const createAnimationTimeline = (project) => {
     rotateX: [70, 70],
     rotateZ: [-60, -60],
     translateX: (el, i) => {
-      let width = parseInt(
-        window.getComputedStyle(el).getPropertyValue('width')
-      );
+      let width = parseInt(window.getComputedStyle(el).getPropertyValue('width'));
 
       let output = [-0.4, -0.4].map((item) => Math.round(item * width));
 
       return output;
     },
     translateY: (el, i) => {
-      let height = parseInt(
-        window.getComputedStyle(el).getPropertyValue('height')
-      );
-      return [isMobile.matches ? 0.44 : 1.1, 0].map((item) =>
-        Math.round(item * height)
-      );
+      let height = parseInt(window.getComputedStyle(el).getPropertyValue('height'));
+      return [isMobile.matches ? 0.44 : 1.1, 0].map((item) => Math.round(item * height));
     },
     translateZ: (el, i) => {
       return [isMobile.matches ? 70 : 130, isMobile.matches ? 70 : 130];
     },
     duration: 600,
-    boxShadow: [
-      '-80px 60px 15px 5px rgba(0, 0, 0, 0.4)',
-      '-40px 40px 15px 5px rgba(0, 0, 0, 0.4)',
-    ],
+    boxShadow: ['-80px 60px 15px 5px rgba(0, 0, 0, 0.4)', '-40px 40px 15px 5px rgba(0, 0, 0, 0.4)'],
   });
 
   projectAnimation.add(
@@ -64,26 +55,19 @@ const createAnimationTimeline = (project) => {
       rotateX: [70, 0],
       rotateZ: [-60, 0],
       translateX: (el, i) => {
-        let width = parseInt(
-          window.getComputedStyle(el).getPropertyValue('width')
-        );
+        let width = parseInt(window.getComputedStyle(el).getPropertyValue('width'));
 
         return [-0.4, 0].map((item) => Math.round(item * width));
       },
       translateY: (el, i) => {
-        let height = parseInt(
-          window.getComputedStyle(el).getPropertyValue('height')
-        );
+        let height = parseInt(window.getComputedStyle(el).getPropertyValue('height'));
         return [0, 0].map((item) => Math.round(item * height));
       },
       translateZ: (el, i) => {
         return [isMobile.matches ? 70 : 130, 0];
       },
       duration: 1000,
-      boxShadow: [
-        '-40px 30px 15px 5px rgba(0, 0, 0, 0.4)',
-        '0px 2px 10px 3px rgba(0, 0, 0, 0.5)',
-      ],
+      boxShadow: ['-40px 30px 15px 5px rgba(0, 0, 0, 0.4)', '0px 2px 10px 3px rgba(0, 0, 0, 0.5)'],
     },
     600
   );
@@ -151,8 +135,7 @@ projectContainers.forEach((project) => {
 
     if (ratioOfProjectShown > (isMobile.matches ? 0.7 : 1)) {
       if (directionY === 'down' && !onetimeFlag) {
-        if (!animationTimeline.completed && animationTimeline.progress === 0)
-          animationTimeline.play();
+        if (!animationTimeline.completed && animationTimeline.progress === 0) animationTimeline.play();
 
         onetimeFlag = true;
       }
