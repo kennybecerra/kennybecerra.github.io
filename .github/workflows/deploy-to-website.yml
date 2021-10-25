@@ -10,10 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-      - run: npm install
-      - run: npm run build
-      - run: echo "Successfully built website"
-      - run: npm run deploy
-      - run: echo "Successfully deployed website"
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        uses: actions/checkout@v2
+        with:
+          node-version: "16"
+      - name: Installation
+        run: npm install
+
+      - name: Run Build
+        run: npm run build
+        run: echo "Successfully built website"
+
+      - name: Run deploy
+        run: npm run deploy
+        run: echo "Successfully deployed website"
