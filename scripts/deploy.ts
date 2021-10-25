@@ -1,19 +1,18 @@
 import fs from 'fs';
 import path from 'path';
-import dotenv from 'dotenv';
 import Client from 'ssh2-sftp-client';
 
-dotenv.config();
+const { WEBSITE_HOST, WEBSITE_REMOTE_DIRECTORY, WEBSITE_RSA_LOCATION, WEBSITE_USERNAME } = process.env;
 
 const sftp = new Client();
 
 const config = {
-  host: process.env.WEBSITE_HOST,
-  username: process.env.WEBSITE_USERNAME,
-  privateKey: fs.readFileSync(process.env.WEBSITE_RSA_LOCATION, 'utf-8'),
+  host: WEBSITE_HOST,
+  username: WEBSITE_USERNAME,
+  privateKey: fs.readFileSync(WEBSITE_RSA_LOCATION as string, 'utf-8'),
 };
 
-const siteDir = process.env.WEBSITE_REMOTE_DIRECTORY;
+const siteDir = WEBSITE_REMOTE_DIRECTORY as string;
 const fileToBedeleted = new RegExp('\\.(js|ico|css|html|gif)$');
 const dirToBeDeleted = new RegExp('(assets|js|css)');
 

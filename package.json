@@ -9,7 +9,7 @@
     "prebuild": "rm -rf dist/",
     "build": "parcel build ./src/index.html --no-source-maps --public-url .",
     "postbuild": "npx ts-node scripts/deploy",
-    "deploy": "npx ts-node scripts/deploy"
+    "deploy": "npx ts-node -r dotenv/config  scripts/deploy"
   },
   "browserslist": [
     "last 5 versions"
