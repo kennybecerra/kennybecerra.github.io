@@ -34,7 +34,7 @@
     "ssh2": "^1.5.0",
     "ssh2-sftp-client": "^7.1.0",
     "svgo": "^2.6.1",
-    "terser": "^5.8.0",
+    "terser": "^5.14.2",
     "ts-node": "^10.3.0",
     "typescript": "^4.4.4"
   },
