@@ -43,9 +43,7 @@
   }
 }
 
-
 .mobileNav {
-
   position: fixed;
   top: 110%;
   right: 15%;
@@ -73,7 +71,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     list-style-type: none;
     color: #33a4c9;
     text-align: center;
@@ -101,7 +99,6 @@
     background-color: white;
     border-radius: 50%;
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
   }
 
   &__burger {
@@ -124,8 +121,6 @@
     }
   }
 }
-
-
 
 .cn-button {
   position: fixed;
@@ -211,7 +206,7 @@
 
 /*cover to prevent extra space of anchors from being clickable*/
 .cn-wrapper:after {
-  content: ".";
+  content: '.';
   display: block;
   font-size: 2em;
   width: 6.2em;
@@ -275,18 +270,9 @@
   height: 14.5em;
   border-radius: 50%;
   background: rgba(119, 130, 133, 0.7);
-  background: -webkit-radial-gradient(
-    circle transparent calc(35% - 1px),
-    rgba(119, 130, 133, 0.7) 35%
-  );
-  background: -moz-radial-gradient(
-    circle transparent calc(35% - 1px),
-    rgba(119, 130, 133, 0.7) 35%
-  );
-  background: radial-gradient(
-    circle transparent calc(35% -1px),
-    rgba(119, 130, 133, 0.7) 35%
-  );
+  background: -webkit-radial-gradient(circle transparent calc(35% - 1px), rgba(119, 130, 133, 0.7) 35%);
+  background: -moz-radial-gradient(circle transparent calc(35% - 1px), rgba(119, 130, 133, 0.7) 35%);
+  background: radial-gradient(circle transparent calc(35% - 1px), rgba(119, 130, 133, 0.7) 35%);
   color: #fff;
   text-align: center;
   text-decoration: none;
@@ -315,18 +301,9 @@
 .cn-wrapper li a:hover,
 .cn-wrapper li a:active,
 .cn-wrapper li a:focus {
-  background: -webkit-radial-gradient(
-    circle transparent calc(35% - 1px),
-    rgba(54, 59, 61, 0.7) 35%
-  );
-  background: -moz-radial-gradient(
-    circle transparent calc(35% - 1px),
-    rgba(54, 59, 61, 0.7) 35%
-  );
-  background: radial-gradient(
-    circle transparent calc(35% - 1px),
-    rgba(54, 59, 61, 0.7) 35%
-  );
+  background: -webkit-radial-gradient(circle transparent calc(35% - 1px), rgba(54, 59, 61, 0.7) 35%);
+  background: -moz-radial-gradient(circle transparent calc(35% - 1px), rgba(54, 59, 61, 0.7) 35%);
+  background: radial-gradient(circle transparent calc(35% - 1px), rgba(54, 59, 61, 0.7) 35%);
 }
 .cn-wrapper li a:focus {
   position: fixed; /* fix the displacement bug in webkit browsers when using tab key */
