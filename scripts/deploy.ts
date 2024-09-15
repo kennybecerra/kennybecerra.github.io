@@ -2,7 +2,12 @@ import fs from 'fs';
 import path from 'path';
 import Client from 'ssh2-sftp-client';
 
-const { WEBSITE_HOST, WEBSITE_REMOTE_DIRECTORY, WEBSITE_RSA_LOCATION, WEBSITE_USERNAME } = process.env;
+const {
+  WEBSITE_HOST,
+  WEBSITE_REMOTE_DIRECTORY,
+  WEBSITE_RSA_LOCATION,
+  WEBSITE_USERNAME,
+} = process.env;
 
 const sftp = new Client();
 
@@ -13,26 +18,31 @@ const config = {
 };
 
 const siteDir = WEBSITE_REMOTE_DIRECTORY as string;
-const fileToBedeleted = new RegExp('\\.(js|ico|css|html|gif)$');
+const fileToBeDeleted = new RegExp('\\.(js|map|ico|css|html|gif)$');
 const dirToBeDeleted = new RegExp('(assets|js|css)');
 
 const deployCode = async () => {
   try {
     await sftp.connect(config);
 
-    const list = await sftp.list(siteDir).then((res) => res.filter(({ name }) => !name?.startsWith('.')));
+    const list = await sftp
+      .list(siteDir)
+      .then((res) => res.filter(({ name }) => !name?.startsWith('.')));
+
 
     const result = await Promise.allSettled(
       list.map(({ type, name }) => {
         switch (type) {
           case '-':
-            if (fileToBedeleted.test(name)) {
+            if (fileToBeDeleted.test(name)) {
+              console.log(`file ${name} is set for deletion`);
               return sftp.delete(`${siteDir}/${name}`);
             }
 
             return Promise.reject(`${name} will not be deleted`);
           case 'd':
             if (dirToBeDeleted.test(name)) {
+              console.log(`directory ${name} is set for deletion`);
               return sftp.rmdir(`${siteDir}/${name}`, true);
             }
 
@@ -41,11 +51,16 @@ const deployCode = async () => {
       })
     );
 
-    await sftp.uploadDir(path.join(__dirname, '..', 'dist'), 'kennybecerra.com');
+    await sftp.uploadDir(
+      path.join(__dirname, '..', 'dist'),
+      'kennybecerra.com'
+    );
+    console.log("files Uploaded")
   } catch (err) {
     console.log(err);
   } finally {
-    sftp.end();
+    await sftp.end();
+    console.log('connection closed');
   }
 };
 

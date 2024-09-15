@@ -1,4 +1,9 @@
 {
-	"extends": ["@parcel/config-default"],
-	"namers": ["parcel-namer-custom", "..."]
+  "extends": [
+    "@parcel/config-default"
+  ],
+  "namers": [
+    "./plugins/custom-asset-namer",
+    "..."
+  ]
 }
