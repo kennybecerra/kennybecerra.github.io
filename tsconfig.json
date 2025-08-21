@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "tsResults",
+    "module": "es2015",
+    "target": "es2015",
+    "checkJs": true,
+    "moduleResolution": "bundler"
+  },
+  "include": [
+    "src/**/*.js",
+    "src/**/*.ts",
+    "scripts/**/*.js",
+    "scripts/**/*.ts"
+  ],
+  "exclude": ["node_modules", "tsResults", "dist"]
+}

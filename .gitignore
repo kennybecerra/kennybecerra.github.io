@@ -5,6 +5,7 @@ assets/**
 package-lock.json
 src/**/unused/*
 .env
+deleted_files.log
 
 # PARCEL EXTRAS
 .cache

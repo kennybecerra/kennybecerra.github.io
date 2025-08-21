@@ -1,3 +1,5 @@
+@use "../abstracts/variables" as c;
+@use "../abstracts/mixins" as m;
 *,
 *:before,
 *:after {
@@ -14,8 +16,8 @@ html {
 
 body {
   box-sizing: border-box;
-  color: $text-color;
-  font-family: 'Roboto', sans-serif;
+  color: c.$text-color;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 2em;
 }
@@ -27,15 +29,15 @@ body::-webkit-scrollbar {
 }
 body {
   scrollbar-width: thin;
-  scrollbar-color: $thumbBG $scrollbarBG;
+  scrollbar-color: c.$thumbBG c.$scrollbarBG;
 }
 body::-webkit-scrollbar-track {
-  background: $scrollbarBG;
+  background: c.$scrollbarBG;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: $thumbBG;
+  background-color: c.$thumbBG;
   border-radius: 6px;
-  border: 1px solid $scrollbarBG;
+  border: 1px solid c.$scrollbarBG;
 }
 
 .keyword {
@@ -56,47 +58,59 @@ body::-webkit-scrollbar-thumb {
 //   src: url('../assets/fonts/Roboto-regular.ttf');
 // }
 
-@include font-face('Roboto', '../assets/fonts/Roboto-Thin', 100, null, ttf);
-@include font-face(
-  'Roboto',
-  '../assets/fonts/Roboto-ThinItalic',
+@include m.font-face("Roboto", "../assets/fonts/Roboto-Thin", 100, null, ttf);
+@include m.font-face(
+  "Roboto",
+  "../assets/fonts/Roboto-ThinItalic",
   100,
   italic,
   ttf
 );
-@include font-face('Roboto', '../assets/fonts/Roboto-Light', 300, null, ttf);
-@include font-face(
-  'Roboto',
-  '../assets/fonts/Roboto-LightItalic',
+@include m.font-face("Roboto", "../assets/fonts/Roboto-Light", 300, null, ttf);
+@include m.font-face(
+  "Roboto",
+  "../assets/fonts/Roboto-LightItalic",
   300,
   italic,
   ttf
 );
 
-@include font-face('Roboto', '../assets/fonts/Roboto-Regular', 400, null, ttf);
-@include font-face('Roboto', '../assets/fonts/Roboto-Italic', 400, italic, ttf);
+@include m.font-face(
+  "Roboto",
+  "../assets/fonts/Roboto-Regular",
+  400,
+  null,
+  ttf
+);
+@include m.font-face(
+  "Roboto",
+  "../assets/fonts/Roboto-Italic",
+  400,
+  italic,
+  ttf
+);
 
-@include font-face('Roboto', '../assets/fonts/Roboto-Medium', 500, null, ttf);
-@include font-face(
-  'Roboto',
-  '../assets/fonts/Roboto-MediumItalic',
+@include m.font-face("Roboto", "../assets/fonts/Roboto-Medium", 500, null, ttf);
+@include m.font-face(
+  "Roboto",
+  "../assets/fonts/Roboto-MediumItalic",
   500,
   italic,
   ttf
 );
-@include font-face('Roboto', '../assets/fonts/Roboto-Bold', 700, null, ttf);
-@include font-face(
-  'Roboto',
-  '../assets/fonts/Roboto-BoldItalic',
+@include m.font-face("Roboto", "../assets/fonts/Roboto-Bold", 700, null, ttf);
+@include m.font-face(
+  "Roboto",
+  "../assets/fonts/Roboto-BoldItalic",
   700,
   italic,
   ttf
 );
 
-@include font-face('Roboto', '../assets/fonts/Roboto-Black', 900, null, ttf);
-@include font-face(
-  'Roboto',
-  '../assets/fonts/Roboto-BlackItalic',
+@include m.font-face("Roboto", "../assets/fonts/Roboto-Black", 900, null, ttf);
+@include m.font-face(
+  "Roboto",
+  "../assets/fonts/Roboto-BlackItalic",
   900,
   italic,
   ttf
@@ -104,89 +118,89 @@ body::-webkit-scrollbar-thumb {
 
 // ROBOTO MONO
 
-@include font-face(
-  'Roboto Mono',
-  '../assets/fonts/RobotoMono-Thin',
+@include m.font-face(
+  "Roboto Mono",
+  "../assets/fonts/RobotoMono-Thin",
   100,
   null,
   ttf
 );
-@include font-face(
-  'Roboto Mono',
-  '../assets/fonts/RobotoMono-ThinItalic',
+@include m.font-face(
+  "Roboto Mono",
+  "../assets/fonts/RobotoMono-ThinItalic",
   100,
   italic,
   ttf
 );
-@include font-face(
-  'Roboto Mono',
-  '../assets/fonts/RobotoMono-Light',
+@include m.font-face(
+  "Roboto Mono",
+  "../assets/fonts/RobotoMono-Light",
   300,
   null,
   ttf
 );
-@include font-face(
-  'Roboto Mono',
-  '../assets/fonts/RobotoMono-LightItalic',
+@include m.font-face(
+  "Roboto Mono",
+  "../assets/fonts/RobotoMono-LightItalic",
   300,
   italic,
   ttf
 );
 
-@include font-face(
-  'Roboto Mono',
-  '../assets/fonts/RobotoMono-Regular',
+@include m.font-face(
+  "Roboto Mono",
+  "../assets/fonts/RobotoMono-Regular",
   400,
   null,
   ttf
 );
-@include font-face(
-  'Roboto Mono',
-  '../assets/fonts/RobotoMono-Italic',
+@include m.font-face(
+  "Roboto Mono",
+  "../assets/fonts/RobotoMono-Italic",
   400,
   italic,
   ttf
 );
 
-@include font-face(
-  'Roboto Mono',
-  '../assets/fonts/RobotoMono-Medium',
+@include m.font-face(
+  "Roboto Mono",
+  "../assets/fonts/RobotoMono-Medium",
   500,
   null,
   ttf
 );
-@include font-face(
-  'Roboto Mono',
-  '../assets/fonts/RobotoMono-MediumItalic',
+@include m.font-face(
+  "Roboto Mono",
+  "../assets/fonts/RobotoMono-MediumItalic",
   500,
   italic,
   ttf
 );
 
-@include font-face(
-  'Roboto Mono',
-  '../assets/fonts/RobotoMono-SemiBold',
+@include m.font-face(
+  "Roboto Mono",
+  "../assets/fonts/RobotoMono-SemiBold",
   600,
   null,
   ttf
 );
-@include font-face(
-  'Roboto Mono',
-  '../assets/fonts/RobotoMono-SemiBoldItalic',
+@include m.font-face(
+  "Roboto Mono",
+  "../assets/fonts/RobotoMono-SemiBoldItalic",
   600,
   italic,
   ttf
 );
-@include font-face(
-  'Roboto Mono',
-  '../assets/fonts/RobotoMono-Bold',
+@include m.font-face(
+  "Roboto Mono",
+  "../assets/fonts/RobotoMono-Bold",
   700,
   null,
   ttf
 );
-@include font-face(
-  'Roboto Mono',
-  '../assets/fonts/RobotoMono-BoldItalic',
+@include m.font-face(
+  "Roboto Mono",
+  "../assets/fonts/RobotoMono-BoldItalic",
   700,
   italic,
   ttf
@@ -194,60 +208,60 @@ body::-webkit-scrollbar-thumb {
 
 // OPEN SANS
 
-@include font-face(
-  'Open Sans',
-  '../assets/fonts/OpenSans-Light',
+@include m.font-face(
+  "Open Sans",
+  "../assets/fonts/OpenSans-Light",
   300,
   null,
   ttf
 );
-@include font-face(
-  'Open Sans',
-  '../assets/fonts/OpenSans-LightItalic',
+@include m.font-face(
+  "Open Sans",
+  "../assets/fonts/OpenSans-LightItalic",
   300,
   italic,
   ttf
 );
 
-@include font-face(
-  'Open Sans',
-  '../assets/fonts/OpenSans-Regular',
+@include m.font-face(
+  "Open Sans",
+  "../assets/fonts/OpenSans-Regular",
   400,
   null,
   ttf
 );
-@include font-face(
-  'Open Sans',
-  '../assets/fonts/OpenSans-Italic',
+@include m.font-face(
+  "Open Sans",
+  "../assets/fonts/OpenSans-Italic",
   400,
   italic,
   ttf
 );
 
-@include font-face(
-  'Open Sans',
-  '../assets/fonts/OpenSans-SemiBold',
+@include m.font-face(
+  "Open Sans",
+  "../assets/fonts/OpenSans-SemiBold",
   600,
   null,
   ttf
 );
-@include font-face(
-  'Open Sans',
-  '../assets/fonts/OpenSans-SemiBoldItalic',
+@include m.font-face(
+  "Open Sans",
+  "../assets/fonts/OpenSans-SemiBoldItalic",
   600,
   italic,
   ttf
 );
-@include font-face(
-  'Open Sans',
-  '../assets/fonts/OpenSans-Bold',
+@include m.font-face(
+  "Open Sans",
+  "../assets/fonts/OpenSans-Bold",
   700,
   null,
   ttf
 );
-@include font-face(
-  'Open Sans',
-  '../assets/fonts/OpenSans-BoldItalic',
+@include m.font-face(
+  "Open Sans",
+  "../assets/fonts/OpenSans-BoldItalic",
   700,
   italic,
   ttf

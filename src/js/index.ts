@@ -1,9 +1,5 @@
-import '../scss/vendor/normalize.css';
-import './cubes';
-import './navigation';
-import './hero';
-
-
-window.addEventListener('DOMContentLoaded', () => {
-  import('./projects');
-});
+import "./cubes";
+import "./navigation";
+import "./hero";
+import "@assets/documents/Kenny_Becerra_Resume.pdf";
+import "./projects";

@@ -132,16 +132,16 @@
     display: none;
 
     .cube__face--front {
-      background-image: url('../assets/images/aboutMe_medium.jpg');
+      background-image: url("@assets/images/aboutMe_medium.jpg");
     }
     .cube__face--left {
-      background-image: url('../assets/images/fsu.jpg');
+      background-image: url("@assets/images/fsu.jpg");
     }
     .cube__face--right {
-      background-image: url('../assets/images/coding_medium.jpg');
+      background-image: url("@assets/images/coding_medium.jpg");
     }
     .cube__face--top {
-      background-image: url('../assets/images/running_medium.jpg');
+      background-image: url("@assets/images/running_medium.jpg");
     }
     // .cube__face--back   { background-color: rgba(0,0,0,.3); }
     // .cube__face--bottom { background-color: rgba(0,0,0,.6); }
@@ -149,16 +149,16 @@
 
   & .right_container {
     .cube__face--front {
-      background-image: url('../assets/images/aboutMe_small_dark.jpg');
+      background-image: url("@assets/images/aboutMe_small_dark.jpg");
     }
     .cube__face--left {
-      background-image: url('../assets/images/fsu_small_dark.jpg');
+      background-image: url("@assets/images/fsu_small_dark.jpg");
     }
     .cube__face--right {
-      background-image: url('../assets/images/running_small_dark.jpg');
+      background-image: url("@assets/images/running_small_dark.jpg");
     }
     .cube__face--top {
-      background-image: url('../assets/images/fsu_small_dark.jpg');
+      background-image: url("@assets/images/fsu_small_dark.jpg");
     }
     // .cube__face--back   { background-color: rgba(0,0,0,.3); }
     // .cube__face--bottom { background-color: rgba(0,0,0,.6); }
